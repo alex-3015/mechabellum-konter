@@ -269,11 +269,14 @@ h1 b { color: var(--accent); font-weight: 700; }
 .note { margin: 14px 0 0; padding: 9px 11px; border-radius: 5px; background: var(--surface-2); font-size: 13.5px; color: var(--muted); }
 .note b { color: var(--fg); font-weight: 500; }
 
-footer { margin-top: 26px; color: var(--muted); font-size: 13px; max-width: 80ch; }
+footer {
+  display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 10px 20px;
+  margin-top: 26px; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px;
+}
 footer a { color: var(--muted); }
 footer p { margin: 4px 0; }
 /* Infos zu Quellen und Bedienung: standardmäßig eingeklappt */
-.info { border-top: 1px solid var(--line); padding-top: 10px; }
+.info { flex: 1 1 320px; min-width: 0; }
 .info > summary {
   display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; user-select: none;
   font: 600 13px var(--font-ui); letter-spacing: .04em; color: var(--muted);
@@ -282,7 +285,15 @@ footer p { margin: 4px 0; }
 .info > summary::before { content: "▸"; font-size: 11px; transition: transform .15s; }
 .info[open] > summary::before { transform: rotate(90deg); }
 .info > summary:hover { color: var(--fg); }
-.info-body { margin-top: 8px; }
+.info-body { margin-top: 8px; max-width: 80ch; }
+/* Ko-fi: dezent, aber immer sichtbar */
+.kofi {
+  display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; white-space: nowrap; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--fg);
+  font: 600 13px var(--font-ui); letter-spacing: .03em;
+}
+.kofi svg { width: 16px; height: 16px; fill: currentColor; color: var(--accent); }
+.kofi:hover { border-color: var(--accent); }
 kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; color: var(--fg); }
 
 [hidden] { display: none !important; }
@@ -337,7 +348,8 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
 
 /* Abgeschrägte Ecken im Stil der Spieloberfläche; Browser ohne corner-shape behalten abgerundete Ecken */
 @supports (corner-shape: bevel) {
-  .tile, .panel, .pic, .tech-opt, .menu-panel, .search input, .toggle, .menu-btn, .lang, .tchip, .chip, .tip, .note, .go, .hint, .sw { corner-shape: bevel; }
+  .tile, .panel, .pic, .tech-opt, .menu-panel, .search input, .toggle, .menu-btn, .lang, .tchip, .chip, .tip, .note, .go, .hint, .sw, .kofi { corner-shape: bevel; }
+  .kofi { border-radius: 8px; }
   .tile { border-radius: 10px; }
   .panel { border-radius: 16px; }
   .pic { border-radius: 8px; }
@@ -2477,6 +2489,10 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     <summary>Infos: Quellen, Techs und Bedienung</summary>
     <div class="info-body" id="foot"></div>
   </details>
+  <a class="kofi" href="https://ko-fi.com/byalexity" target="_blank" rel="noopener" title="Öffnet ko-fi.com/byalexity in einem neuen Tab">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h13.5v6a5 5 0 0 1-5 5H8.5a5 5 0 0 1-5-5V7zm13.5 1h1.6a3 3 0 0 1 0 6H17v-1.8h1.6a1.2 1.2 0 0 0 0-2.4H17V8zM2.5 19.6h16v1.6h-16z"/></svg>
+    Auf Ko-fi unterstützen
+  </a>
 </footer>
 
 <script>
