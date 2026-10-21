@@ -1,0 +1,36 @@
+# Claude Code Review: prüft jeden Pull Request mit dem offiziellen Code-Review-Plugin von Anthropic
+# und kommentiert Funde direkt an den betroffenen Zeilen.
+# Voraussetzungen: Claude GitHub App für dieses Repo installiert (https://github.com/apps/claude)
+# und ein Secret CLAUDE_CODE_OAUTH_TOKEN (aus `claude setup-token`) oder ANTHROPIC_API_KEY.
+# Pull Requests aus Forks bekommen von GitHub keine Secrets und werden daher nicht geprüft.
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          plugin_marketplaces: "https://github.com/anthropics/claude-code.git"
+          plugins: "code-review@claude-code-plugins"
+          prompt: "/code-review:code-review --comment ${{ github.repository }}/pull/${{ github.event.pull_request.number }}"
+          claude_args: '--allowedTools "mcp__github_inline_comment__create_inline_comment"'

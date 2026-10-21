@@ -4,12 +4,13 @@
   "private": true,
   "description": "Cheat-Sheet für Mechabellum: welche Einheit kontert welche, mit Tech-Schaltern aus den Spieldateien",
   "scripts": {
-    "build": "node scripts/build.js src/template.html data/units.json index.html data/icons.json data/techs.page.json",
+    "check": "node scripts/check-i18n.js",
+    "build": "node scripts/build.js",
     "techs": "node scripts/gentechs.js",
     "icons": "node scripts/icons.js",
     "all": "npm run icons && npm run techs && npm run build",
+    "dev": "node -e \"process.env.ALLOW_MISSING=1;require('./scripts/build.js')\"",
     "serve": "node scripts/serve.js index.html",
-    "extract:names": "node scripts/extract/names.js \"C:/Program Files (x86)/Steam/steamapps/common/Mechabellum/Mechabellum_Data/resources.assets\" data/mechnames.json",
-    "extract:techs": "node scripts/extract/techlist.js \"C:/Program Files (x86)/Steam/steamapps/common/Mechabellum/Mechabellum_Data/resources.assets\" data/techs.json"
+    "extract:texts": "node scripts/extract/gametexts.js \"C:/Program Files (x86)/Steam/steamapps/common/Mechabellum/Mechabellum_Data/resources.assets\" data/gametexts.json"
   }
 }

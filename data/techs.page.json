@@ -2,196 +2,420 @@
  {
   "key": "arclight_aa",
   "unit": "arclight",
-  "name": "Anti-Aircraft Ammunition",
-  "name_de": "Flugabwehrmunition",
-  "desc": "Can be used against aerial units",
-  "desc_de": "Kann gegen Lufteinheiten eingesetzt werden.",
+  "names": {
+   "en": "Anti-Aircraft Ammunition",
+   "zh-CN": "防空弹药",
+   "ru": "Зенитные боеприпасы",
+   "fr": "Munitions antiaériennes",
+   "de": "Flugabwehrmunition",
+   "es": "Munición antiaérea",
+   "ko": "대공 탄약",
+   "ja": "対空砲弾",
+   "zh-TW": "防空彈藥",
+   "es-419": "Munición antiaérea",
+   "pl": "Amunicja przeciwlotnicza"
+  },
+  "descs": {
+   "en": "Can be used against aerial units",
+   "zh-CN": "可以攻击空中单位",
+   "ru": "Можно использовать против воздушных юнитов",
+   "fr": "Peut s'utiliser contre les unités aériennes.",
+   "de": "Kann gegen Lufteinheiten eingesetzt werden.",
+   "es": "Puede utilizarse contra unidades aéreas",
+   "ko": "공중 유닛을 대상으로 사용할 수 있습니다",
+   "ja": "飛行ユニットに対して使用可能。",
+   "zh-TW": "可以攻擊空中單位",
+   "es-419": "Se usa para atacar a unidades aéreas",
+   "pl": "Może być użyta przeciw jednostkom powietrznym."
+  },
   "level": "belegt",
+  "gameId": "3115",
   "set": {
    "hitsAir": true
   },
-  "effect": "Kann jetzt Lufteinheiten angreifen.",
   "add": [
    {
     "a": "arclight",
-    "b": "wasp",
-    "why": "Kettensplash trifft Luftschwarm"
+    "b": "wasp"
    }
-  ],
-  "gameId": "3115"
+  ]
  },
  {
   "key": "tarantula_aa",
   "unit": "tarantula",
-  "name": "Anti-Aircraft Ammunition",
-  "name_de": "Flugabwehrmunition",
-  "desc": "Can be used against aerial units",
-  "desc_de": "Kann gegen Lufteinheiten eingesetzt werden.",
+  "names": {
+   "en": "Anti-Aircraft Ammunition",
+   "zh-CN": "防空弹药",
+   "ru": "Зенитные боеприпасы",
+   "fr": "Munitions antiaériennes",
+   "de": "Flugabwehrmunition",
+   "es": "Munición antiaérea",
+   "ko": "대공 탄약",
+   "ja": "対空砲弾",
+   "zh-TW": "防空彈藥",
+   "es-419": "Munición antiaérea",
+   "pl": "Amunicja przeciwlotnicza"
+  },
+  "descs": {
+   "en": "Can be used against aerial units",
+   "zh-CN": "可以攻击空中单位",
+   "ru": "Можно использовать против воздушных юнитов",
+   "fr": "Peut s'utiliser contre les unités aériennes.",
+   "de": "Kann gegen Lufteinheiten eingesetzt werden.",
+   "es": "Puede utilizarse contra unidades aéreas",
+   "ko": "공중 유닛을 대상으로 사용할 수 있습니다",
+   "ja": "飛行ユニットに対して使用可能。",
+   "zh-TW": "可以攻擊空中單位",
+   "es-419": "Se usa para atacar a unidades aéreas",
+   "pl": "Może być użyta przeciw jednostkom powietrznym."
+  },
   "level": "belegt",
+  "gameId": "3124",
   "set": {
    "hitsAir": true
   },
-  "effect": "Kann jetzt Lufteinheiten angreifen.",
   "add": [
    {
     "a": "tarantula",
-    "b": "wasp",
-    "why": "Flächenschaden trifft Luftschwarm"
+    "b": "wasp"
    }
-  ],
-  "gameId": "3124"
+  ]
  },
  {
   "key": "mountain_aa",
   "unit": "mountain",
-  "name": "Anti-Aircraft Ammunition",
-  "name_de": "Flugabwehrmunition",
-  "desc": "Decreases ATK by {0}%, allowing Mountain to attack aerial targets.",
-  "desc_de": "Verringert die ATK um {0}%, sodass Mountain Luftziele angreifen kann.",
+  "names": {
+   "en": "Anti-Aircraft Ammunition",
+   "zh-CN": "防空弹药",
+   "ru": "Зенитные боеприпасы",
+   "fr": "Munitions antiaériennes",
+   "de": "Flugabwehrmunition",
+   "es": "Munición antiaérea",
+   "ko": "대공 탄약",
+   "ja": "対空砲弾",
+   "zh-TW": "防空彈藥",
+   "es-419": "Munición antiaérea",
+   "pl": "Amunicja przeciwlotnicza"
+  },
+  "descs": {
+   "en": "Decreases ATK by {0}%, allowing Mountain to attack aerial targets.",
+   "zh-CN": "攻击力降低{0}%，使泰山可以攻击空中目标。",
+   "ru": "Уменьшает атаку на {0}%, позволяя Mountain атаковать воздушные цели.",
+   "fr": "Réduit l'ATK de {0} %, permettant à Mountain d'attaquer des cibles aériennes.",
+   "de": "Verringert die ATK um {0}%, sodass Mountain Luftziele angreifen kann.",
+   "es": "Reduce el ATQ un {0}%, lo que permite a Mountain atacar objetivos aéreos.",
+   "ko": "ATK를 {0}% 감소시켜 마운틴이 공중 타겟을 공격할 수 있게 합니다.",
+   "ja": "攻撃力が {0} %減少し、マウンテンが空中ターゲットを攻撃できるようになります。",
+   "zh-TW": "攻擊力降低{0}%，使泰山可以攻擊空中目標。",
+   "es-419": "Reduce el ATQ un {0}%, lo que permite a Mountain atacar objetivos aéreos.",
+   "pl": "Zmniejsza ATK o {0}%, umożliwiając Górze atakowanie celów powietrznych."
+  },
   "level": "belegt",
+  "gameId": "312002",
   "set": {
    "hitsAir": true
-  },
-  "effect": "Kann jetzt Lufteinheiten angreifen, macht dafür weniger Schaden.",
-  "gameId": "312002"
+  }
  },
  {
   "key": "sandworm_aa",
   "unit": "sandworm",
-  "name": "Anti-Aerial",
-  "name_de": "Anti-Lufteinheiten",
-  "desc": "Increases ATK by {0}% and allows the Sandworm to attack aerial targets.",
-  "desc_de": "Erhöht ANG um {0}% und ermöglicht Sandwurm, Luftziele anzugreifen.",
+  "names": {
+   "en": "Anti-Aerial",
+   "zh-CN": "对空",
+   "ru": "ПВО",
+   "fr": "Anti-air",
+   "de": "Anti-Lufteinheiten",
+   "es": "Antiaéreo",
+   "ko": "방공",
+   "ja": "対空",
+   "zh-TW": "對空",
+   "es-419": "Antiaéreo",
+   "pl": "Przeciwpowietrzna"
+  },
+  "descs": {
+   "en": "Increases ATK by {0}% and allows the Sandworm to attack aerial targets.",
+   "zh-CN": "攻击力增加{0}%，使沙虫可以攻击空中目标。",
+   "ru": "Увеличивает АТК на {0}% и позволяет Песчаный червь атаковать воздушные цели.",
+   "fr": "Augmente l'ATK de {0}% et permet à Ver de sable d'attaquer les cibles aériennes.",
+   "de": "Erhöht ANG um {0}% und ermöglicht Sandwurm, Luftziele anzugreifen.",
+   "es": "Aumenta el ATK en {0}% y permite a Gusano de arena atacar objetivos aéreos.",
+   "ko": "공격력을 {0}% 증가시키고 샌드웜이(가) 공중 대상을 공격할 수 있게 합니다.",
+   "ja": "攻撃力を{0}%上昇させ、サンドワームが空中のターゲットを攻撃できるようにする。",
+   "zh-TW": "攻擊力增加{0}%，使沙蟲可以攻擊空中目標。",
+   "es-419": "Aumenta el ATK en {0}% y permite que Gusano de Arena ataque objetivos aéreos.",
+   "pl": "Zwiększa ATK o {0}% i pozwala Czerw Pustynny atakować cele powietrzne."
+  },
   "level": "belegt",
+  "gameId": "3123",
   "set": {
    "hitsAir": true
-  },
-  "effect": "Kann jetzt Lufteinheiten angreifen.",
-  "gameId": "3123"
+  }
  },
  {
   "key": "voideye_air",
   "unit": "void_eye",
-  "name": "Aerial Mode",
-  "name_de": "Luftmodus",
-  "desc": "Void Eye transforms into a flying unit that can attack air and its movement speed is increased by {1}, but its range is reduced by {0}.",
-  "desc_de": "Void Eye verwandelt sich in eine fliegende Einheit, die Luft angreifen kann. Ihre Bewegungsgeschwindigkeit wird um {1} erhöht, aber ihre Reichweite wird um {0} reduziert.",
+  "names": {
+   "en": "Aerial Mode",
+   "zh-CN": "飞行模式",
+   "ru": "Воздушный режим",
+   "fr": "Mode aérien",
+   "de": "Luftmodus",
+   "es": "Modo aéreo",
+   "ko": "에어리얼 모드",
+   "ja": "エアリアルモード",
+   "zh-TW": "飛行模式",
+   "es-419": "Modo aéreo",
+   "pl": "Tryb antenowy"
+  },
+  "descs": {
+   "en": "Void Eye transforms into a flying unit that can attack air and its movement speed is increased by {1}, but its range is reduced by {0}.",
+   "zh-CN": "魔眼变为可对空攻击的飞行单位，移动速度增加{1}，但射程减少{0}",
+   "ru": "Void Eye превращается в летающий юнит, способный атаковать воздух, скорость его передвижения увеличивается на {1}, но дальность его действия уменьшается на {0}.",
+   "fr": "Void Eye se transforme en une unité volante capable d'attaquer l'air et sa vitesse de déplacement est augmentée de {1}, mais sa portée est réduite de {0}.",
+   "de": "Void Eye verwandelt sich in eine fliegende Einheit, die Luft angreifen kann. Ihre Bewegungsgeschwindigkeit wird um {1} erhöht, aber ihre Reichweite wird um {0} reduziert.",
+   "es": "Void Eye se transforma en una unidad voladora que puede atacar el aire y su velocidad de movimiento aumenta en {1}, pero su alcance se reduce en {0}.",
+   "ko": "공허의 눈은 공중을 공격할 수 있는 비행 유닛으로 변신하며 이동 속도가 {1} 증가하지만 사거리는 {0} 감소합니다.",
+   "ja": "ヴォイド・アイは空中を攻撃できる飛行ユニットに変身し、移動速度は {1} 増加しますが、射程は {0} 減少します。",
+   "zh-TW": "魔眼變為可對空攻擊的飛行單位，移動速度增加{1}，但射程減少{0}",
+   "es-419": "Void Eye se transforma en una unidad voladora que puede atacar el aire y su velocidad de movimiento aumenta en {1}, pero su alcance se reduce en {0}.",
+   "pl": "Void Eye przekształca się w jednostkę latającą, która może atakować powietrze, a jej prędkość ruchu jest zwiększona o {1}, ale jej zasięg jest zmniejszony o {0}."
+  },
   "level": "belegt",
+  "gameId": "4430",
   "set": {
    "hitsAir": true,
    "flies": true
-  },
-  "effect": "Wird zur Lufteinheit und kann Luft angreifen. Reine Bodeneinheiten können es nicht mehr treffen.",
-  "gameId": "4430"
+  }
  },
  {
   "key": "fang_grenade",
   "unit": "fang",
-  "name": "Grenade Launcher",
-  "name_de": "Granatwerfer",
-  "desc": "Fangs switch to grenade launchers. Increases Range by {1}. Attacks deal splash damage in a {0}m radius, but cannot target air units.",
-  "desc_de": "Fangzähne wechseln zu Granatwerfern. Erhöht die Reichweite um {1}. Angriffe verursachen Spritzschaden in einem Radius von {0} m, können aber keine Lufteinheiten ins Visier nehmen.",
+  "names": {
+   "en": "Grenade Launcher",
+   "zh-CN": "榴弹发射器",
+   "ru": "Гранатомет",
+   "fr": "Lance-grenades",
+   "de": "Granatwerfer",
+   "es": "Lanzador de granadas",
+   "ko": "유탄 발사기",
+   "ja": "グレネードランチャー",
+   "zh-TW": "榴彈發射器",
+   "es-419": "Lanzador de granadas",
+   "pl": "Granatnik"
+  },
+  "descs": {
+   "en": "Fangs switch to grenade launchers. Increases Range by {1}. Attacks deal splash damage in a {0}m radius, but cannot target air units.",
+   "zh-CN": "尖牙改为使用榴弹发射器，射程增加{1}米，对目标周围{0}米范围内的敌人造成溅射伤害，但是无法对空。",
+   "ru": "Клыки переключаются на гранатометы. Увеличивает дальность на {1}. Атаки наносят урон от брызг в радиусе {0} м, но не могут быть направлены против воздушных юнитов.",
+   "fr": "Les crocs passent aux lance-grenades. Augmente la portée de {1}. Les attaques infligent des dégâts d'éclaboussure dans un rayon de {0} m, mais ne peuvent pas cibler les unités aériennes.",
+   "de": "Fangzähne wechseln zu Granatwerfern. Erhöht die Reichweite um {1}. Angriffe verursachen Spritzschaden in einem Radius von {0} m, können aber keine Lufteinheiten ins Visier nehmen.",
+   "es": "Los colmillos se convierten en lanzagranadas. Aumenta el alcance en {1}. Los ataques infligen daño por salpicadura en un radio de {0} m, pero no pueden atacar a las unidades aéreas.",
+   "ko": "송곳니가 유탄 발사기로 전환됩니다.사거리가 {1} 증가합니다.공격 시 {0} m 반경 내에서 방사 피해를 입히지만 공중 유닛은 대상으로 지정할 수 없습니다.",
+   "ja": "牙はグレネードランチャーに切り替わります。射程が {1} 増加する。攻撃は半径 {0} m の範囲でスプラッシュダメージを与えますが、航空ユニットをターゲットにすることはできません。",
+   "zh-TW": "尖牙改為使用榴彈發射器，射程增加{1}米，對目標周圍{0}米範圍內的敵人造成濺射傷害，但是無法對空。",
+   "es-419": "Los colmillos se convierten en lanzagranadas. Aumenta el alcance en {1}. Los ataques infligen daño por salpicadura en un radio de {0} m, pero no pueden atacar a las unidades aéreas.",
+   "pl": "Kły przełączają się na granatniki. Zwiększa zasięg o {1}. Ataki zadają obrażenia od rozprysku w promieniu {0} m, ale nie mogą celować w jednostki powietrzne."
+  },
   "level": "belegt",
+  "gameId": "3109",
   "set": {
    "hitsAir": false
   },
-  "effect": "Bekommt Flächenschaden und mehr Reichweite, kann aber keine Lufteinheiten mehr angreifen.",
   "add": [
    {
     "a": "fang",
-    "b": "crawler",
-    "why": "Granaten-Splash gegen Schwarm"
+    "b": "crawler"
    }
-  ],
-  "gameId": "3109"
+  ]
  },
  {
   "key": "wraith_ground",
   "unit": "wraith",
-  "name": "Land Cruiser",
-  "name_de": "Landkreuzer",
-  "desc": "Wraith becomes a ground unit. It can no longer attack air targets, but its Attack Range increases by {0}, and its attack interval increases by {1} seconds.",
-  "desc_de": "Wraith wird eine Bodeneinheit. Es kann keine Luftziele mehr angreifen, aber seine Angriffsreichweite erhöht sich um {0} und sein Angriffsintervall erhöht sich um {1} Sekunden.",
+  "names": {
+   "en": "Land Cruiser",
+   "zh-CN": "地面巡航",
+   "ru": "Лэнд Крузер",
+   "fr": "Land Cruiser",
+   "de": "Landkreuzer",
+   "es": "Land Cruiser",
+   "ko": "랜드 크루저",
+   "ja": "ランドクルーザー",
+   "zh-TW": "地面巡航",
+   "es-419": "Land Cruiser",
+   "pl": "Krążowniki lądowe"
+  },
+  "descs": {
+   "en": "Wraith becomes a ground unit. It can no longer attack air targets, but its Attack Range increases by {0}, and its attack interval increases by {1} seconds.",
+   "zh-CN": "恶灵成为地面单位，无法再攻击空中目标，但是射程增加{0}米，攻击间隔增加{1}秒",
+   "ru": "Призрак становится наземным подразделением. Он больше не может атаковать воздушные цели, но дальность атаки увеличивается на {0}, а интервал атаки увеличивается на {1} секунды.",
+   "fr": "Wraith devient une unité terrestre. Il ne peut plus attaquer de cibles aériennes, mais sa portée d'attaque augmente de {0}, et son intervalle d'attaque augmente de {1} secondes.",
+   "de": "Wraith wird eine Bodeneinheit. Es kann keine Luftziele mehr angreifen, aber seine Angriffsreichweite erhöht sich um {0} und sein Angriffsintervall erhöht sich um {1} Sekunden.",
+   "es": "Wraith se convierte en una unidad terrestre. Ya no puede atacar objetivos aéreos, pero su alcance de ataque aumenta en {0} y su intervalo de ataque aumenta en {1} segundos.",
+   "ko": "레이스가 지상 유닛이 됩니다.더는 공중 목표물을 공격할 수 없지만 공격 사거리가 {0} 증가하고 공격 간격이 {1} 초 증가합니다.",
+   "ja": "レイスは地上ユニットになります。空中ターゲットを攻撃することはできなくなりますが、射程が {0} 増加し、攻撃間隔が {1} 秒増加します。",
+   "zh-TW": "惡靈成為地面單位，無法再攻擊空中目標，但是射程增加{0}米，攻擊間隔增加{1}秒",
+   "es-419": "Wraith se convierte en una unidad terrestre. Ya no puede atacar objetivos aéreos, pero su alcance de ataque aumenta en {0} y su intervalo de ataque aumenta en {1} segundos.",
+   "pl": "Wraith staje się jednostką naziemną. Nie może już atakować celów powietrznych, ale jego zasięg ataku wzrasta o {0}, a interwał ataków zwiększa się o {1} sekund."
+  },
   "level": "belegt",
+  "gameId": "4418",
   "set": {
    "hitsAir": false,
    "flies": false
-  },
-  "effect": "Wird zur Bodeneinheit: kann keine Lufteinheiten mehr angreifen, und jede Bodeneinheit kann es treffen.",
-  "gameId": "4418"
+  }
  },
  {
   "key": "fortress_aa",
   "unit": "fortress",
-  "name": "Anti-Air Barrage",
-  "name_de": "Anti-Luftsperrfeuer",
-  "desc": "Launches {1} anti-air barrages at the enemy every {0}s. The barrages only damage aerial units. Each guided missile deals {2} damage and has a range of {3}m",
-  "desc_de": "Feuert alle {0} Sek. {1} Luftabwehrsalven auf den Gegner ab. Die Geschütze richten nur bei Lufteinheiten Schaden an. Jede Lenkrakete verursacht {2} Schaden und hat eine Reichweite von {3} m.",
+  "names": {
+   "en": "Anti-Air Barrage",
+   "zh-CN": "防空弹幕",
+   "ru": "Зенитный шквал",
+   "fr": "Barrage antiaérien",
+   "de": "Anti-Luftsperrfeuer",
+   "es": "Andanada antiaérea",
+   "ko": "대공 탄막",
+   "ja": "対空掃射",
+   "zh-TW": "防空彈幕",
+   "es-419": "Ráfaga antiaérea",
+   "pl": "Salwa przeciwlotnicza"
+  },
+  "descs": {
+   "en": "Launches {1} anti-air barrages at the enemy every {0}s. The barrages only damage aerial units. Each guided missile deals {2} damage and has a range of {3}m",
+   "zh-CN": "每{0}秒发射{1}枚防空弹幕攻击敌人，弹幕只对空中单位造成伤害，每枚导弹造成{2}点伤害，射程{3}米",
+   "ru": "Выпускает залп из {1} противовоздушных ракет во врага каждые {0} с. Они повреждают только воздушных юнитов, каждая наносит {2} урона и имеет радиус действия в {3} м.",
+   "fr": "Lance {1} barrages antiaériens sur l'ennemi toutes les {0} s. Les barrages n'infligent des dégâts qu'aux unités aériennes. Chaque missile guidé a une portée de {3} m et inflige {2} dégâts.",
+   "de": "Feuert alle {0} Sek. {1} Luftabwehrsalven auf den Gegner ab. Die Geschütze richten nur bei Lufteinheiten Schaden an. Jede Lenkrakete verursacht {2} Schaden und hat eine Reichweite von {3} m.",
+   "es": "Lanza {1} andanadas antiaéreas contra el enemigo cada {0} segundos. Estas andanadas solamente dañan a unidades aéreas. Cada misil guiado inflige {2} de daño y tiene un alcance de {3} metros",
+   "ko": "{0}초마다 적에게 대공 탄막을 {1}발 발사합니다. 탄막은 공중 유닛에게만 대미지를 줍니다. 각 유도 미사일은 {2} 대미지를 주고 사거리는 {3}미터입니다",
+   "ja": "{0}秒ごとに{1}発の対空砲撃を行う。飛行ユニットにのみ有効。誘導ミサイルが与えるダメージは1発につき{2}、射程は{3}m。",
+   "zh-TW": "每{0}秒發射{1}枚防空彈幕攻擊敵人，彈幕只對空中單位造成傷害，每枚導彈造成{2}點傷害，射程{3}米",
+   "es-419": "Dispara {1} ráfagas antiaéreas contra el enemigo cada {0} s; solo daña a las unidades aéreas. Cada misil guiado inflige {2} puntos de daño y tiene un alcance de {3} m.",
+   "pl": "Co {0} sek. wystrzeliwuje w stronę wroga salwy przeciwlotnicze w liczbie {1}. Salwy uszkadzają wyłącznie jednostki powietrzne. Każdy pocisk kierowany zadaje {2} pkt. uszkodzeń i ma zasięg {3} m."
+  },
   "level": "tendenz",
+  "gameId": "1105",
   "set": {
    "hitsAir": true
-  },
-  "effect": "Zusätzliches Sperrfeuer, das nur Lufteinheiten trifft. Wie stark es im Kampf ist, ist unbekannt.",
-  "gameId": "1105"
+  }
  },
  {
   "key": "sabertooth_aa",
   "unit": "sabertooth",
-  "name": "Anti-Air Missile",
-  "name_de": "Luftabwehrrakete",
-  "desc": "Fires {1} anti-air missiles every {0} seconds to attack air enemies, each missile dealing {2} damage.",
-  "desc_de": "Feuert alle {0} Sekunden {1} Flugabwehrraketen ab, um Luftgegner anzugreifen, wobei jede Rakete {2} Schaden verursacht.",
+  "names": {
+   "en": "Anti-Air Missile",
+   "zh-CN": "防空导弹",
+   "ru": "Зенитная ракета",
+   "fr": "Missile antiaérien",
+   "de": "Luftabwehrrakete",
+   "es": "Misil antiaéreo",
+   "ko": "대공 미사일",
+   "ja": "対空ミサイル",
+   "zh-TW": "防空導彈",
+   "es-419": "Misil antiaéreo",
+   "pl": "Pocisk przeciwlotniczy"
+  },
+  "descs": {
+   "en": "Fires {1} anti-air missiles every {0} seconds to attack air enemies, each missile dealing {2} damage.",
+   "zh-CN": "每{0}秒发射{1}枚防空导弹攻击空中敌人，每枚导弹造成{2}点伤害",
+   "ru": "Выпускает {1} зенитных ракет каждые {0} секунд для атаки воздушных врагов, каждая ракета наносит {2} урона.",
+   "fr": "Tire {1} missiles antiaériens toutes les {0} secondes pour attaquer les ennemis aériens, chaque missile infligeant {2} dégâts.",
+   "de": "Feuert alle {0} Sekunden {1} Flugabwehrraketen ab, um Luftgegner anzugreifen, wobei jede Rakete {2} Schaden verursacht.",
+   "es": "Dispara {1} misiles antiaéreos cada {0} segundos para atacar a enemigos aéreos, cada misil inflige {2} de daño.",
+   "ko": "{0}초마다 대공 미사일 {1}발을 발사해 공중 적을 공격하며, 각 미사일은 {2}의 피해를 입힙니다.",
+   "ja": "{0}秒ごとに{1}発の対空ミサイルを発射して空中の敵を攻撃し、各ミサイルは{2}のダメージを与える。",
+   "zh-TW": "每{0}秒發射{1}枚防空飛彈攻擊空中敵人，每枚飛彈造成{2}點傷害",
+   "es-419": "Dispara {1} misiles antiaéreos cada {0} segundos para atacar enemigos aéreos, cada misil inflige {2} de daño.",
+   "pl": "Wystrzeliwuje {1} pocisków przeciwlotniczych co {0} sekund, aby atakować wrogów powietrznych; każdy pocisk zadaje {2} obrażeń."
+  },
   "level": "tendenz",
+  "gameId": "11015021",
   "set": {
    "hitsAir": true
-  },
-  "effect": "Zusätzliche Flugabwehrraketen (neu in 2.0). Wie stark sie im Kampf sind, ist unbekannt.",
-  "gameId": "11015021"
+  }
  },
  {
   "key": "raiden_chain",
   "unit": "raiden",
-  "name": "Chain",
-  "name_de": "Kette",
-  "desc": "Decreases Raiden's range by {2}, the lightning bolts it fires will jump to other enemies within {0} radius after hitting the enemy, dealing {1}% damage.",
-  "desc_de": "Verringert Raidens Reichweite um {2}. Die von ihm abgefeuerten Blitze springen auf andere Gegner im Umkreis von {0}, nachdem sie den Feind getroffen haben, und verursachen {1}% Schaden.",
+  "names": {
+   "en": "Chain",
+   "zh-CN": "连锁",
+   "ru": "Цепочка",
+   "fr": "Chaîne",
+   "de": "Kette",
+   "es": "Cadena",
+   "ko": "체인",
+   "ja": "チェーン",
+   "zh-TW": "連鎖",
+   "es-419": "Cadena",
+   "pl": "Łańcuch"
+  },
+  "descs": {
+   "en": "Decreases Raiden's range by {2}, the lightning bolts it fires will jump to other enemies within {0} radius after hitting the enemy, dealing {1}% damage.",
+   "zh-CN": "雷霆射程减少{2}，当闪电命中敌人时，会跳跃至{0}米内的其他敌人，造成{1}%的伤害。",
+   "ru": "Дальность действия Рейдена уменьшается на {2}, а выстрелы молнии после попадания в него будут прыгать на других противников в радиусе {0}, нанося {1}% урона.",
+   "fr": "Réduit la portée de Raiden de {2}, les éclairs qu'il lance sautent vers les autres ennemis dans un rayon de {0} après avoir touché l'ennemi, infligeant {1} % de dégâts.",
+   "de": "Verringert Raidens Reichweite um {2}. Die von ihm abgefeuerten Blitze springen auf andere Gegner im Umkreis von {0}, nachdem sie den Feind getroffen haben, und verursachen {1}% Schaden.",
+   "es": "Disminuye el alcance de Raiden un {2}. Los relámpagos que dispare saltarán sobre otros enemigos que estén dentro de un radio de {0} tras alcanzar al enemigo e infligirles un {1}% de daño.",
+   "ko": "라이덴의 사거리가 {2} 감소합니다. 라이덴이 발사한 번개는 적에게 적중하면 반경 {0} 내의 다른 적에게 뛰어올라 {1} %의 피해를 입힙니다.",
+   "ja": "雷電の射程を {2} 減らします。雷が発射した稲妻は、敵に当たった後 {0} 半径内の他の敵にジャンプし、{1}% のダメージを与えます。",
+   "zh-TW": "雷霆射程減少{2}，當閃電命中敵人時，會跳躍至{0}米內的其他敵人，造成{1}%的傷害。",
+   "es-419": "Disminuye el alcance de Raiden un {2}. Los relámpagos que dispare saltarán sobre otros enemigos que estén dentro de un radio de {0} tras alcanzar al enemigo e infligirles un {1}% de daño.",
+   "pl": "Zmniejsza zasięg Raidena o {2}, wystrzelone przez niego błyskawice przeskakują na innych wrogów w promieniu {0} po trafieniu wroga, zadając obrażenia {1}%."
+  },
   "level": "tendenz",
-  "effect": "Blitze springen auf weitere Gegner über. Hilft gegen Schwärme, die Stärke ist unbekannt.",
+  "gameId": "4027",
   "weaken": [
    {
     "a": "fang",
-    "b": "raiden",
-    "why": "Kettenblitz trifft mehrere Fangs"
+    "b": "raiden"
    },
    {
     "a": "wasp",
-    "b": "raiden",
-    "why": "Kettenblitz trifft mehrere Wespen"
+    "b": "raiden"
    }
-  ],
-  "gameId": "4027"
+  ]
  },
  {
   "key": "centurion_melee",
   "unit": "centurion",
-  "name": "Melee Mode",
-  "name_de": "Nahkampfmodus",
-  "desc": "Equips powerful melee weaponry, but cannot carry spare ammo. The rifle magazine holds {0} rounds. Upon ammo depletion, the Centurion switches to melee mode and charges at the enemy: Movement Speed increases by {5}, HP increase by {1}%,  ATK increases by {2}%, Attack Interval increases by {3} seconds, and attacks deal {4}m Splash Damage.",
-  "desc_de": "Rüstet mächtige Nahkampfwaffen aus, kann jedoch keine Ersatzmunition tragen. Das Gewehrmagazin fasst {0} Schuss. Bei Munitionserschöpfung wechselt Zenturio in den Nahkampfmodus und stürmt auf den Feind zu: Bewegungsgeschwindigkeit erhöht sich um {5}, LP erhöhen sich um {1}%,  ANG erhöht sich um {2}%, Angriffsintervall erhöht sich um {3} Sekunden, und Angriffe verursachen {4}m Flächenschaden.",
+  "names": {
+   "en": "Melee Mode",
+   "zh-CN": "近战模式",
+   "ru": "Режим ближнего боя",
+   "fr": "Mode Mêlée",
+   "de": "Nahkampfmodus",
+   "es": "Modo cuerpo a cuerpo",
+   "ko": "근접 모드",
+   "ja": "近接モード",
+   "zh-TW": "近戰模式",
+   "es-419": "Modo cuerpo a cuerpo",
+   "pl": "Tryb walki wręcz"
+  },
+  "descs": {
+   "en": "Equips powerful melee weaponry, but cannot carry spare ammo. The rifle magazine holds {0} rounds. Upon ammo depletion, the Centurion switches to melee mode and charges at the enemy: Movement Speed increases by {5}, HP increase by {1}%,  ATK increases by {2}%, Attack Interval increases by {3} seconds, and attacks deal {4}m Splash Damage.",
+   "zh-CN": "装备强大的近战武器，但无法携带备用弹药。步枪弹匣内仅有 {0} 发子弹，子弹耗尽后，百夫长将切换为近战模式冲入敌阵：移动速度增加 {5}，生命值提升 {1}%，攻击力提升 {2}%，攻击间隔增加 {3} 秒，攻击带有 {4} 米溅射。",
+   "ru": "Оснащён мощным оружием ближнего боя, но не может носить запасные боеприпасы. Магазин винтовки вмещает {0} патронов. При истощении боеприпасов центурион переключается в режим ближнего боя и бросается на врага: Скорость передвижения увеличивается на {5}, HP увеличивается на {1}%, ATK увеличивается на {2}%, интервал атаки увеличивается на {3} секунды, а атаки наносят {4}м урона по площади.",
+   "fr": "Équipe de puissantes armes de mêlée, mais ne peut pas transporter de munitions de rechange. Le chargeur du fusil contient {0} balles. Une fois les munitions épuisées, Centurion passe en mode mêlée et charge l'ennemi : la vitesse de déplacement augmente de {5}, les PV augmentent de {1}%, l'ATQ augmente de {2}%, l'intervalle d'attaque augmente de {3} secondes, et les attaques infligent des dégâts de zone sur {4}m.",
+   "de": "Rüstet mächtige Nahkampfwaffen aus, kann jedoch keine Ersatzmunition tragen. Das Gewehrmagazin fasst {0} Schuss. Bei Munitionserschöpfung wechselt Zenturio in den Nahkampfmodus und stürmt auf den Feind zu: Bewegungsgeschwindigkeit erhöht sich um {5}, LP erhöhen sich um {1}%,  ANG erhöht sich um {2}%, Angriffsintervall erhöht sich um {3} Sekunden, und Angriffe verursachen {4}m Flächenschaden.",
+   "es": "Equipa potentes armas cuerpo a cuerpo, pero no puede llevar munición de repuesto. El cargador del rifle contiene {0} balas. Cuando se agota la munición, centurión cambia al modo cuerpo a cuerpo y carga contra el enemigo: la Velocidad de Movimiento aumenta en {5}, los HP aumentan en {1}%,  el ATQ aumenta en {2}%, el Intervalo de Ataque aumenta en {3} segundos, y los ataques infligen {4}m de Daño en Área.",
+   "ko": "강력한 근접 무기를 장비하지만, 예비 탄약을 휴대할 수 없습니다. 소총 탄창에는 {0}발이 들어 있습니다. 탄약이 소진되면 백부장이(가) 근접 모드로 전환하여 적에게 돌진합니다: 이동 속도가 {5}만큼 증가하고, HP가 {1}% 증가하며, 공격력이 {2}% 증가하고, 공격 간격이 {3}초 증가하며, 공격이 {4}m 범위 피해를 입힙니다.",
+   "ja": "強力な近接武器を装備しているが、予備弾薬を携行できない。ライフルの弾倉には{0}発装填されている。弾薬が尽きると、センチュリオンは近接モードに切り替わり、敵に突撃する：移動速度が{5}増加し、HPが{1}%増加、攻撃力が{2}%増加、攻撃間隔が{3}秒増加し、攻撃は{4}mの範囲ダメージを与える。",
+   "zh-TW": "裝備強大的近戰武器，但無法攜帶備用彈藥。步槍彈匣內僅有 {0} 發子彈，子彈耗盡後，百夫長將切換為近戰模式衝入敵陣：移動速度增加 {5}，生命值提升 {1}%，攻擊力提升 {2}%，攻擊間隔增加 {3} 秒，攻擊帶有 {4} 米濺射。",
+   "es-419": "Equipa un potente armamento cuerpo a cuerpo, pero no puede llevar munición de reserva. El cargador del rifle contiene {0} balas. Cuando se agota la munición, el Centurión cambia a modo cuerpo a cuerpo y carga contra el enemigo: la Velocidad de movimiento aumenta en {5}, los HP aumentan en {1}%,  el ATK aumenta en {2}%, el Intervalo de ataque aumenta en {3} segundos, y los ataques infligen {4}m de Daño en área.",
+   "pl": "Wyposaża w potężną broń białą, ale nie może nosić zapasowej amunicji. Magazynek karabinu mieści {0} naboi. Po wyczerpaniu amunicji, Centurion przełącza się w tryb walki wręcz i szarżuje na wroga: Szybkość ruchu wzrasta o {5}, HP wzrasta o {1}%,  ATK wzrasta o {2}%, Interwał ataku wzrasta o {3} sek., a ataki zadają {4}m obrażeń obszarowych."
+  },
   "level": "tendenz",
-  "effect": "Wechselt nach leerem Magazin in den Nahkampf mit Flächenschaden. Hilft gegen Schwärme am Boden.",
+  "gameId": "5532",
   "weaken": [
    {
     "a": "crawler",
-    "b": "centurion",
-    "why": "Nahkampf-Splash gegen Schwarm"
+    "b": "centurion"
    },
    {
     "a": "fang",
-    "b": "centurion",
-    "why": "Nahkampf-Splash gegen Schwarm"
+    "b": "centurion"
    }
-  ],
-  "gameId": "5532"
+  ]
  }
 ]

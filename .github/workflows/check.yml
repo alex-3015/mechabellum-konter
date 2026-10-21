@@ -1,0 +1,27 @@
+# Prüft bei jedem Pull Request und Push auf main:
+# 1. alle Texte in allen Sprachen vorhanden (Regel aus CLAUDE.md)
+# 2. die committete index.html entspricht dem Quellstand
+name: Prüfung
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Sprachen prüfen
+        run: npm run check
+      - name: Seite bauen
+        run: npm run all
+      - name: Gebaute Dateien sind aktuell
+        run: git diff --exit-code -- index.html data/icons.json data/techs.page.json

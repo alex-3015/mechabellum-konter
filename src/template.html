@@ -1,18 +1,21 @@
 <title>Mechabellum Konter</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <script>
-  // Farbschema, Größe und Farbschwäche-Modus vor dem ersten Zeichnen setzen (Standard: dunkel), damit nichts aufblitzt
+  // Farbschema, Größe, Farben und Seitenleiste vor dem ersten Zeichnen setzen (Standard: dunkel), damit nichts aufblitzt
   (function () {
-    var t = 'dark', s = 'normal', cb = '0';
+    var t = 'dark', s = 'normal', cb = '0', sb = 'on';
     try {
       t = localStorage.getItem('mbk.theme') === 'light' ? 'light' : 'dark';
       s = localStorage.getItem('mbk.size') === 'large' ? 'large' : 'normal';
-      cb = localStorage.getItem('mbk.cb') === '1' ? '1' : '0';
+      cb = localStorage.getItem('mbk.cb');
+      cb = cb === '1' || cb === '2' ? cb : '0';
+      sb = localStorage.getItem('mbk.sidebar') === 'off' ? 'off' : 'on';
     } catch (e) {}
     var r = document.documentElement;
     r.setAttribute('data-mbk-theme', t);
     r.setAttribute('data-mbk-size', s);
     r.setAttribute('data-mbk-cb', cb);
+    r.setAttribute('data-mbk-sidebar', sb);
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -346,9 +349,56 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   --accent: #1d2731; --accent-bg: rgba(29,39,49,.09);
 }
 
+/* Farbschwäche Blau-Gelb (Tritanopie): Türkis/Rot, Auswahl neutral (Bernstein wäre dort mit Rot verwechselbar) */
+:root[data-mbk-cb="2"][data-mbk-theme="dark"] {
+  --good: #3fd0c9; --good-bg: rgba(63,208,201,.16); --bad: #ff5a7a; --bad-bg: rgba(255,90,122,.16);
+  --accent: #eef1f4; --accent-bg: rgba(238,241,244,.13);
+}
+:root[data-mbk-cb="2"][data-mbk-theme="light"] {
+  --good: #0b7f7a; --good-bg: rgba(11,127,122,.12); --bad: #c8174d; --bad-bg: rgba(200,23,77,.11);
+  --accent: #1d2731; --accent-bg: rgba(29,39,49,.09);
+}
+
+/* Seitenleiste ausgeblendet: Raster nutzt die volle Breite */
+:root[data-mbk-sidebar="off"] .layout { grid-template-columns: minmax(0, 1fr); }
+:root[data-mbk-sidebar="off"] .panel { display: none; }
+
+/* Sprachauswahl im Ansicht-Menü */
+.langsel {
+  height: 32px; padding: 0 8px; cursor: pointer; max-width: 100%;
+  background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; font: 600 13.5px var(--font-ui);
+}
+.menu-panel { max-width: calc(100vw - 32px); }
+.mrow { grid-template-columns: minmax(74px, max-content) auto; }
+
+/* Lange Namen: feste Trennstellen für DE/EN, sonst automatische Silbentrennung */
+:root:not(:lang(de)):not(:lang(en)) .tname { hyphens: auto; }
+
+/* Schriften: die Webfonts decken kein CJK ab, daher passende Systemschriften je Sprache */
+:root:lang(ja) {
+  --font-display: "Chakra Petch", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-ui: "Barlow Semi Condensed", "Hiragino Sans", "Yu Gothic UI", "Meiryo", sans-serif;
+  --font-body: "Barlow", "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+}
+:root:lang(ko) {
+  --font-display: "Chakra Petch", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-ui: "Barlow Semi Condensed", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-body: "Barlow", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+}
+:root:lang(zh-CN) {
+  --font-display: "Chakra Petch", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-ui: "Barlow Semi Condensed", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Barlow", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+:root:lang(zh-TW) {
+  --font-display: "Chakra Petch", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-ui: "Barlow Semi Condensed", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-body: "Barlow", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+}
+
 /* Abgeschrägte Ecken im Stil der Spieloberfläche; Browser ohne corner-shape behalten abgerundete Ecken */
 @supports (corner-shape: bevel) {
-  .tile, .panel, .pic, .tech-opt, .menu-panel, .search input, .toggle, .menu-btn, .lang, .tchip, .chip, .tip, .note, .go, .hint, .sw, .kofi { corner-shape: bevel; }
+  .tile, .panel, .pic, .tech-opt, .menu-panel, .search input, .toggle, .menu-btn, .lang, .tchip, .chip, .tip, .note, .go, .hint, .sw, .kofi, .langsel { corner-shape: bevel; }
   .kofi { border-radius: 8px; }
   .tile { border-radius: 10px; }
   .panel { border-radius: 16px; }
@@ -385,70 +435,76 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
 <script type="application/json" id="tech-data">
 /*__TECH_DATA__*/
 </script>
+<script type="application/json" id="i18n-data">
+/*__I18N_DATA__*/
+</script>
 
 <header class="bar">
   <div class="brand">
-    <h1>Mechabellum <b>Konter</b></h1>
+    <h1>Mechabellum <b data-i18n="ui.brand">Konter</b></h1>
     <span class="patch" id="patch"></span>
   </div>
   <div class="controls">
-    <label class="search" for="q"><input id="q" type="search" placeholder="Einheit suchen … (einfach tippen)" autocomplete="off" spellcheck="false" aria-label="Einheit suchen"></label>
-    <button id="hover-toggle" class="toggle" type="button" aria-pressed="false" title="Einheiten per Mauszeiger auswählen, ohne Klick"><span class="track"></span>Hover-Modus</button>
+    <label class="search" for="q"><input id="q" type="search" data-i18n-ph="ui.search.placeholder" data-i18n-aria="ui.search.aria" placeholder="" autocomplete="off" spellcheck="false"></label>
+    <button id="hover-toggle" class="toggle" type="button" aria-pressed="false" data-i18n-title="ui.hover.title"><span class="track"></span><span data-i18n="ui.hover.label">Hover-Modus</span></button>
     <details class="menu" id="view-menu">
-      <summary class="menu-btn">Ansicht <span class="caret" aria-hidden="true">▼</span></summary>
+      <summary class="menu-btn"><span data-i18n="ui.view.button">Ansicht</span> <span class="caret" aria-hidden="true">▼</span></summary>
       <div class="menu-panel">
-        <div class="mrow"><span class="mlabel">Namen</span>
-          <div class="lang" role="group" aria-label="Sprache der Einheitennamen">
-            <button type="button" data-lang="de" aria-pressed="true" title="Deutsche Namen wie im Spiel">DE</button>
-            <button type="button" data-lang="en" aria-pressed="false" title="Englische Namen wie im Spiel">EN</button>
+        <div class="mrow"><label class="mlabel" for="langsel" data-i18n="ui.view.language">Sprache</label>
+          <select id="langsel" class="langsel"></select></div>
+        <div class="mrow"><span class="mlabel" data-i18n="ui.view.groups">Gruppen</span>
+          <div class="lang" role="group" data-i18n-aria="ui.view.groups">
+            <button type="button" data-group-set="class" aria-pressed="true" data-i18n="ui.groups.class" data-i18n-title="ui.groups.class.title">Klasse</button>
+            <button type="button" data-group-set="stage" aria-pressed="false" data-i18n="ui.groups.stage" data-i18n-title="ui.groups.stage.title">Stufe I–IV</button>
           </div></div>
-        <div class="mrow"><span class="mlabel">Gruppen</span>
-          <div class="lang" role="group" aria-label="Gruppierung der Einheiten">
-            <button type="button" data-group-set="class" aria-pressed="true" title="Nach Klasse gruppieren (Klein, Mittel, Groß …)">Klasse</button>
-            <button type="button" data-group-set="stage" aria-pressed="false" title="Wie im Spiel nach Stufe I–IV gruppieren">Stufe I–IV</button>
+        <div class="mrow"><span class="mlabel" data-i18n="ui.view.design">Design</span>
+          <div class="lang" role="group" data-i18n-aria="ui.view.design">
+            <button type="button" data-theme-set="dark" aria-pressed="true" data-i18n="ui.design.dark" data-i18n-title="ui.design.dark.title">Dunkel</button>
+            <button type="button" data-theme-set="light" aria-pressed="false" data-i18n="ui.design.light" data-i18n-title="ui.design.light.title">Hell</button>
           </div></div>
-        <div class="mrow"><span class="mlabel">Design</span>
-          <div class="lang" role="group" aria-label="Farbschema">
-            <button type="button" data-theme-set="dark" aria-pressed="true" title="Dunkles Design">Dunkel</button>
-            <button type="button" data-theme-set="light" aria-pressed="false" title="Helles Design">Hell</button>
+        <div class="mrow"><span class="mlabel" data-i18n="ui.view.size">Größe</span>
+          <div class="lang" role="group" data-i18n-aria="ui.view.size">
+            <button type="button" data-size-set="normal" aria-pressed="true" data-i18n="ui.size.normal" data-i18n-title="ui.size.normal.title">Normal</button>
+            <button type="button" data-size-set="large" aria-pressed="false" data-i18n="ui.size.large" data-i18n-title="ui.size.large.title">Groß</button>
           </div></div>
-        <div class="mrow"><span class="mlabel">Größe</span>
-          <div class="lang" role="group" aria-label="Größe">
-            <button type="button" data-size-set="normal" aria-pressed="true" title="Normale Größe">Normal</button>
-            <button type="button" data-size-set="large" aria-pressed="false" title="Alles etwas größer, z. B. für einen weiter entfernten Monitor">Groß</button>
+        <div class="mrow"><span class="mlabel" data-i18n="ui.view.colors">Farben</span>
+          <div class="lang" role="group" data-i18n-aria="ui.view.colors">
+            <button type="button" data-cb-set="0" aria-pressed="true" data-i18n="ui.colors.default" data-i18n-title="ui.colors.default.title">Grün/Rot</button>
+            <button type="button" data-cb-set="1" aria-pressed="false" data-i18n="ui.colors.redgreen" data-i18n-title="ui.colors.redgreen.title">Blau/Orange</button>
+            <button type="button" data-cb-set="2" aria-pressed="false" data-i18n="ui.colors.blueyellow" data-i18n-title="ui.colors.blueyellow.title">Türkis/Rot</button>
           </div></div>
-        <div class="mrow"><span class="mlabel">Farben</span>
-          <div class="lang" role="group" aria-label="Farben für Konter">
-            <button type="button" data-cb-set="0" aria-pressed="true" title="Grün für Konter, Rot für gekonterte Einheiten">Grün/Rot</button>
-            <button type="button" data-cb-set="1" aria-pressed="false" title="Für Rot-Grün-Schwäche: Blau und Orange">Blau/Orange</button>
+        <div class="mrow"><span class="mlabel" data-i18n="ui.view.sidebar">Seitenleiste</span>
+          <div class="lang" role="group" data-i18n-aria="ui.view.sidebar">
+            <button type="button" data-sidebar-set="on" aria-pressed="true" data-i18n="ui.sidebar.show" data-i18n-title="ui.sidebar.show.title">Anzeigen</button>
+            <button type="button" data-sidebar-set="off" aria-pressed="false" data-i18n="ui.sidebar.hide" data-i18n-title="ui.sidebar.hide.title">Ausblenden</button>
           </div></div>
       </div>
     </details>
-    <a class="kofi" href="https://ko-fi.com/byalexity" target="_blank" rel="noopener" title="Öffnet ko-fi.com/byalexity in einem neuen Tab">
+    <a class="kofi" href="https://ko-fi.com/byalexity" target="_blank" rel="noopener" data-i18n-title="ui.kofi.title">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h13.5v6a5 5 0 0 1-5 5H8.5a5 5 0 0 1-5-5V7zm13.5 1h1.6a3 3 0 0 1 0 6H17v-1.8h1.6a1.2 1.2 0 0 0 0-2.4H17V8zM2.5 19.6h16v1.6h-16z"/></svg>
-      Auf Ko-fi unterstützen
+      <span data-i18n="ui.kofi.label">Auf Ko-fi unterstützen</span>
     </a>
   </div>
 </header>
 
-<div class="legend" aria-label="Legende">
-  <span><i class="sw sel"></i>gewählte Einheit</span>
-  <span><i class="sw good">▲</i>kontert die gewählte Einheit</span>
-  <span><i class="sw bad">▼</i>wird von ihr gekontert</span>
-  <span><i class="sw" style="border-style:dashed"></i>gestrichelt: Tendenz durch Tech</span>
-  <span><span class="ico on"><svg viewBox="0 0 24 16" aria-hidden="true"><path d="M8 2.5h6v3.5H8zM14 3.4h8.5v1.6H14zM3.5 6h15.5v4H3.5zM3.2 10.6h17.6a2.2 2.2 0 0 1 0 4.4H3.2a2.2 2.2 0 0 1 0-4.4z"/></svg></span>trifft Boden
-    <span class="ico on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span>trifft Luft · blass = nein</span>
+<div class="legend" data-i18n-aria="ui.legend.aria">
+  <span><i class="sw sel"></i><span data-i18n="ui.legend.selected">gewählte Einheit</span></span>
+  <span><i class="sw good">▲</i><span data-i18n="ui.legend.good">kontert die gewählte Einheit</span></span>
+  <span><i class="sw bad">▼</i><span data-i18n="ui.legend.bad">wird von ihr gekontert</span></span>
+  <span><i class="sw" style="border-style:dashed"></i><span data-i18n="ui.legend.tend">gestrichelt: Tendenz durch Tech</span></span>
+  <span><span class="ico on"><svg viewBox="0 0 24 16" aria-hidden="true"><path d="M8 2.5h6v3.5H8zM14 3.4h8.5v1.6H14zM3.5 6h15.5v4H3.5zM3.2 10.6h17.6a2.2 2.2 0 0 1 0 4.4H3.2a2.2 2.2 0 0 1 0-4.4z"/></svg></span><span data-i18n="ui.legend.ground">trifft Boden</span>
+    <span class="ico on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span><span data-i18n="ui.legend.air">trifft Luft · blass = nein</span></span>
 </div>
 <div class="techbar" id="techbar" hidden></div>
 
 <main class="layout">
-  <section class="roster" id="roster" aria-label="Alle Einheiten"></section>
+  <section class="roster" id="roster" data-i18n-aria="ui.roster.aria"></section>
   <aside class="panel" id="panel" aria-live="polite"></aside>
 </main>
 
 <footer>
   <details class="info">
-    <summary>Infos: Quellen, Techs und Bedienung</summary>
+    <summary data-i18n="ui.info.summary">Infos: Quellen, Techs und Bedienung</summary>
     <div class="info-body" id="foot"></div>
   </details>
 </footer>
@@ -456,20 +512,20 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
 <script>
 (function () {
   const DATA = JSON.parse(document.getElementById('unit-data').textContent);
-  let ICONS = {};
+  let ICONS = {}, TECHS = [], I18N = {};
   try { ICONS = JSON.parse(document.getElementById('unit-icons').textContent) || {}; } catch (e) {}
-  let TECHS = [];
   try { TECHS = JSON.parse(document.getElementById('tech-data').textContent) || []; } catch (e) {}
+  try { I18N = JSON.parse(document.getElementById('i18n-data').textContent) || {}; } catch (e) {}
+  const LANGS = (I18N.languages || []).filter(l => I18N.strings && I18N.strings[l.code]);
+  const SOURCE = (LANGS.find(l => l.source) || { code: 'de' }).code;
+  const STR = I18N.strings || {};
   const CLASS_ORDER = ['small', 'medium', 'large', 'giant', 'air', 'titan'];
-  const CLASS_LABEL = { small: 'Klein', medium: 'Mittel', large: 'Groß', giant: 'Riesen', air: 'Luft', titan: 'Titanen' };
-  const CLASS_ONE = { small: 'Klein', medium: 'Mittel', large: 'Groß', giant: 'Riese', air: 'Flieger', titan: 'Titan' };
-  const TARGETS = { ground: 'trifft nur Boden', air: 'trifft nur Luft', both: 'trifft Boden & Luft' };
-  const TARGET_SHORT = { ground: 'Boden', air: 'nur Luft', both: 'Boden + Luft' };
 
   const store = {
     get(k) { try { return localStorage.getItem('mbk.' + k); } catch (e) { return null; } },
     set(k, v) { try { localStorage.setItem('mbk.' + k, v); } catch (e) {} }
   };
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   function normClass(c, tags) {
     if ((tags || []).some(x => /titan/i.test(x))) return 'titan';
@@ -489,10 +545,12 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
 
   const units = DATA.units.map(u => ({
     ...u, cls: normClass(u.class, u.tags), tgt: normTargets(u.targets),
-    flies: u.class === 'air' || (u.tags || []).some(x => /fliegt|flying/i.test(x)),
-    strong: u.strong || [], weak: u.weak || []
+    flies: u.class === 'air' || (u.tags || []).includes('flying'),
+    strong: u.strong || [], weak: u.weak || [], names: u.names || { en: u.name }
   }));
   const byId = Object.fromEntries(units.map(u => [u.id, u]));
+  // Suche findet Namen in allen Sprachen
+  units.forEach(u => { u.search = Object.values(u.names).concat(u.name).join('\n').toLowerCase(); });
 
   // Kürzel als Ersatz, falls ein Bild fehlt
   const used = new Set();
@@ -506,121 +564,132 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     used.add(u.abbr);
   });
 
-  // Sprache der Einheiten- und Tech-Namen
-  let lang = store.get('lang') === 'en' ? 'en' : 'de';
-  const nm = u => (lang === 'de' && u.name_de) || u.name;
-  const alt = u => lang === 'de' ? u.name : (u.name_de || '');
-  // Feste Trennstellen (weiches Trennzeichen) für lange Namen, damit sie nur an sinnvollen Stellen umbrechen
-  const SHY = '­';
+  // ---------- Sprache ----------
+  function detectLang() {
+    const saved = store.get('lang');
+    if (saved && STR[saved]) return saved;
+    const prefs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']).map(s => String(s).toLowerCase());
+    for (const p of prefs) {
+      let c = null;
+      if (p.startsWith('zh')) c = /(tw|hk|mo|hant)/.test(p) ? 'zh-TW' : 'zh-CN';
+      else if (p.startsWith('es')) c = (p === 'es' || p === 'es-es') ? 'es' : 'es-419';
+      else c = p.split('-')[0];
+      if (STR[c]) return c;
+    }
+    return STR.en ? 'en' : SOURCE;
+  }
+  let lang = detectLang();
+  const nm = u => u.names[lang] || u.names.en || u.name;
+  const alt = u => (lang === 'en' ? '' : (u.names.en || u.name));
+  const techName = ref => { const n = (DATA.techNames || {})[ref]; return n ? (n[lang] || n.en) : ref; };
+  const tn = t => t.names[lang] || t.names.en;
+  const gameText = t => String(t.descs[lang] || t.descs.en || '').replace(/\{\d+\}/g, '…');
+  // Übersetzung: {u:id} = Einheitenname aus dem Spiel, {t:ref} = Tech-Name aus dem Spiel, {name} usw. = Werte
+  function t(key, vars) {
+    let s = (STR[lang] && STR[lang][key]) ?? (STR[SOURCE] && STR[SOURCE][key]) ?? key;
+    s = s.replace(/\{u:([a-z0-9_]+)\}/g, (m, id) => byId[id] ? nm(byId[id]) : m)
+      .replace(/\{t:([a-z0-9_]+)\}/g, (m, ref) => techName(ref));
+    if (vars) s = s.replace(/\{([a-zA-Z]+)\}/g, (m, k) => (k in vars ? vars[k] : m));
+    return s;
+  }
+  const has = key => !!(STR[SOURCE] && key in STR[SOURCE]);
+  // Feste Trennstellen für lange Namen (nur DE/EN, andere Sprachen nutzen automatische Silbentrennung)
   const HYPH = {
     'Vorschlaghammer': 'Vorschlag|hammer', 'Phantomstrahl': 'Phantom|strahl', 'Kriegsfabrik': 'Kriegs|fabrik',
     'Schmelzpunkt': 'Schmelz|punkt', 'Scharfschütze': 'Scharf|schütze', 'Weitblicker': 'Weit|blicker',
     'Totenglocke': 'Toten|glocke', 'Feuerdachs': 'Feuer|dachs', 'Stahlkugel': 'Stahl|kugel', 'Sturmrufer': 'Sturm|rufer',
     'Säbelzahn': 'Säbel|zahn', 'Sledgehammer': 'Sledge|hammer', 'Stormcaller': 'Storm|caller', 'Sabertooth': 'Saber|tooth'
   };
-  const nmh = u => { const n = nm(u); return HYPH[n] ? HYPH[n].replace('|', SHY) : n; };
-  const tn = t => (lang === 'de' && t.name_de) || t.name;
-  const gameText = t => String((lang === 'de' && t.desc_de) || t.desc || '').replace(/\{\d+\}/g, '…');
-  const swapList = units.filter(u => u.name_de && u.name_de !== u.name)
-    .sort((a, b) => b.name.length - a.name.length)
-    .map(u => [new RegExp('\\b' + u.name.replace(/ /g, '\\s') + 's?\\b', 'g'), u.name_de]);
-  const tx = s => {
-    if (!s || lang !== 'de') return s;
-    return swapList.reduce((acc, [re, de]) => acc.replace(re, de), s);
-  };
+  const nmh = u => { const n = nm(u); return HYPH[n] ? HYPH[n].replace('|', '­') : n; };
 
   // ---------- Techs ----------
-  const techByKey = Object.fromEntries(TECHS.map(t => [t.key, t]));
+  const techByKey = Object.fromEntries(TECHS.map(x => [x.key, x]));
   const techsOf = {};
-  TECHS.forEach(t => (techsOf[t.unit] = techsOf[t.unit] || []).push(t));
+  TECHS.forEach(x => (techsOf[x.unit] = techsOf[x.unit] || []).push(x));
   let active = new Set();
   try { (JSON.parse(store.get('techs') || '[]') || []).forEach(k => techByKey[k] && active.add(k)); } catch (e) {}
   const saveTechs = () => store.set('techs', JSON.stringify([...active]));
 
-  // Wirksame Eigenschaften einer Einheit unter den aktiven Techs
   function flags(u, act) {
     const f = { hitsAir: u.tgt !== 'ground', hitsGround: u.tgt !== 'air', flies: u.flies, src: {} };
-    (techsOf[u.id] || []).forEach(t => {
-      if (!act.has(t.key) || !t.set) return;
-      Object.entries(t.set).forEach(([k, v]) => { f[k] = v; f.src[k] = t; });
+    (techsOf[u.id] || []).forEach(x => {
+      if (!act.has(x.key) || !x.set) return;
+      Object.entries(x.set).forEach(([k, v]) => { f[k] = v; f.src[k] = x; });
     });
     return f;
   }
   const tgtOf = f => f.hitsAir && f.hitsGround ? 'both' : f.hitsAir ? 'air' : 'ground';
 
-  // Macht eine Tech den Konter "a schlägt b" unmöglich? Gibt die Tech zurück, 'base' wenn schon ohne Tech unstimmig.
-  function breaker(a, b, why, act) {
+  // Macht eine Tech den Konter "a schlägt b" unmöglich? 'base' = schon ohne Tech unstimmig (wird ignoriert)
+  function breaker(a, b, noAir, act) {
     const fa = flags(a, act), fb = flags(b, act);
     if (fb.flies && !fa.hitsAir) return fa.src.hitsAir || fb.src.flies || 'base';
     if (!fb.flies && !fa.hitsGround) return fa.src.hitsGround || fb.src.flies || 'base';
-    if (/Luft nicht treffen/i.test(why || '')) {
+    if (noAir) {
       if (!fa.flies) return fa.src.flies || 'base';
       if (fb.hitsAir) return fb.src.hitsAir || 'base';
     }
     return null;
   }
-  const weakEntry = (t, a, b) => (t.weaken || []).find(w => w.a === a.id && w.b === b.id);
+  const weakEntry = (x, a, b) => (x.weaken || []).find(w => w.a === a.id && w.b === b.id);
 
-  // Grund-Konter einer Einheit in beide Richtungen
   function basePairs(x) {
     const out = [], seen = new Set();
-    const push = (dir, other, why) => {
+    const push = (dir, other, whyKey, noAir) => {
       if (seen.has(other) || !byId[other]) return;
       seen.add(other);
-      out.push({ dir, id: other, why, a: dir === 'good' ? byId[other] : x, b: dir === 'good' ? x : byId[other] });
+      out.push({ dir, id: other, whyKey, noAir: !!noAir, a: dir === 'good' ? byId[other] : x, b: dir === 'good' ? x : byId[other] });
     };
-    x.weak.forEach(r => push('good', r.id, r.why));
-    x.strong.forEach(r => push('bad', r.id, r.why));
+    x.weak.forEach(r => push('good', r.id, `why.w.${x.id}.${r.id}`, r.noAir));
+    x.strong.forEach(r => push('bad', r.id, `why.s.${x.id}.${r.id}`, r.noAir));
     units.forEach(u => {
       if (u.id === x.id) return;
-      u.strong.forEach(r => { if (r.id === x.id) push('good', u.id, r.why); });
-      u.weak.forEach(r => { if (r.id === x.id) push('bad', u.id, r.why); });
+      u.strong.forEach(r => { if (r.id === x.id) push('good', u.id, `why.s.${u.id}.${x.id}`, r.noAir); });
+      u.weak.forEach(r => { if (r.id === x.id) push('bad', u.id, `why.w.${u.id}.${x.id}`, r.noAir); });
     });
     return out;
   }
 
   function evaluate(x, act) {
     const list = basePairs(x).map(p => {
-      const br = breaker(p.a, p.b, p.why, act);
+      const br = breaker(p.a, p.b, p.noAir, act);
       if (br && br !== 'base') return { ...p, status: 'gone', tech: br, level: br.level };
-      const wt = TECHS.find(t => act.has(t.key) && weakEntry(t, p.a, p.b));
-      if (wt) return { ...p, status: 'weak', tech: wt, level: 'tendenz', note: weakEntry(wt, p.a, p.b).why };
+      const wt = TECHS.find(k => act.has(k.key) && weakEntry(k, p.a, p.b));
+      if (wt) return { ...p, status: 'weak', tech: wt, level: 'tendenz', noteKey: `tech.${wt.key}.weaken.${p.a.id}.${p.b.id}` };
       return { ...p, status: 'ok' };
     });
-    const have = new Set(list.map(p => p.id));
-    TECHS.filter(t => act.has(t.key)).forEach(t => (t.add || []).forEach(ad => {
+    const haveIds = new Set(list.map(p => p.id));
+    TECHS.filter(k => act.has(k.key)).forEach(k => (k.add || []).forEach(ad => {
       const dir = ad.b === x.id ? 'good' : ad.a === x.id ? 'bad' : null;
       if (!dir) return;
       const other = dir === 'good' ? ad.a : ad.b;
-      if (have.has(other) || !byId[other] || breaker(byId[ad.a], byId[ad.b], '', act)) return;
-      have.add(other);
-      list.push({ dir, id: other, why: ad.why, a: byId[ad.a], b: byId[ad.b], status: 'new', tech: t, level: ad.level || 'tendenz' });
+      if (haveIds.has(other) || !byId[other] || breaker(byId[ad.a], byId[ad.b], false, act)) return;
+      haveIds.add(other);
+      list.push({ dir, id: other, whyKey: `tech.${k.key}.add.${ad.a}.${ad.b}`, a: byId[ad.a], b: byId[ad.b], status: 'new', tech: k, level: ad.level || 'tendenz' });
     }));
     return list;
   }
 
-  // Welche noch nicht aktive Tech würde diesen Konter ändern?
   function hintsFor(p) {
     if (p.status !== 'ok') return [];
-    const cands = [...(techsOf[p.a.id] || []), ...(techsOf[p.b.id] || [])].filter(t => !active.has(t.key));
+    const cands = [...(techsOf[p.a.id] || []), ...(techsOf[p.b.id] || [])].filter(x => !active.has(x.key));
     const out = [];
-    cands.forEach(t => {
-      const act2 = new Set(active); act2.add(t.key);
-      if (breaker(p.a, p.b, p.why, act2) === t) out.push({ t, eff: 'entfällt' });
-      else if (weakEntry(t, p.a, p.b)) out.push({ t, eff: 'geschwächt' });
+    cands.forEach(x => {
+      const act2 = new Set(active); act2.add(x.key);
+      if (breaker(p.a, p.b, p.noAir, act2) === x) out.push({ x, eff: t('ui.status.gone') });
+      else if (weakEntry(x, p.a, p.b)) out.push({ x, eff: t('ui.status.weak') });
     });
     return out;
   }
-  // Neue Konter, die erst mit einer (noch nicht aktiven) Tech entstehen
   function maybeNew(x, dir, have) {
     const out = [];
-    TECHS.filter(t => !active.has(t.key)).forEach(t => (t.add || []).forEach(ad => {
+    TECHS.filter(k => !active.has(k.key)).forEach(k => (k.add || []).forEach(ad => {
       const d = ad.b === x.id ? 'good' : ad.a === x.id ? 'bad' : null;
       const other = d === 'good' ? ad.a : ad.b;
       if (d !== dir || have.has(other) || !byId[other]) return;
-      const act2 = new Set(active); act2.add(t.key);
-      if (breaker(byId[ad.a], byId[ad.b], '', act2)) return;
-      out.push({ t, id: other, why: ad.why });
+      const act2 = new Set(active); act2.add(k.key);
+      if (breaker(byId[ad.a], byId[ad.b], false, act2)) return;
+      out.push({ k, id: other, whyKey: `tech.${k.key}.add.${ad.a}.${ad.b}` });
     }));
     return out;
   }
@@ -631,34 +700,45 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   const techbar = document.getElementById('techbar');
   const q = document.getElementById('q');
   const hoverBtn = document.getElementById('hover-toggle');
-  const langBtns = [...document.querySelectorAll('.lang button[data-lang]')];
-  const themeBtns = [...document.querySelectorAll('.lang button[data-theme-set]')];
-  const sizeBtns = [...document.querySelectorAll('.lang button[data-size-set]')];
-  const cbBtns = [...document.querySelectorAll('.lang button[data-cb-set]')];
+  const langSel = document.getElementById('langsel');
   const menu = document.getElementById('view-menu');
+  const btns = sel => [...document.querySelectorAll(sel)];
+  const groupBtns = btns('.lang button[data-group-set]'), themeBtns = btns('.lang button[data-theme-set]');
+  const sizeBtns = btns('.lang button[data-size-set]'), cbBtns = btns('.lang button[data-cb-set]'), sideBtns = btns('.lang button[data-sidebar-set]');
   const tip = document.createElement('div');
-  tip.className = 'tip';
-  tip.hidden = true;
-  tip.setAttribute('role', 'tooltip');
+  tip.className = 'tip'; tip.hidden = true; tip.setAttribute('role', 'tooltip');
   document.body.appendChild(tip);
-  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
   const pic = u => ICONS[u.id]
     ? `<span class="pic"><img src="${ICONS[u.id]}" alt="" loading="lazy" decoding="async"></span>`
     : `<span class="pic">${esc(u.abbr)}</span>`;
-  const lvl = l => `<span class="lvl ${l}">${l === 'belegt' ? 'belegt' : 'Tendenz'}</span>`;
-  // Zieltyp-Symbole: Panzer = trifft Boden, Flugzeug = trifft Luft (hell = ja, blass = nein, Akzentfarbe = durch Tech)
+  const lvl = l => `<span class="lvl ${l}">${esc(t(l === 'belegt' ? 'ui.level.proven' : 'ui.level.tendency'))}</span>`;
+  const owner = x => esc(nm(byId[x.unit]));
   const ICO_G = '<svg viewBox="0 0 24 16" aria-hidden="true"><path d="M8 2.5h6v3.5H8zM14 3.4h8.5v1.6H14zM3.5 6h15.5v4H3.5zM3.2 10.6h17.6a2.2 2.2 0 0 1 0 4.4H3.2a2.2 2.2 0 0 1 0-4.4z"/></svg>';
   const ICO_A = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>';
   function targetIcons(f) {
     const cls = (on, src) => 'ico ' + (on ? 'on' : 'off') + (src ? ' tech' : '');
-    const label = TARGETS[tgtOf(f)] + (f.src.hitsAir ? ' (durch Tech)' : '');
+    const label = t('ui.target.' + tgtOf(f)) + (f.src.hitsAir ? ' ' + t('ui.target.byTech') : '');
     return `<span class="tg" role="img" aria-label="${esc(label)}" title="${esc(label)}"><span class="${cls(f.hitsGround, f.src.hitsGround)}">${ICO_G}</span><span class="${cls(f.hitsAir, f.src.hitsAir)}">${ICO_A}</span></span>`;
   }
-  const owner = t => esc(nm(byId[t.unit]));
+  const tierText = u => u.unlockSpecial ? t('ui.tier.special') : (u.unlock ? t('ui.tier.unlock', { n: u.unlock }) : t('ui.tier.start'));
 
-  // Gruppierung: nach Klasse oder wie im Spiel nach Stufe I–IV (Zuordnung aus dem Spiel abgelesen)
+  // Statische Texte der Seite übersetzen
+  function applyStatic() {
+    document.documentElement.lang = lang;
+    document.title = t('ui.docTitle');
+    btns('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    btns('[data-i18n-title]').forEach(el => { el.title = t(el.dataset.i18nTitle); });
+    btns('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nAria)); });
+    btns('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+    let date = DATA.patchDate || '';
+    try { date = new Intl.DateTimeFormat(lang, { dateStyle: 'medium' }).format(new Date(DATA.patchDate + 'T12:00:00')); } catch (e) {}
+    document.getElementById('patch').textContent = t('ui.patchLine', { count: units.length, patch: DATA.patch || '?', date });
+    renderFooter();
+  }
+
+  // Gruppierung: nach Klasse oder wie im Spiel nach Stufe I–IV
   const STAGES = [{ n: 'I', stage: 1 }, { n: 'II', stage: 2 }, { n: 'III', stage: 3 }, { n: 'IV', stage: 4 }];
-  const groupBtns = [...document.querySelectorAll('.lang button[data-group-set]')];
   let grouping = store.get('group') === 'stage' ? 'stage' : 'class';
   let tiles = [], tileById = {};
   const byCost = (a, b) => (a.cost || 0) - (b.cost || 0) || a.name.localeCompare(b.name);
@@ -668,15 +748,14 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
           <span><span class="tname"></span><span class="tmeta"></span></span>
           <span class="mark" aria-hidden="true"></span>
         </button>`;
-
   function buildRoster() {
     let groups;
     if (grouping === 'stage') {
       groups = STAGES.map(s => ({ title: `<span class="roman">${s.n}</span>`, list: units.filter(u => u.stage === s.stage) }));
       const rest = units.filter(u => !STAGES.some(s => s.stage === u.stage));
-      if (rest.length) groups.push({ title: 'Ohne Stufe', list: rest });
+      if (rest.length) groups.push({ title: esc(t('ui.group.none')), list: rest });
     } else {
-      groups = CLASS_ORDER.map(cls => ({ title: CLASS_LABEL[cls], list: units.filter(u => u.cls === cls) }));
+      groups = CLASS_ORDER.map(cls => ({ title: esc(t('ui.class.' + cls)), list: units.filter(u => u.cls === cls) }));
     }
     roster.innerHTML = groups.filter(g => g.list.length).map(g => {
       const list = g.list.slice().sort(byCost);
@@ -684,30 +763,19 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
       <div class="tiles">${list.map(tileHtml).join('')}</div></div>`;
     }).join('');
     tiles = [...roster.querySelectorAll('.tile')];
-    tileById = Object.fromEntries(tiles.map(t => [t.dataset.id, t]));
+    tileById = Object.fromEntries(tiles.map(x => [x.dataset.id, x]));
     groupBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.groupSet === grouping ? 'true' : 'false'));
   }
-  buildRoster();
-
-  function setGrouping(mode) {
-    grouping = mode === 'stage' ? 'stage' : 'class';
-    store.set('group', grouping);
-    buildRoster();
-    updateTiles();
-    matches();
-    if (current) select(current, { force: true, save: false });
-  }
-  groupBtns.forEach(b => b.addEventListener('click', () => setGrouping(b.dataset.groupSet)));
 
   function updateTiles() {
-    tiles.forEach(t => {
-      const u = byId[t.dataset.id];
+    tiles.forEach(el => {
+      const u = byId[el.dataset.id];
       const f = flags(u, active);
       const hasTech = (techsOf[u.id] || []).some(x => active.has(x.key));
-      const tn_ = t.querySelector('.tname');
-      tn_.textContent = nmh(u);
-      tn_.classList.toggle('long', nm(u).length > 13);
-      t.querySelector('.tmeta').innerHTML = `${u.cost ? `<span class="tc">${u.cost}</span>` : ''}${targetIcons(f)}${f.flies && (u.cls === 'titan' || !u.flies) ? '<span>fliegt</span>' : ''}${!f.flies && u.flies ? '<span>am Boden</span>' : ''}${hasTech ? '<span class="ttech">⚙ Tech</span>' : ''}`;
+      const name = el.querySelector('.tname');
+      name.textContent = nmh(u);
+      name.classList.toggle('long', nm(u).length > 13);
+      el.querySelector('.tmeta').innerHTML = `${u.cost ? `<span class="tc">${u.cost}</span>` : ''}${targetIcons(f)}${f.flies && (u.cls === 'titan' || !u.flies) ? `<span>${esc(t('ui.tile.flies'))}</span>` : ''}${!f.flies && u.flies ? `<span>${esc(t('ui.tile.grounded'))}</span>` : ''}${hasTech ? `<span class="ttech">⚙ ${esc(t('ui.tile.tech'))}</span>` : ''}`;
     });
   }
 
@@ -722,46 +790,45 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     const rel = {};
     list.forEach(p => { if (p.status !== 'gone') rel[p.id] = p; });
     relMap = rel;
-    tiles.forEach(t => {
-      const tid = t.dataset.id;
+    tiles.forEach(el => {
+      const tid = el.dataset.id;
       const p = rel[tid];
       const r = tid === id ? 'sel' : p ? p.dir : '';
-      t.dataset.rel = r;
-      t.dataset.tend = p && p.status !== 'ok' && p.level === 'tendenz' ? '1' : '';
-      t.querySelector('.mark').textContent = r === 'good' ? '▲' : r === 'bad' ? '▼' : '';
-      t.setAttribute('aria-pressed', r === 'sel' ? 'true' : 'false');
+      el.dataset.rel = r;
+      el.dataset.tend = p && p.status !== 'ok' && p.level === 'tendenz' ? '1' : '';
+      el.querySelector('.mark').textContent = r === 'good' ? '▲' : r === 'bad' ? '▼' : '';
+      el.setAttribute('aria-pressed', r === 'sel' ? 'true' : 'false');
     });
     roster.classList.add('focus');
     renderPanel(x, list);
   }
 
-  // Auswahl aufheben (Klick ins Leere oder Esc)
   function renderEmpty() {
-    panel.innerHTML = `<div class="empty-state"><h2>Keine Einheit gewählt</h2>
-      <p>Kachel anklicken${hover ? ' oder mit der Maus darüberfahren' : ''}, oder einfach den Namen tippen.</p></div>`;
+    panel.innerHTML = `<div class="empty-state"><h2>${esc(t('ui.empty.title'))}</h2><p>${esc(t(hover ? 'ui.empty.textHover' : 'ui.empty.text'))}</p></div>`;
   }
   function deselect() {
     if (!current) return;
     current = null;
     relMap = {};
     store.set('sel', '');
-    tiles.forEach(t => {
-      t.dataset.rel = '';
-      t.dataset.tend = '';
-      t.querySelector('.mark').textContent = '';
-      t.setAttribute('aria-pressed', 'false');
+    tiles.forEach(el => {
+      el.dataset.rel = ''; el.dataset.tend = '';
+      el.querySelector('.mark').textContent = '';
+      el.setAttribute('aria-pressed', 'false');
     });
     roster.classList.remove('focus');
     hideTip();
     renderEmpty();
   }
 
+  const byLine = p => esc(t('ui.status.by', { tech: tn(p.tech), unit: nm(byId[p.tech.unit]) }));
   function statusLine(p) {
-    if (p.status === 'gone') return `<span class="rs">✕ entfällt${lvl(p.level)} durch ${esc(tn(p.tech))} (${owner(p.tech)})</span>`;
-    if (p.status === 'weak') return `<span class="rs">◐ geschwächt${lvl('tendenz')} durch ${esc(tn(p.tech))} (${owner(p.tech)})${p.note ? ': ' + esc(tx(p.note)) : ''}</span>`;
-    if (p.status === 'new') return `<span class="rs">＋ neu${lvl(p.level)} durch ${esc(tn(p.tech))} (${owner(p.tech)})</span>`;
+    if (p.status === 'gone') return `<span class="rs">✕ ${esc(t('ui.status.gone'))}${lvl(p.level)} ${byLine(p)}</span>`;
+    if (p.status === 'weak') return `<span class="rs">◐ ${esc(t('ui.status.weak'))}${lvl('tendenz')} ${byLine(p)}${p.noteKey && has(p.noteKey) ? ': ' + esc(t(p.noteKey)) : ''}</span>`;
+    if (p.status === 'new') return `<span class="rs">＋ ${esc(t('ui.status.new'))}${lvl(p.level)} ${byLine(p)}</span>`;
     return '';
   }
+  const whyText = p => (has(p.whyKey) ? esc(t(p.whyKey)) : `<em>${esc(t('ui.sec.noReason'))}</em>`);
 
   function rowList(list, x, dir) {
     const order = { ok: 0, new: 1, weak: 2, gone: 3 };
@@ -773,15 +840,15 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
       return `<li class="${cls}">
         <button type="button" class="go" data-go="${esc(p.id)}">
           ${pic(u)}
-          <span><span class="rn">${esc(nmh(u))}</span><span class="rw">${esc(tx(p.why)) || '<em>ohne Begründung</em>'}</span>${statusLine(p)}</span>
+          <span><span class="rn">${esc(nmh(u))}</span><span class="rw">${whyText(p)}</span>${statusLine(p)}</span>
         </button>
-        ${hs.length ? `<div class="hints">${hs.map(h => `<button type="button" class="hint" data-tech="${esc(h.t.key)}" title="Tech einschalten">⚙ mit ${esc(tn(h.t))} (${owner(h.t)}): ${h.eff}</button>`).join('')}</div>` : ''}
+        ${hs.length ? `<div class="hints">${hs.map(h => `<button type="button" class="hint" data-tech="${esc(h.x.key)}" title="${esc(t('ui.hint.title'))}">⚙ ${esc(t('ui.hint.with', { tech: tn(h.x), unit: nm(byId[h.x.unit]), effect: h.eff }))}</button>`).join('')}</div>` : ''}
       </li>`;
-    }).join('') + '</ul>' : '<p class="empty">Keine klaren Matchups eingetragen.</p>';
+    }).join('') + '</ul>' : `<p class="empty">${esc(t('ui.sec.empty'))}</p>`;
     const mb = maybeNew(x, dir, new Set(list.map(p => p.id)));
     if (mb.length) {
-      html += `<div class="maybe"><div class="maybe-title">Mit Tech zusätzlich möglich</div><div class="hints" style="padding-left:6px">${mb.map(m =>
-        `<button type="button" class="hint" data-tech="${esc(m.t.key)}" title="Tech einschalten">⚙ ${esc(nm(byId[m.id]))} mit ${esc(tn(m.t))} (${owner(m.t)}): ${esc(tx(m.why))}</button>`).join('')}</div></div>`;
+      html += `<div class="maybe"><div class="maybe-title">${esc(t('ui.maybe.title'))}</div><div class="hints" style="padding-left:6px">${mb.map(m =>
+        `<button type="button" class="hint" data-tech="${esc(m.k.key)}" title="${esc(t('ui.hint.title'))}">⚙ ${esc(t('ui.maybe.item', { name: nm(byId[m.id]), tech: tn(m.k), unit: nm(byId[m.k.unit]), why: has(m.whyKey) ? t(m.whyKey) : '' }))}</button>`).join('')}</div></div>`;
     }
     return html;
   }
@@ -789,53 +856,68 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   function techSection(x) {
     const ts = techsOf[x.id] || [];
     if (!ts.length) return '';
-    return `<div class="sec tech"><h3>⚙ Techs, die Konter ändern <small>anklicken zum Aktivieren</small></h3><div class="techs">${ts.map(t => {
-      const on = active.has(t.key);
-      return `<button type="button" class="tech-opt" data-tech="${esc(t.key)}" aria-pressed="${on}">
+    return `<div class="sec tech"><h3>⚙ ${esc(t('ui.techs.title'))} <small>${esc(t('ui.techs.hint'))}</small></h3><div class="techs">${ts.map(k => {
+      const on = active.has(k.key);
+      return `<button type="button" class="tech-opt" data-tech="${esc(k.key)}" aria-pressed="${on}">
         <span class="box" aria-hidden="true">${on ? '✓' : ''}</span>
-        <span><span class="tech-name">${esc(tn(t))}</span>${lvl(t.level)}
-          <span class="tech-eff">${esc(t.effect)}</span>
-          <span class="tech-game">Spieltext: „${esc(gameText(t))}“</span></span>
+        <span><span class="tech-name">${esc(tn(k))}</span>${lvl(k.level)}
+          <span class="tech-eff">${esc(t(`tech.${k.key}.effect`))}</span>
+          <span class="tech-game">${esc(t('ui.techs.gameText'))} <i>${esc(gameText(k))}</i></span></span>
       </button>`;
     }).join('')}</div></div>`;
   }
 
-  // Kurzübersicht: Konter als kleine Bilder direkt unter dem Namen
   function quickRow(list, dir) {
     const order = { ok: 0, new: 1, weak: 2 };
     const ps = list.filter(p => p.dir === dir && p.status !== 'gone').sort((a, b) => order[a.status] - order[b.status]);
     if (!ps.length) return '';
     const shown = ps.slice(0, 6), rest = ps.length - shown.length;
-    return `<div class="quick ${dir}"><span class="qt">${dir === 'good' ? '▲ Kaufen' : '▼ Meiden'}</span><span class="qi">${shown.map(p => {
+    return `<div class="quick ${dir}"><span class="qt">${dir === 'good' ? '▲ ' + esc(t('ui.quick.buy')) : '▼ ' + esc(t('ui.quick.avoid'))}</span><span class="qi">${shown.map(p => {
       const u = byId[p.id];
-      return `<button type="button" class="qb${p.status !== 'ok' && p.level === 'tendenz' ? ' tend' : ''}" data-go="${esc(p.id)}" title="${esc(nm(u))}: ${esc(tx(p.why))}" aria-label="${esc(nm(u))}">${pic(u)}</button>`;
+      return `<button type="button" class="qb${p.status !== 'ok' && p.level === 'tendenz' ? ' tend' : ''}" data-go="${esc(p.id)}" title="${esc(nm(u))}: ${esc(has(p.whyKey) ? t(p.whyKey) : '')}" aria-label="${esc(nm(u))}">${pic(u)}</button>`;
     }).join('')}${rest > 0 ? `<span class="qmore">+${rest}</span>` : ''}</span></div>`;
   }
 
   function renderPanel(x, list) {
     const f = flags(x, active);
-    const flyNote = f.src.flies ? (f.flies ? ' (fliegt durch Tech)' : ' (am Boden durch Tech)') : (x.flies && x.cls === 'titan' ? ' (fliegt)' : '');
-    const tgtNote = TARGETS[tgtOf(f)] + (f.src.hitsAir ? ' (durch Tech)' : '');
-    const meta = [CLASS_ONE[x.cls] + flyNote, x.cost ? x.cost + ' Kosten' : '', x.tier || '', tgtNote].filter(Boolean).join(' · ');
+    const flyNote = f.src.flies ? ` (${t(f.flies ? 'ui.meta.fliesTech' : 'ui.meta.groundTech')})` : (x.flies && x.cls === 'titan' ? ` (${t('ui.meta.flies')})` : '');
+    const tgtNote = t('ui.target.' + tgtOf(f)) + (f.src.hitsAir ? ' ' + t('ui.target.byTech') : '');
+    const meta = [t('ui.class1.' + x.cls) + flyNote, x.cost ? t('ui.meta.cost', { n: x.cost }) : '', tierText(x), tgtNote].filter(Boolean).join(' · ');
     const n = esc(nm(x));
     const a = alt(x);
     panel.innerHTML = `
       <div class="p-head">${pic(x)}
-        <div><h2>${esc(nmh(x))}</h2>${a && a !== nm(x) ? `<div class="p-alt">${lang === 'de' ? 'EN' : 'DE'}: ${esc(a)}</div>` : ''}<div class="p-meta">${esc(meta)}</div></div></div>
+        <div><h2>${esc(nmh(x))}</h2>${a && a !== nm(x) ? `<div class="p-alt">EN: ${esc(a)}</div>` : ''}<div class="p-meta">${esc(meta)}</div></div></div>
       ${quickRow(list, 'good')}${quickRow(list, 'bad')}
-      ${x.tags && x.tags.length ?`<div class="chips">${x.tags.map(t => `<span class="chip">${esc(tx(t))}</span>`).join('')}</div>` : ''}
-      <div class="sec good"><h3>▲ Kontert ${n} <small>dagegen kaufen</small></h3>${rowList(list, x, 'good')}</div>
-      <div class="sec bad"><h3>▼ ${n} kontert <small>nicht dagegen stellen</small></h3>${rowList(list, x, 'bad')}</div>
+      ${x.tags && x.tags.length ? `<div class="chips">${x.tags.filter(k => has('tag.' + k)).map(k => `<span class="chip">${esc(t('tag.' + k))}</span>`).join('')}</div>` : ''}
+      <div class="sec good"><h3>▲ ${esc(t('ui.sec.good', { name: nm(x) }))} <small>${esc(t('ui.sec.good.hint'))}</small></h3>${rowList(list, x, 'good')}</div>
+      <div class="sec bad"><h3>▼ ${esc(t('ui.sec.bad', { name: nm(x) }))} <small>${esc(t('ui.sec.bad.hint'))}</small></h3>${rowList(list, x, 'bad')}</div>
       ${techSection(x)}
-      ${x.note ? `<p class="note"><b>Hinweis:</b> ${esc(tx(x.note))}</p>` : ''}`;
+      ${has('note.' + x.id) ? `<p class="note"><b>${esc(t('ui.note.label'))}</b> ${esc(t('note.' + x.id))}</p>` : ''}`;
   }
 
   function renderTechbar() {
-    const on = TECHS.filter(t => active.has(t.key));
+    const on = TECHS.filter(k => active.has(k.key));
     techbar.hidden = !on.length;
-    techbar.innerHTML = on.length ? `Aktive Techs:${on.map(t =>
-      `<button type="button" class="tchip" data-tech="${esc(t.key)}" title="Tech ausschalten">${owner(t)}: ${esc(tn(t))} <span class="x" aria-hidden="true">✕</span></button>`).join('')}
-      <button type="button" class="linkbtn" data-clear="1">alle aus</button>` : '';
+    techbar.innerHTML = on.length ? `${esc(t('ui.techbar.active'))}${on.map(k =>
+      `<button type="button" class="tchip" data-tech="${esc(k.key)}" title="${esc(t('ui.techbar.off'))}">${owner(k)}: ${esc(tn(k))} <span class="x" aria-hidden="true">✕</span></button>`).join('')}
+      <button type="button" class="linkbtn" data-clear="1">${esc(t('ui.techbar.clear'))}</button>` : '';
+  }
+
+  function renderFooter() {
+    const kbd = s => `<kbd>${s}</kbd>`;
+    const wiki = `<a href="https://mbwiki.dreamhaven.com/units/" target="_blank" rel="noopener">${esc(t('ui.foot.wiki'))}</a>`;
+    const src = [...new Set((DATA.sources || []).map(s => {
+      let host = s; try { host = new URL(s).hostname.replace(/^www\./, ''); } catch (e) {}
+      return `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(host)}</a>`;
+    }))];
+    document.getElementById('foot').innerHTML = `
+      <p>${esc(t('ui.foot.ratings'))}</p>
+      <p><b>${esc(t('ui.foot.techsLabel'))}</b> ${esc(t('ui.foot.techs'))}</p>
+      <p>${esc(t('ui.foot.sources')).replace('{wiki}', wiki)} ${esc(t('ui.foot.translation'))}</p>
+      <p>${esc(t('ui.foot.usage')).replace('{enter}', kbd('Enter')).replace('{esc}', kbd('Esc'))}</p>
+      ${src.length ? `<p>${esc(t('ui.foot.matchupSources'))} ${src.join(' · ')}</p>` : ''}
+      <p>${esc(t('ui.foot.owner'))}</p>`;
   }
 
   function refresh() {
@@ -851,43 +933,44 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     refresh();
   }
 
+  // ---------- Einstellungen ----------
+  langSel.innerHTML = LANGS.map(l => `<option value="${esc(l.code)}" lang="${esc(l.code)}">${esc(l.name)}</option>`).join('');
   function applyLang(next) {
-    lang = next;
+    lang = STR[next] ? next : lang;
     store.set('lang', lang);
-    document.documentElement.lang = lang;
-    langBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    langSel.value = lang;
+    applyStatic();
+    buildRoster();
+    matches();
     refresh();
   }
-  langBtns.forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+  langSel.addEventListener('change', () => applyLang(langSel.value));
 
-  // Farbschema: eigener Umschalter, Standard dunkel
-  function applyTheme(t) {
-    t = t === 'light' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-mbk-theme', t);
-    store.set('theme', t);
-    themeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.themeSet === t ? 'true' : 'false'));
+  function setGrouping(mode) {
+    grouping = mode === 'stage' ? 'stage' : 'class';
+    store.set('group', grouping);
+    buildRoster();
+    matches();
+    refresh();
   }
-  themeBtns.forEach(b => b.addEventListener('click', () => applyTheme(b.dataset.themeSet)));
-  applyTheme(store.get('theme'));
+  groupBtns.forEach(b => b.addEventListener('click', () => setGrouping(b.dataset.groupSet)));
 
-  // Größe und Farbschwäche-Modus
-  function applySize(s) {
-    s = s === 'large' ? 'large' : 'normal';
-    document.documentElement.setAttribute('data-mbk-size', s);
-    store.set('size', s);
-    sizeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.sizeSet === s ? 'true' : 'false'));
-    hideTip();
+  // Einfache Umschalter, die ein Attribut am Wurzelelement setzen
+  function setter(key, attr, buttons, dataKey, valid, fallback) {
+    const apply = v => {
+      v = valid.includes(v) ? v : fallback;
+      document.documentElement.setAttribute(attr, v);
+      store.set(key, v);
+      buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset[dataKey] === v ? 'true' : 'false'));
+      hideTip();
+    };
+    buttons.forEach(b => b.addEventListener('click', () => apply(b.dataset[dataKey])));
+    apply(store.get(key));
   }
-  function applyCb(v) {
-    v = v === '1' ? '1' : '0';
-    document.documentElement.setAttribute('data-mbk-cb', v);
-    store.set('cb', v);
-    cbBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.cbSet === v ? 'true' : 'false'));
-  }
-  sizeBtns.forEach(b => b.addEventListener('click', () => applySize(b.dataset.sizeSet)));
-  cbBtns.forEach(b => b.addEventListener('click', () => applyCb(b.dataset.cbSet)));
-  applySize(store.get('size'));
-  applyCb(store.get('cb'));
+  setter('theme', 'data-mbk-theme', themeBtns, 'themeSet', ['dark', 'light'], 'dark');
+  setter('size', 'data-mbk-size', sizeBtns, 'sizeSet', ['normal', 'large'], 'normal');
+  setter('cb', 'data-mbk-cb', cbBtns, 'cbSet', ['0', '1', '2'], '0');
+  setter('sidebar', 'data-mbk-sidebar', sideBtns, 'sidebarSet', ['on', 'off'], 'on');
 
   panel.addEventListener('click', e => {
     const tb = e.target.closest('[data-tech]');
@@ -901,8 +984,8 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     if (tb) toggleTech(tb.dataset.tech);
   });
   roster.addEventListener('click', e => {
-    const t = e.target.closest('.tile');
-    if (t) select(t.dataset.id);
+    const el = e.target.closest('.tile');
+    if (el) select(el.dataset.id);
   });
 
   // Hover-Modus: Auswahl folgt dem Mauszeiger und bleibt stehen, wenn die Maus das Raster verlässt
@@ -912,37 +995,37 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     hover = on;
     hoverBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
     store.set('hover', on ? '1' : '0');
+    if (!current) renderEmpty();
   }
-  setHover(hover);
   hoverBtn.addEventListener('click', () => setHover(!hover));
   roster.addEventListener('pointerover', e => {
     if (!hover || e.pointerType === 'touch') return;
-    const t = e.target.closest('.tile');
-    if (!t) return;
+    const el = e.target.closest('.tile');
+    if (!el) return;
     clearTimeout(hoverTimer);
-    hoverTimer = setTimeout(() => select(t.dataset.id), 45);
+    hoverTimer = setTimeout(() => select(el.dataset.id), 45);
   });
   roster.addEventListener('pointerleave', () => { clearTimeout(hoverTimer); hideTip(); });
 
-  // Hinweis an der Kachel: Begründung des Konters (nur ohne Hover-Modus, dort folgt die Auswahl der Maus)
+  // Hinweis an der Kachel: Begründung des Konters (nur ohne Hover-Modus)
   function hideTip() { tip.hidden = true; }
-  function showTip(t) {
-    const u = byId[t.dataset.id];
+  function showTip(el) {
+    const u = byId[el.dataset.id];
     const p = relMap[u.id];
     const x = current && byId[current];
     let html = '';
     if (p && x) {
-      const head = p.dir === 'good' ? `▲ ${nm(u)} kontert ${nm(x)}` : `▼ ${nm(x)} kontert ${nm(u)}`;
-      html = `<b>${esc(head)}</b><span class="tw">${esc(tx(p.why))}</span>${p.status !== 'ok' ? statusLine(p) : ''}`;
+      const head = p.dir === 'good' ? '▲ ' + t('ui.tip.counters', { a: nm(u), b: nm(x) }) : '▼ ' + t('ui.tip.counters', { a: nm(x), b: nm(u) });
+      html = `<b>${esc(head)}</b><span class="tw">${has(p.whyKey) ? esc(t(p.whyKey)) : ''}</span>${p.status !== 'ok' ? statusLine(p) : ''}`;
       tip.className = 'tip ' + p.dir;
     } else if (alt(u) && alt(u) !== nm(u)) {
-      html = `<b>${esc(nm(u))}</b><span class="tw">${lang === 'de' ? 'EN' : 'DE'}: ${esc(alt(u))}</span>`;
+      html = `<b>${esc(nm(u))}</b><span class="tw">EN: ${esc(alt(u))}</span>`;
       tip.className = 'tip';
     }
     if (!html) return hideTip();
     tip.innerHTML = html;
     tip.hidden = false;
-    const r = t.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
     const tw = tip.offsetWidth, th = tip.offsetHeight;
     const left = Math.max(8, Math.min(window.innerWidth - tw - 8, r.left + r.width / 2 - tw / 2));
     let top = r.top - th - 8;
@@ -952,25 +1035,24 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   }
   roster.addEventListener('pointerover', e => {
     if (hover || e.pointerType === 'touch') return;
-    const t = e.target.closest('.tile');
-    if (t) showTip(t); else hideTip();
+    const el = e.target.closest('.tile');
+    if (el) showTip(el); else hideTip();
   });
   window.addEventListener('scroll', hideTip, { passive: true });
 
   // Klick ins Leere hebt die Auswahl auf; ein offenes Ansicht-Menü schließt sich zuerst
   document.addEventListener('click', e => {
     if (menu.open && !e.target.closest('.menu')) { menu.open = false; return; }
-    if (e.target.closest('.tile, .panel, .menu, .techbar, .info, button, a, input, label, summary')) return;
+    if (e.target.closest('.tile, .panel, .menu, .techbar, .info, button, a, input, select, label, summary')) return;
     deselect();
   });
 
-  // Suche findet deutsche und englische Namen
+  // Suche findet Namen in allen Sprachen
   function matches() {
     const s = q.value.trim().toLowerCase();
-    return tiles.filter(t => {
-      const u = byId[t.dataset.id];
-      const hit = !s || u.name.toLowerCase().includes(s) || (u.name_de || '').toLowerCase().includes(s);
-      t.classList.toggle('dim', !hit);
+    return tiles.filter(el => {
+      const hit = !s || byId[el.dataset.id].search.includes(s);
+      el.classList.toggle('dim', !hit);
       return hit;
     });
   }
@@ -984,30 +1066,17 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   });
   document.addEventListener('keydown', e => {
     if (e.target === q || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
     if (e.key === 'Escape') { if (menu.open) menu.open = false; else deselect(); return; }
     if (e.key === '/') { e.preventDefault(); q.focus(); q.select(); return; }
-    if (e.key.length === 1 && /[a-zA-ZäöüÄÖÜ]/.test(e.key) && !/^(INPUT|TEXTAREA)$/.test(e.target.tagName)) {
+    if (e.key.length === 1 && /\p{L}/u.test(e.key)) {
       q.focus(); q.value = ''; // der Buchstabe landet danach im Feld
     }
   });
 
-  // Kopf- und Fußzeile
-  document.getElementById('patch').textContent =
-    `${units.length} Einheiten · Stand: Patch ${DATA.patch || 'unbekannt'}${DATA.patchDate ? ' · ' + DATA.patchDate : ''}`;
-  const src = (DATA.sources || []).map(s => {
-    let host = s; try { host = new URL(s).hostname.replace(/^www\./, ''); } catch (e) {}
-    return `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(host)}</a>`;
-  });
-  const uniq = [...new Set(src)];
-  document.getElementById('foot').innerHTML = `
-    <p>Bewertungen sind Community-Konsens für Einheiten ohne besondere Technologien. Spezialisten, Einheitenlevel und reine Zahlen-Buffs sind nicht berücksichtigt.</p>
-    <p><b>Techs:</b> „belegt“ heißt, die Änderung folgt direkt aus dem Spieltext der Tech und den Zieltypen (Boden/Luft). Ein Beispiel: Wer keine Lufteinheiten mehr angreifen kann, kontert sie nicht mehr. „Tendenz“ heißt, die Richtung ist belegt, aber die Stärke ist unbekannt. Eine Tech gilt für die Einheit, egal ob sie dir oder dem Gegner gehört.</p>
-    <p>Einheiten- und Tech-Namen (DE und EN) sowie Spieltexte stammen aus den Spieldateien, Zieltypen und Tech-Zuordnung sind mit dem <a href="https://mbwiki.dreamhaven.com/units/" target="_blank" rel="noopener">Mechabellum Wiki</a> abgeglichen, die Einheitenbilder kommen ebenfalls von dort. Mechabellum und alle Spielinhalte gehören Game River.</p>
-    <p>Bedienung: Buchstaben tippen sucht (deutsch oder englisch), <kbd>Enter</kbd> wählt den ersten Treffer, <kbd>Esc</kbd> leert die Suche bzw. hebt die Auswahl auf, ein Klick ins Leere ebenfalls. Fährst du über eine markierte Kachel, erscheint die Begründung. Einträge in der Liste rechts sind anklickbar, ⚙-Hinweise schalten die jeweilige Tech ein. Sprache, Gruppierung, Design, Größe und Farben stellst du unter „Ansicht“ ein.</p>
-    ${uniq.length ? `<p>Quellen der Matchups: ${uniq.join(' · ')}</p>` : ''}`;
-
+  // Start: Sprache anwenden, zuletzt gewählte Einheit, bewusst leere Auswahl bleibt leer
+  setHover(hover);
   applyLang(lang);
-  // Start: zuletzt gewählte Einheit, bewusst leere Auswahl bleibt leer, sonst die erste Einheit
   const start = store.get('sel');
   if (start === '') renderEmpty();
   else select(byId[start] ? start : (tiles[0] && tiles[0].dataset.id), { save: false });

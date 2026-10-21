@@ -1,44 +1,149 @@
-// Techs mit grundsätzlicher Wirkung. Name und Spieltext kommen aus den Spieldateien (table + num),
+// Techs mit grundsätzlicher Wirkung. Name und Spieltext kommen aus den Spieldateien (table + num, alle Sprachen),
 // "set" ändert Zieltyp/Luft-Status (Grundlage für belegte Änderungen), "add"/"weaken" sind Tendenzen.
+// Texte (Wirkung, Begründungen) stehen in i18n/<sprache>.json unter tech.<key>.*
 module.exports = [
-  { key: 'arclight_aa', unit: 'arclight', table: 'AirAttackTechnologyData', num: '3115', level: 'belegt',
-    set: { hitsAir: true },
-    effect: 'Kann jetzt Lufteinheiten angreifen.',
-    add: [{ a: 'arclight', b: 'wasp', why: 'Kettensplash trifft Luftschwarm' }] },
-  { key: 'tarantula_aa', unit: 'tarantula', table: 'AirAttackTechnologyData', num: '3124', level: 'belegt',
-    set: { hitsAir: true },
-    effect: 'Kann jetzt Lufteinheiten angreifen.',
-    add: [{ a: 'tarantula', b: 'wasp', why: 'Flächenschaden trifft Luftschwarm' }] },
-  { key: 'mountain_aa', unit: 'mountain', table: 'AirAttackTechnologyData', num: '312002', level: 'belegt',
-    set: { hitsAir: true },
-    effect: 'Kann jetzt Lufteinheiten angreifen, macht dafür weniger Schaden.' },
-  { key: 'sandworm_aa', unit: 'sandworm', table: 'AirAttackTechnologyData', num: '3123', level: 'belegt',
-    set: { hitsAir: true },
-    effect: 'Kann jetzt Lufteinheiten angreifen.' },
-  { key: 'voideye_air', unit: 'void_eye', table: 'FlyTechData', num: '4430', level: 'belegt',
-    set: { hitsAir: true, flies: true },
-    effect: 'Wird zur Lufteinheit und kann Luft angreifen. Reine Bodeneinheiten können es nicht mehr treffen.' },
-  { key: 'fang_grenade', unit: 'fang', table: 'AirAttackTechnologyData', num: '3109', level: 'belegt',
-    set: { hitsAir: false },
-    effect: 'Bekommt Flächenschaden und mehr Reichweite, kann aber keine Lufteinheiten mehr angreifen.',
-    add: [{ a: 'fang', b: 'crawler', why: 'Granaten-Splash gegen Schwarm' }] },
-  { key: 'wraith_ground', unit: 'wraith', table: 'FlyTechData', num: '4418', level: 'belegt',
-    set: { hitsAir: false, flies: false },
-    effect: 'Wird zur Bodeneinheit: kann keine Lufteinheiten mehr angreifen, und jede Bodeneinheit kann es treffen.' },
-  { key: 'fortress_aa', unit: 'fortress', table: 'ExtraWeaponTechnologyData', num: '1105', level: 'tendenz',
-    set: { hitsAir: true },
-    effect: 'Zusätzliches Sperrfeuer, das nur Lufteinheiten trifft. Wie stark es im Kampf ist, ist unbekannt.' },
-  { key: 'sabertooth_aa', unit: 'sabertooth', table: 'ExtraWeaponTechnologyData', num: '11015021', level: 'tendenz',
-    set: { hitsAir: true },
-    effect: 'Zusätzliche Flugabwehrraketen (neu in 2.0). Wie stark sie im Kampf sind, ist unbekannt.' },
-  { key: 'raiden_chain', unit: 'raiden', table: 'IterationHitDamageTechData', num: '4027', level: 'tendenz',
-    effect: 'Blitze springen auf weitere Gegner über. Hilft gegen Schwärme, die Stärke ist unbekannt.',
-    weaken: [
-      { a: 'fang', b: 'raiden', why: 'Kettenblitz trifft mehrere Fangs' },
-      { a: 'wasp', b: 'raiden', why: 'Kettenblitz trifft mehrere Wespen' }] },
-  { key: 'centurion_melee', unit: 'centurion', table: 'MeleeModeTechData', num: '5532', level: 'tendenz',
-    effect: 'Wechselt nach leerem Magazin in den Nahkampf mit Flächenschaden. Hilft gegen Schwärme am Boden.',
-    weaken: [
-      { a: 'crawler', b: 'centurion', why: 'Nahkampf-Splash gegen Schwarm' },
-      { a: 'fang', b: 'centurion', why: 'Nahkampf-Splash gegen Schwarm' }] },
+  {
+    "key": "arclight_aa",
+    "unit": "arclight",
+    "table": "AirAttackTechnologyData",
+    "num": "3115",
+    "level": "belegt",
+    "set": {
+      "hitsAir": true
+    },
+    "add": [
+      {
+        "a": "arclight",
+        "b": "wasp"
+      }
+    ]
+  },
+  {
+    "key": "tarantula_aa",
+    "unit": "tarantula",
+    "table": "AirAttackTechnologyData",
+    "num": "3124",
+    "level": "belegt",
+    "set": {
+      "hitsAir": true
+    },
+    "add": [
+      {
+        "a": "tarantula",
+        "b": "wasp"
+      }
+    ]
+  },
+  {
+    "key": "mountain_aa",
+    "unit": "mountain",
+    "table": "AirAttackTechnologyData",
+    "num": "312002",
+    "level": "belegt",
+    "set": {
+      "hitsAir": true
+    }
+  },
+  {
+    "key": "sandworm_aa",
+    "unit": "sandworm",
+    "table": "AirAttackTechnologyData",
+    "num": "3123",
+    "level": "belegt",
+    "set": {
+      "hitsAir": true
+    }
+  },
+  {
+    "key": "voideye_air",
+    "unit": "void_eye",
+    "table": "FlyTechData",
+    "num": "4430",
+    "level": "belegt",
+    "set": {
+      "hitsAir": true,
+      "flies": true
+    }
+  },
+  {
+    "key": "fang_grenade",
+    "unit": "fang",
+    "table": "AirAttackTechnologyData",
+    "num": "3109",
+    "level": "belegt",
+    "set": {
+      "hitsAir": false
+    },
+    "add": [
+      {
+        "a": "fang",
+        "b": "crawler"
+      }
+    ]
+  },
+  {
+    "key": "wraith_ground",
+    "unit": "wraith",
+    "table": "FlyTechData",
+    "num": "4418",
+    "level": "belegt",
+    "set": {
+      "hitsAir": false,
+      "flies": false
+    }
+  },
+  {
+    "key": "fortress_aa",
+    "unit": "fortress",
+    "table": "ExtraWeaponTechnologyData",
+    "num": "1105",
+    "level": "tendenz",
+    "set": {
+      "hitsAir": true
+    }
+  },
+  {
+    "key": "sabertooth_aa",
+    "unit": "sabertooth",
+    "table": "ExtraWeaponTechnologyData",
+    "num": "11015021",
+    "level": "tendenz",
+    "set": {
+      "hitsAir": true
+    }
+  },
+  {
+    "key": "raiden_chain",
+    "unit": "raiden",
+    "table": "IterationHitDamageTechData",
+    "num": "4027",
+    "level": "tendenz",
+    "weaken": [
+      {
+        "a": "fang",
+        "b": "raiden"
+      },
+      {
+        "a": "wasp",
+        "b": "raiden"
+      }
+    ]
+  },
+  {
+    "key": "centurion_melee",
+    "unit": "centurion",
+    "table": "MeleeModeTechData",
+    "num": "5532",
+    "level": "tendenz",
+    "weaken": [
+      {
+        "a": "crawler",
+        "b": "centurion"
+      },
+      {
+        "a": "fang",
+        "b": "centurion"
+      }
+    ]
+  }
 ];
