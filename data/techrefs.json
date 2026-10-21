@@ -1,0 +1,19 @@
+{
+ "grenade_launcher": "AirAttackTechnologyData/name_3109",
+ "portable_shield": "EnergyShieldTechnologyData/name_209",
+ "anti_aircraft_ammunition": "AirAttackTechnologyData/name_3115",
+ "aerial_mode": "FlyTechData/name_4430",
+ "machine_learning": "TechnologyData/name_10131",
+ "scorching_charge": "ExtraWeaponTechnologyData/name_11020",
+ "stealth_cloak": "MoveAbilityDynamicTechData/name_3925",
+ "anti_air_missile": "ExtraWeaponTechnologyData/name_11015021",
+ "energy_diffraction": "ExtraWeaponTechnologyData/name_1107",
+ "chain": "IterationHitDamageTechData/name_4027",
+ "anti_air_barrage": "ExtraWeaponTechnologyData/name_1105",
+ "anti_aerial": "AirAttackTechnologyData/name_3123",
+ "summon_hounds": "SupportUnitTechnologyData/name_1232",
+ "whirlwind": "ExtraWeaponTechnologyData/name_1109",
+ "damage_sharing": "DamageShareTechnologyData/name_613",
+ "melee_mode": "MeleeModeTechData/name_5532",
+ "barrier": "AdvancedEnergyShieldTechData/name_1001"
+}

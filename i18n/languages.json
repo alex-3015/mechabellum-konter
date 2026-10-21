@@ -1,0 +1,13 @@
+[
+ { "code": "en", "name": "English" },
+ { "code": "de", "name": "Deutsch", "source": true },
+ { "code": "fr", "name": "Français" },
+ { "code": "es", "name": "Español (castellano)" },
+ { "code": "es-419", "name": "Español (latinoamericano)" },
+ { "code": "pl", "name": "Polski" },
+ { "code": "ru", "name": "Русский" },
+ { "code": "ja", "name": "日本語" },
+ { "code": "ko", "name": "한국어" },
+ { "code": "zh-CN", "name": "简体中文" },
+ { "code": "zh-TW", "name": "繁體中文" }
+]
