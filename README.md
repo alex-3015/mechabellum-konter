@@ -2,6 +2,8 @@
 
 **Deutsch** · [English](README.en.md)
 
+<p align="center"><img src="docs/logo.png" width="195" height="195" alt="Mechabellum Counters: Vorschlaghammer in der Mitte, links Skorpion als Konter, rechts Mustang als gekonterte Einheit"></p>
+
 Cheat-Sheet für Mechabellum für den zweiten Monitor: Einheit anklicken (oder mit der Maus darüberfahren) und sofort sehen, was sie kontert und wovon sie gekontert wird.
 
 Stand: Patch 2.0.0.4 (14.10.2026), 34 Einheiten, 11 Sprachen.
@@ -47,6 +49,7 @@ Die Seite online aufrufen oder `index.html` direkt im Browser öffnen. Die Datei
 | `data/techrefs.json` | Tech-Namen, die in Texten als `{t:…}` vorkommen |
 | `data/techs.page.json`, `data/icons.json` | Daraus erzeugt, landen in der Seite |
 | `icons/` | Einheitenbilder (112 px) |
+| `docs/logo.png`, `docs/logo-195.png` | Logo (390 bzw. 195 px), z. B. als Bild für den Steam-Guide |
 | `scripts/` | Build, Sprachprüfung, Tech-Erzeugung, Bild-Daten, Vorschau-Server, Auslesen der Spieldateien |
 | `.github/workflows/check.yml` | Prüfung bei jedem Pull Request |
 
