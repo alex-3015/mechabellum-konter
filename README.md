@@ -48,8 +48,7 @@ Die Seite online aufrufen oder `index.html` direkt im Browser öffnen. Die Datei
 | `data/techs.page.json`, `data/icons.json` | Daraus erzeugt, landen in der Seite |
 | `icons/` | Einheitenbilder (112 px) |
 | `scripts/` | Build, Sprachprüfung, Tech-Erzeugung, Bild-Daten, Vorschau-Server, Auslesen der Spieldateien |
-| `.github/workflows/check.yml` | Prüfung bei jedem Pull Request (Sprachen, aktuelle `index.html`) |
-| `.github/workflows/claude-code-review.yml` | Claude Code Review: kommentiert Funde direkt im Pull Request |
+| `.github/workflows/check.yml` | Prüfung bei jedem Pull Request |
 
 ## Bauen
 

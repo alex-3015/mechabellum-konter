@@ -368,7 +368,8 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   height: 32px; padding: 0 8px; cursor: pointer; max-width: 100%;
   background: var(--surface); color: var(--fg); border: 1px solid var(--line); border-radius: 6px; font: 600 13.5px var(--font-ui);
 }
-.menu-panel { max-width: calc(100vw - 32px); }
+/* Menübreite richtet sich nach dem Inhalt (z. B. drei Farbknöpfe), nie breiter als der Bildschirm */
+.menu-panel { width: max-content; max-width: calc(100vw - 32px); }
 .mrow { grid-template-columns: minmax(74px, max-content) auto; }
 
 /* Lange Namen: feste Trennstellen für DE/EN, sonst automatische Silbentrennung */
@@ -408,6 +409,34 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   .tech-opt, .menu-panel { border-radius: 10px; }
   .search input, .toggle, .menu-btn, .lang { border-radius: 8px; }
   .mark { top: 7px; right: 10px; }
+}
+
+/* Ersatz für Browser ohne corner-shape (Firefox, Safari, ältere Chrome/Edge):
+   Ecken per clip-path abschrägen und die schrägen Rahmenlinien mit Verläufen nachzeichnen.
+   --r = Größe der Abschrägung, --bc = Rahmenfarbe des jeweiligen Zustands. */
+@supports not (corner-shape: bevel) {
+  .tile, .panel, .menu-panel, .tech-opt, .toggle, .menu-btn, .lang, .kofi {
+    --r: 8px; --bc: var(--line); --d: calc(var(--r) * .7071);
+    border-radius: 0;
+    clip-path: polygon(var(--r) 0, calc(100% - var(--r)) 0, 100% var(--r), 100% calc(100% - var(--r)), calc(100% - var(--r)) 100%, var(--r) 100%, 0 calc(100% - var(--r)), 0 var(--r));
+    background-image:
+      linear-gradient(135deg, transparent calc(var(--d) - .6px), var(--bc) calc(var(--d) - .6px), var(--bc) calc(var(--d) + .6px), transparent calc(var(--d) + .6px)),
+      linear-gradient(225deg, transparent calc(var(--d) - .6px), var(--bc) calc(var(--d) - .6px), var(--bc) calc(var(--d) + .6px), transparent calc(var(--d) + .6px)),
+      linear-gradient(315deg, transparent calc(var(--d) - .6px), var(--bc) calc(var(--d) - .6px), var(--bc) calc(var(--d) + .6px), transparent calc(var(--d) + .6px)),
+      linear-gradient(45deg, transparent calc(var(--d) - .6px), var(--bc) calc(var(--d) - .6px), var(--bc) calc(var(--d) + .6px), transparent calc(var(--d) + .6px)) !important;
+    background-origin: border-box !important;
+    background-position: top left, top right, bottom right, bottom left !important;
+    background-size: 50% 50% !important;
+    background-repeat: no-repeat !important;
+  }
+  .tile, .menu-panel, .tech-opt { --r: 10px; }
+  .panel { --r: 16px; }
+  .tile:hover, .tech-opt:hover { --bc: var(--muted); }
+  .tile[data-rel="good"] { --bc: var(--good); }
+  .tile[data-rel="bad"] { --bc: var(--bad); }
+  .tile[data-rel="sel"], .tech-opt[aria-pressed="true"], .toggle[aria-pressed="true"], .menu[open] > .menu-btn, .kofi:hover { --bc: var(--accent); }
+  /* das Menü liegt über dem Panel; der Schatten würde vom Zuschnitt abgeschnitten */
+  .menu-panel { box-shadow: none; }
 }
 
 @media (max-width: 820px) {
