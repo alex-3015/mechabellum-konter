@@ -1,0 +1,4 @@
+node_modules/
+icons-raw/
+.claude/
+*.log

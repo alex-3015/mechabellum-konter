@@ -1,0 +1,197 @@
+[
+ {
+  "key": "arclight_aa",
+  "unit": "arclight",
+  "name": "Anti-Aircraft Ammunition",
+  "name_de": "Flugabwehrmunition",
+  "desc": "Can be used against aerial units",
+  "desc_de": "Kann gegen Lufteinheiten eingesetzt werden.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Kann jetzt Lufteinheiten angreifen.",
+  "add": [
+   {
+    "a": "arclight",
+    "b": "wasp",
+    "why": "Kettensplash trifft Luftschwarm"
+   }
+  ],
+  "gameId": "3115"
+ },
+ {
+  "key": "tarantula_aa",
+  "unit": "tarantula",
+  "name": "Anti-Aircraft Ammunition",
+  "name_de": "Flugabwehrmunition",
+  "desc": "Can be used against aerial units",
+  "desc_de": "Kann gegen Lufteinheiten eingesetzt werden.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Kann jetzt Lufteinheiten angreifen.",
+  "add": [
+   {
+    "a": "tarantula",
+    "b": "wasp",
+    "why": "Flächenschaden trifft Luftschwarm"
+   }
+  ],
+  "gameId": "3124"
+ },
+ {
+  "key": "mountain_aa",
+  "unit": "mountain",
+  "name": "Anti-Aircraft Ammunition",
+  "name_de": "Flugabwehrmunition",
+  "desc": "Decreases ATK by {0}%, allowing Mountain to attack aerial targets.",
+  "desc_de": "Verringert die ATK um {0}%, sodass Mountain Luftziele angreifen kann.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Kann jetzt Lufteinheiten angreifen, macht dafür weniger Schaden.",
+  "gameId": "312002"
+ },
+ {
+  "key": "sandworm_aa",
+  "unit": "sandworm",
+  "name": "Anti-Aerial",
+  "name_de": "Anti-Lufteinheiten",
+  "desc": "Increases ATK by {0}% and allows the Sandworm to attack aerial targets.",
+  "desc_de": "Erhöht ANG um {0}% und ermöglicht Sandwurm, Luftziele anzugreifen.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Kann jetzt Lufteinheiten angreifen.",
+  "gameId": "3123"
+ },
+ {
+  "key": "voideye_air",
+  "unit": "void_eye",
+  "name": "Aerial Mode",
+  "name_de": "Luftmodus",
+  "desc": "Void Eye transforms into a flying unit that can attack air and its movement speed is increased by {1}, but its range is reduced by {0}.",
+  "desc_de": "Void Eye verwandelt sich in eine fliegende Einheit, die Luft angreifen kann. Ihre Bewegungsgeschwindigkeit wird um {1} erhöht, aber ihre Reichweite wird um {0} reduziert.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": true,
+   "flies": true
+  },
+  "effect": "Wird zur Lufteinheit und kann Luft angreifen. Reine Bodeneinheiten können es nicht mehr treffen.",
+  "gameId": "4430"
+ },
+ {
+  "key": "fang_grenade",
+  "unit": "fang",
+  "name": "Grenade Launcher",
+  "name_de": "Granatwerfer",
+  "desc": "Fangs switch to grenade launchers. Increases Range by {1}. Attacks deal splash damage in a {0}m radius, but cannot target air units.",
+  "desc_de": "Fangzähne wechseln zu Granatwerfern. Erhöht die Reichweite um {1}. Angriffe verursachen Spritzschaden in einem Radius von {0} m, können aber keine Lufteinheiten ins Visier nehmen.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": false
+  },
+  "effect": "Bekommt Flächenschaden und mehr Reichweite, kann aber keine Lufteinheiten mehr angreifen.",
+  "add": [
+   {
+    "a": "fang",
+    "b": "crawler",
+    "why": "Granaten-Splash gegen Schwarm"
+   }
+  ],
+  "gameId": "3109"
+ },
+ {
+  "key": "wraith_ground",
+  "unit": "wraith",
+  "name": "Land Cruiser",
+  "name_de": "Landkreuzer",
+  "desc": "Wraith becomes a ground unit. It can no longer attack air targets, but its Attack Range increases by {0}, and its attack interval increases by {1} seconds.",
+  "desc_de": "Wraith wird eine Bodeneinheit. Es kann keine Luftziele mehr angreifen, aber seine Angriffsreichweite erhöht sich um {0} und sein Angriffsintervall erhöht sich um {1} Sekunden.",
+  "level": "belegt",
+  "set": {
+   "hitsAir": false,
+   "flies": false
+  },
+  "effect": "Wird zur Bodeneinheit: kann keine Lufteinheiten mehr angreifen, und jede Bodeneinheit kann es treffen.",
+  "gameId": "4418"
+ },
+ {
+  "key": "fortress_aa",
+  "unit": "fortress",
+  "name": "Anti-Air Barrage",
+  "name_de": "Anti-Luftsperrfeuer",
+  "desc": "Launches {1} anti-air barrages at the enemy every {0}s. The barrages only damage aerial units. Each guided missile deals {2} damage and has a range of {3}m",
+  "desc_de": "Feuert alle {0} Sek. {1} Luftabwehrsalven auf den Gegner ab. Die Geschütze richten nur bei Lufteinheiten Schaden an. Jede Lenkrakete verursacht {2} Schaden und hat eine Reichweite von {3} m.",
+  "level": "tendenz",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Zusätzliches Sperrfeuer, das nur Lufteinheiten trifft. Wie stark es im Kampf ist, ist unbekannt.",
+  "gameId": "1105"
+ },
+ {
+  "key": "sabertooth_aa",
+  "unit": "sabertooth",
+  "name": "Anti-Air Missile",
+  "name_de": "Luftabwehrrakete",
+  "desc": "Fires {1} anti-air missiles every {0} seconds to attack air enemies, each missile dealing {2} damage.",
+  "desc_de": "Feuert alle {0} Sekunden {1} Flugabwehrraketen ab, um Luftgegner anzugreifen, wobei jede Rakete {2} Schaden verursacht.",
+  "level": "tendenz",
+  "set": {
+   "hitsAir": true
+  },
+  "effect": "Zusätzliche Flugabwehrraketen (neu in 2.0). Wie stark sie im Kampf sind, ist unbekannt.",
+  "gameId": "11015021"
+ },
+ {
+  "key": "raiden_chain",
+  "unit": "raiden",
+  "name": "Chain",
+  "name_de": "Kette",
+  "desc": "Decreases Raiden's range by {2}, the lightning bolts it fires will jump to other enemies within {0} radius after hitting the enemy, dealing {1}% damage.",
+  "desc_de": "Verringert Raidens Reichweite um {2}. Die von ihm abgefeuerten Blitze springen auf andere Gegner im Umkreis von {0}, nachdem sie den Feind getroffen haben, und verursachen {1}% Schaden.",
+  "level": "tendenz",
+  "effect": "Blitze springen auf weitere Gegner über. Hilft gegen Schwärme, die Stärke ist unbekannt.",
+  "weaken": [
+   {
+    "a": "fang",
+    "b": "raiden",
+    "why": "Kettenblitz trifft mehrere Fangs"
+   },
+   {
+    "a": "wasp",
+    "b": "raiden",
+    "why": "Kettenblitz trifft mehrere Wespen"
+   }
+  ],
+  "gameId": "4027"
+ },
+ {
+  "key": "centurion_melee",
+  "unit": "centurion",
+  "name": "Melee Mode",
+  "name_de": "Nahkampfmodus",
+  "desc": "Equips powerful melee weaponry, but cannot carry spare ammo. The rifle magazine holds {0} rounds. Upon ammo depletion, the Centurion switches to melee mode and charges at the enemy: Movement Speed increases by {5}, HP increase by {1}%,  ATK increases by {2}%, Attack Interval increases by {3} seconds, and attacks deal {4}m Splash Damage.",
+  "desc_de": "Rüstet mächtige Nahkampfwaffen aus, kann jedoch keine Ersatzmunition tragen. Das Gewehrmagazin fasst {0} Schuss. Bei Munitionserschöpfung wechselt Zenturio in den Nahkampfmodus und stürmt auf den Feind zu: Bewegungsgeschwindigkeit erhöht sich um {5}, LP erhöhen sich um {1}%,  ANG erhöht sich um {2}%, Angriffsintervall erhöht sich um {3} Sekunden, und Angriffe verursachen {4}m Flächenschaden.",
+  "level": "tendenz",
+  "effect": "Wechselt nach leerem Magazin in den Nahkampf mit Flächenschaden. Hilft gegen Schwärme am Boden.",
+  "weaken": [
+   {
+    "a": "crawler",
+    "b": "centurion",
+    "why": "Nahkampf-Splash gegen Schwarm"
+   },
+   {
+    "a": "fang",
+    "b": "centurion",
+    "why": "Nahkampf-Splash gegen Schwarm"
+   }
+  ],
+  "gameId": "5532"
+ }
+]

@@ -1,0 +1,3834 @@
+[
+ {
+  "table": "AdditionalDamageTechData",
+  "num": "4127",
+  "description": "Decreases Raiden's ATK by {0}%, but attack will cause an additional damage equal to {1}% of the target's current HP.",
+  "description_de": "Verringert Raidens ATK um {0}%, aber der Angriff verursacht zusätzlichen Schaden in Höhe von {1}% der aktuellen HP des Ziels.",
+  "name": "Ionization",
+  "name_de": "Ionisierung",
+  "nums": [
+   "4127",
+   "415027"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldIntensifyTechData",
+  "num": "48400101",
+  "description": "Increases shield radius by {1}, and provides an additional {0} shield HP per unit Rank.",
+  "description_de": "Erhöht den Schildradius um {1} und gewährt zusätzlich {0} Schild-HP pro Einheitsrang.",
+  "name": "Wide-Area Projection",
+  "name_de": "Weitbereichsprojektion",
+  "nums": [
+   "48400101",
+   "48520301"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "AdvancedEnergyShieldIntensifyTechData",
+  "num": "48400102",
+  "description": "The shield regenerates {0} HP per second, regenerates an additional {0} per unit Rank increased.",
+  "description_de": "Der Schild regeneriert {0} HP pro Sekunde und regeneriert zusätzlich {0} pro Einheit. Rang erhöht.",
+  "name": "Shield Recharge",
+  "name_de": "Schild aufladen",
+  "nums": [
+   "48400102",
+   "48520302"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldIntensifyTechData",
+  "num": "48400103",
+  "description": "While the shield is active, Death Knell and friendly units within the shield gain {0} range.",
+  "description_de": "Solange der Schild aktiv ist, gewinnen Death Knell und verbündete Einheiten innerhalb des Schildes an Reichweite um {0}.",
+  "name": "Coordinated Fire Control",
+  "name_de": "Koordinierter Brandschutz",
+  "nums": [
+   "48400103",
+   "48520303"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldIntensifyTechData",
+  "num": "48400104",
+  "description": "After being destroyed, the shield reboots in {0} seconds.",
+  "description_de": "Nach der Zerstörung startet der Schild in {0} Sekunden neu.",
+  "name": "Shield Reboot",
+  "name_de": "Shield-Neustart",
+  "nums": [
+   "48400104",
+   "48520304"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldTechData",
+  "num": "1001",
+  "description": "Generates a Shield Dome that protects all allies within it. Shield HP increases by {0} per unit Rank increased",
+  "description_de": "Erzeugt eine Schildkuppel, die alle Verbündeten innerhalb des Schildes schützt. Die TP des Schildes erhöhen sich um {0} pro erhöhtem Einheitenrang.",
+  "name": "Barrier",
+  "name_de": "Barriere",
+  "nums": [
+   "1001",
+   "1014",
+   "1019",
+   "102001",
+   "1022",
+   "105001",
+   "105014",
+   "105019",
+   "105022",
+   "105201"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldTechData",
+  "num": "10072",
+  "description": "Generates a Shield Dome that protects all allies within it. Shield HP increases by {0} per unit Rank increased",
+  "description_de": "Erzeugt eine Schildkuppel, die alle Verbündeten innerhalb des Schildes schützt. Die TP des Schildes erhöhen sich um {0} pro erhöhtem Einheitenrang.",
+  "name": "Super Protection Barrier",
+  "name_de": "Superschutzbarriere",
+  "nums": [
+   "10072",
+   "101531",
+   "1051",
+   "1054",
+   "1061",
+   "1064",
+   "1069"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AdvancedEnergyShieldTechData",
+  "num": "10400101",
+  "description": "Deploys a shield dome with a {0} radius around Death Knell. Shield HP increases by {1} per unit Rank increased.",
+  "description_de": "Platziert eine Schildkuppel mit einem Radius von {0} um Death Knell. Die HP des Schildes erhöhen sich um {1} pro erhöhtem Einheitenrang.",
+  "name": "Shield Trial",
+  "name_de": "Schild-Test",
+  "nums": [
+   "10400101",
+   "10520301"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "AirAttackTechnologyData",
+  "num": "3109",
+  "description": "Fangs switch to grenade launchers. Increases Range by {1}. Attacks deal splash damage in a {0}m radius, but cannot target air units.",
+  "description_de": "Fangzähne wechseln zu Granatwerfern. Erhöht die Reichweite um {1}. Angriffe verursachen Spritzschaden in einem Radius von {0} m, können aber keine Lufteinheiten ins Visier nehmen.",
+  "name": "Grenade Launcher",
+  "name_de": "Granatwerfer",
+  "nums": [
+   "3109",
+   "315009"
+  ],
+  "kind": "Ziel Luft/Boden, Flächenschaden"
+ },
+ {
+  "table": "AirAttackTechnologyData",
+  "num": "3115",
+  "description": "Can be used against aerial units",
+  "description_de": "Kann gegen Lufteinheiten eingesetzt werden.",
+  "name": "Anti-Aircraft Ammunition",
+  "name_de": "Flugabwehrmunition",
+  "nums": [
+   "3115",
+   "31153",
+   "3124",
+   "315015",
+   "315024",
+   "3164",
+   "3165",
+   "3171"
+  ],
+  "kind": "Ziel Luft/Boden"
+ },
+ {
+  "table": "AirAttackTechnologyData",
+  "num": "312002",
+  "description": "Decreases ATK by {0}%, allowing Mountain to attack aerial targets.",
+  "description_de": "Verringert die ATK um {0}%, sodass Mountain Luftziele angreifen kann.",
+  "name": "Anti-Aircraft Ammunition",
+  "name_de": "Flugabwehrmunition",
+  "nums": [
+   "312002",
+   "31205002"
+  ],
+  "kind": "Ziel Luft/Boden"
+ },
+ {
+  "table": "AirAttackTechnologyData",
+  "num": "3123",
+  "description": "Increases ATK by {0}% and allows the Sandworm to attack aerial targets.",
+  "description_de": "Erhöht ANG um {0}% und ermöglicht Sandwurm, Luftziele anzugreifen.",
+  "name": "Anti-Aerial",
+  "name_de": "Anti-Lufteinheiten",
+  "nums": [
+   "3123",
+   "315023"
+  ],
+  "kind": "Ziel Luft/Boden"
+ },
+ {
+  "table": "AirAttackTechnologyData",
+  "num": "3173",
+  "description": "Allow Experimental Sandworm attack aerial targets.",
+  "description_de": "Ermöglicht es dem Experimentellen Sandwurm, Ziele in der Luft anzugreifen.",
+  "name": "Anti-Aerial",
+  "name_de": "Anti-Lufteinheiten",
+  "nums": [
+   "3173"
+  ],
+  "kind": "Ziel Luft/Boden"
+ },
+ {
+  "table": "ArmorStrengthenTechnologyData",
+  "num": "3001",
+  "description": "Increases HP by {1}%, and blocks {0} damage when attacked. The damage blocking effect increases with the Rank. And for each Rank, blocks an additional {0} damage.",
+  "description_de": "Erhöht TP um {1} % und blockt bei Angriffen {0} Schaden. Der Schadensblock-Effekt wird mit jedem Rangaufstieg erhöht, wobei mit jedem Rang zusätzlich {0} Schaden geblockt werden.",
+  "name": "Armor Enhancement",
+  "name_de": "Rüstungsverstärkung",
+  "nums": [
+   "3001",
+   "3003",
+   "3004",
+   "3005",
+   "3008",
+   "3011",
+   "3013",
+   "3015",
+   "3017",
+   "3018",
+   "3019",
+   "3020",
+   "302001",
+   "30205001",
+   "3021",
+   "3023",
+   "3024",
+   "3025",
+   "3028",
+   "3029",
+   "305001",
+   "305003",
+   "305004",
+   "305005",
+   "305008",
+   "305011",
+   "305013",
+   "305015",
+   "305017",
+   "305018",
+   "305019",
+   "305020",
+   "305021",
+   "305023",
+   "305024",
+   "305025",
+   "305028",
+   "305029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ArmorStrengthenTechnologyData",
+  "num": "302002",
+  "description": "Blocks {0} damage when attacked. The damage blocking effect increases with the Rank. And for each Rank, blocks an additional {0} damage.",
+  "description_de": "Blockt bei Angriff {0} Schaden ab. Der Schadensblockierungseffekt steigt mit dem Rang. Und blockt für jeden Rang zusätzlich {0} Schaden ab.",
+  "name": "Mountain Plating",
+  "name_de": "Gebirgsplatten",
+  "nums": [
+   "302002",
+   "30205002"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ArmorStrengthenTechnologyData",
+  "num": "3051",
+  "description": "Increases HP by {1}%, and blocks {0} damage when attacked. The damage blocking effect increases with the Rank. And for each Rank, blocks an additional {0} damage.",
+  "description_de": "Erhöht TP um {1} % und blockt bei Angriffen {0} Schaden. Der Schadensblock-Effekt wird mit jedem Rangaufstieg erhöht, wobei mit jedem Rang zusätzlich {0} Schaden geblockt werden.",
+  "name": "Super Armor Enhancement",
+  "name_de": "Super-Rüstungsverstärkung",
+  "nums": [
+   "3051",
+   "3059"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AutoRecoveryTechnologyData",
+  "num": "10321",
+  "description": "Increases HP by {0}% and automatically restores {1}% of Max HP per second upon taking damage",
+  "description_de": "Erhöht die TP um {0} % und stellt automatisch {1} % der maximalen TP pro Sekunde bei erlittenem Schaden wieder her.",
+  "name": "Field Maintenance",
+  "name_de": "Feldinstandhaltung",
+  "nums": [
+   "10321",
+   "911",
+   "913",
+   "918",
+   "919",
+   "920",
+   "922",
+   "924",
+   "931",
+   "95005",
+   "95011",
+   "95013",
+   "95018",
+   "95019",
+   "95020",
+   "95021",
+   "95022",
+   "95024",
+   "95031"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AutoRecoveryTechnologyData",
+  "num": "903",
+  "description": "Automatically restores {0}% of Max HP per second upon taking damage",
+  "description_de": "Stellt bei erlittenem Schaden automatisch {0}% der maximalen HP pro Sekunde wieder her",
+  "name": "Field Maintenance",
+  "name_de": "Feldinstandhaltung",
+  "nums": [
+   "903",
+   "904",
+   "905",
+   "908",
+   "95003",
+   "95004",
+   "95008"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AutoRecoveryTechnologyData",
+  "num": "923",
+  "description": "Increases Sandworm's HP by {0}% and  Sandworm automatically restores {1}% of Max HP per second when burrowing.",
+  "description_de": "Erhöht die HP des Sandwurms um {0}% und der Sandwurm stellt beim Graben automatisch {1}% der maximalen HP pro Sekunde wieder her.",
+  "name": "Burrow Maintenance",
+  "name_de": "Unterirdische Instandhaltung",
+  "nums": [
+   "923",
+   "95023"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "AutoRecoveryTechnologyData",
+  "num": "963",
+  "description": "Increases HP by {0}% and automatically restores {1}% of Max HP per second upon taking damage",
+  "description_de": "Erhöht die TP um {0} % und stellt automatisch {1} % der maximalen TP pro Sekunde bei erlittenem Schaden wieder her.",
+  "name": "Super Field Maintenance",
+  "name_de": "Super-Feldinstandhaltung",
+  "nums": [
+   "963"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180110",
+  "description": "Uses destroyed enemies to create more Crawlers",
+  "description_de": "Verwendet zerstörte Gegner, um mehr Kriecher zu erschaffen.",
+  "name": "Replicate",
+  "name_de": "Replizieren",
+  "nums": [
+   "180110",
+   "18015010"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180166",
+  "description": "When an enemy unit is destroyed, a Crawler of Our Forces will be created from their wreckage.",
+  "description_de": "Wenn eine feindliche Einheit zerstört, wird aus ihren Trümmern ein Kriecher unserer Streitkräfte erschaffen.",
+  "name": "Parasitic Ammo",
+  "name_de": "Parasitäre Munition",
+  "nums": [
+   "180166"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180173",
+  "description": "When an enemy unit is destroyed, a Crawler of Our Forces will be created from their wreckage.",
+  "description_de": "Wenn eine feindliche Einheit zerstört, wird aus ihren Trümmern ein Kriecher unserer Streitkräfte erschaffen.",
+  "name": "Parasitism",
+  "name_de": "Parasitismus",
+  "nums": [
+   "180173"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1802",
+  "description": "Causes electromagnetic interference on hit, temporarily disabling the target unit's Tech and decreasing its movement speed by {0}%",
+  "description_de": "Verursacht bei einem Treffer eine elektromagnetische Störung, die die Technik der Zieleinheit vorübergehend deaktiviert und ihre Bewegungsgeschwindigkeit um {0} % verringert.",
+  "name": "Electromagnetic Shot",
+  "name_de": "Elektromagnetischer Schuss",
+  "nums": [
+   "1802",
+   "1806",
+   "1813",
+   "1815",
+   "1816",
+   "1827",
+   "185002",
+   "185006",
+   "185013",
+   "185015",
+   "185016",
+   "185027",
+   "1852",
+   "1857",
+   "1865"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180202",
+  "description": "Attacks ignite the target unit. For {1}s, ignited units lose {0}% HP per second and cannot restore HP.",
+  "description_de": "Angriffe entzünden die Zieleinheit. {1} s lang verlieren gezündete Einheiten {0}% HP pro Sekunde und können ihre HP nicht wiederherstellen.",
+  "name": "Ignite",
+  "name_de": "Entzünden",
+  "nums": [
+   "180202",
+   "180203",
+   "18025002",
+   "18025003"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180206",
+  "description": "Attacks have a chance to ignite the target unit. For {1}s, ignited units lose {0}% HP per second and cannot restore HP.",
+  "description_de": "Angriffe haben die Chance, die Zieleinheit zu entzünden. {1} s lang verlieren gezündete Einheiten {0}% HP pro Sekunde und können ihre HP nicht wiederherstellen.",
+  "name": "Ignite",
+  "name_de": "Entzünden",
+  "nums": [
+   "180206",
+   "180207",
+   "180209",
+   "180210",
+   "180220",
+   "18025006",
+   "18025007",
+   "18025009",
+   "18025010",
+   "18025020"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1802153",
+  "description": "Attacks ignite the target unit. For {1}s, ignited units lose {0}% HP per second and cannot restore HP.",
+  "description_de": "Angriffe entzünden die Zieleinheit. {1} s lang verlieren gezündete Einheiten {0}% HP pro Sekunde und können ihre HP nicht wiederherstellen.",
+  "name": "Super Ignition",
+  "name_de": "Superzünder",
+  "nums": [
+   "1802153",
+   "180253",
+   "180259",
+   "180270"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180305",
+  "description": "Covers the unit with a photon coating, decreasing damage received by {1}% within {0}s after the start of the battle, and grants immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Der gesamte Körper der Einheit ist mit einer Photonenbeschichtung bedeckt. Der erlittene Schaden wird innerhalb von {0} Sek. nach Beginn des Gefechts um {1} % reduziert und die Einheit ist immun gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“.",
+  "name": "Photon Coating",
+  "name_de": "Photonenbeschichtung",
+  "nums": [
+   "180305",
+   "180317",
+   "180329",
+   "18035005",
+   "18035017",
+   "18035029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180311",
+  "description": "After the start of the battle, emits a photon coating on all allied forces (excluding the user) within {0}m, decreasing their damage received by {2}% for the within {1}s and granting immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Strahlt nach Beginn des Kampfes einen Photonenmantel auf alle verbündeten Kräfte (außer dem Benutzer) im Umkreis von {0} m aus, der den erlittenen Schaden innerhalb von {1} Sek. um {2} % verringert und Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Photon Emission",
+  "name_de": "Photonenemission",
+  "nums": [
+   "180311",
+   "18035011"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1803153",
+  "description": "Every {0}s, covers the unit with a photon coating, decreasing damage received by {2}% within {1}s and grants immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Die Einheit wird alle {0} Sek. mit einer Photonenbeschichtung bedeckt, die den erlittenen Schaden innerhalb von {1} Sek. um {2} % reduziert Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Super Photon Coating",
+  "name_de": "Super-Photonenbeschichtung",
+  "nums": [
+   "1803153",
+   "180351",
+   "180353",
+   "180354",
+   "180370"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "18032002",
+  "description": "Every {0}s, covers the unit with a photon coating, decreasing damage received by {2}% within {1}s and grants immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Die Einheit wird alle {0} Sek. mit einer Photonenbeschichtung bedeckt, die den erlittenen Schaden innerhalb von {1} Sek. um {2} % reduziert Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Photon Loop",
+  "name_de": "Photonenschleife",
+  "nums": [
+   "18032002",
+   "18035202"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180321",
+  "description": "After the start of the battle, emits a photon coating on all Ground allied forces (excluding the user) within {0}m, decreasing their damage received by {2}% for the within {1}s and granting immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Strahlt nach Beginn des Kampfes einen Photonenmantel auf alle verbündeten Bodenstreitkräfte (außer dem Benutzer) im Umkreis von {0} m aus, der den erlittenen Schaden innerhalb von {1} Sek. um {2} % verringert und Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Photon Emission",
+  "name_de": "Photonenemission",
+  "nums": [
+   "180321",
+   "180326",
+   "18035026"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1803541",
+  "description": "Enters Overload state {0}s after the battle starts, increasing movement speed by {1}%, decreasing attack interval by {2}%, and granting immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects.",
+  "description_de": "Löst {0} Sek. nach Kampfbeginn den Überladungszustand aus, der die Bewegungsgeschwindigkeit um {1} % erhöht, das Angriffsintervall um {2} % reduziert und Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Super Overload",
+  "name_de": "Super-Überladung",
+  "nums": [
+   "1803541",
+   "1803672"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180355",
+  "description": "Covers the unit with a photon coating, decreasing damage received by {1}% within {0}s after the start of the battle, and grants immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Der gesamte Körper der Einheit ist mit einer Photonenbeschichtung bedeckt. Der erlittene Schaden wird innerhalb von {0} Sek. nach Beginn des Gefechts um {1} % reduziert und die Einheit ist immun gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“.",
+  "name": "Super Photon Coating",
+  "name_de": "Super-Photonenbeschichtung",
+  "nums": [
+   "180355",
+   "180368"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180358",
+  "description": "After the start of the battle, emits a photon coating on all allied forces within {1}m every {0}s, decreasing their damage received by {3}% for the within {2}s and granting immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Strahlt nach Beginn des Kampfes alle {0} Sek. einen Photonenmantel auf alle verbündeten Kräfte im Umkreis von {1} m aus, der den erlittenen Schaden innerhalb von {2} Sek. um {3} % verringert und Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Super Photon Emission",
+  "name_de": "Super-Photonenemission",
+  "nums": [
+   "180358"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180359",
+  "description": "Enters Overload state every {0}s, decreasing attack interval by {2}% and increasing movement speed by {3}% for {1}s.",
+  "description_de": "Löst alle {0} Sek. den Überladungszustand aus, der das Angriffsintervall um {2} % reduziert und die Bewegungsgeschwindigkeit {1} Sek. lang um {3} % erhöht.",
+  "name": "Interval Overload",
+  "name_de": "Intervall-Überladung",
+  "nums": [
+   "180359"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180361",
+  "description": "After the start of the battle, emits a photon coating on all allied forces (excluding the user) within {1}m every {0}s, decreasing their damage received by {3}% for the within {2}s and granting immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects",
+  "description_de": "Strahlt nach Beginn des Kampfes alle {0} Sek. einen Photonenmantel auf alle verbündeten Kräfte (außer dem Benutzer) im Umkreis von {1} m aus, der den erlittenen Schaden innerhalb von {2} Sek. um {3} % verringert und Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ gewährt.",
+  "name": "Super Photon Emission",
+  "name_de": "Super-Photonenemission",
+  "nums": [
+   "180361"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1803671",
+  "description": "Cannot move, gains immunity to Electromagnetic, Ignited, Acid, and Degeneration Beam effects, and restores {1}% of Max HP within {0}s after the start of the battle.",
+  "description_de": "Kann sich nicht bewegen, gewährt Immunität gegen die Effekte „Elektromagnetisch“, „Zündung“, „Säure“ und „Degenerationsstrahl“ und stellt {1} % der max. TP innerhalb von {0} Sek. nach Kampfbeginn wieder her.",
+  "name": "Super Photon Coating",
+  "name_de": "Super-Photonenbeschichtung",
+  "nums": [
+   "1803671"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1804168",
+  "description": "Projects a Degeneration Beam to enemy units within a range of {0}m. The affected enemy units' movement speed is reduced by {1}%, their ATK is reduced by {2}%, they cannot use Tech and take an additional {3}% damage when attacked.",
+  "description_de": "Wendet einen Degenerationsstrahl auf feindliche Einheiten in {0} m Reichweite an. Die Bewegungsgeschwindigkeit der betroffenen Einheiten wird um {1} % reduziert, der ANG um {2} %, sie können Technik nicht einsetzen und erleiden zusätzlich {3} % Schaden durch Angriffe.",
+  "name": "Super Degeneration Beam",
+  "name_de": "Super-Degenerationsstrahl",
+  "nums": [
+   "1804168",
+   "180468"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180418",
+  "description": "Projects a Degeneration Beam to enemy units within a range of {0}m. The affected enemy units' movement speed is reduced by {1}%, their ATK is reduced by {2}%, and they take an additional {3}% damage when attacked.",
+  "description_de": "Wendet einen Degenerationsstrahl auf feindliche Einheiten in {0} m Reichweite an. Die Bewegungsgeschwindigkeit der betroffenen Einheiten wird um {1} % reduziert, der ANG um {2} % und sie erleiden zusätzlich {3} % Schaden durch Angriffe.",
+  "name": "Degeneration Beam",
+  "name_de": "Degenerationsstrahl",
+  "nums": [
+   "180418",
+   "18045018"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180430",
+  "description": "Increases Void Eye's range by {2},  and its attacks reduce target's range by {1}% for {0} seconds",
+  "description_de": "Erhöht die Reichweite von Void Eye um {2} und seine Angriffe reduzieren die Reichweite des Ziels für {0} Sekunden um {1} %",
+  "name": "Suppression Shots",
+  "name_de": "Unterdrückungsschüsse",
+  "nums": [
+   "180430",
+   "18045030"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180519",
+  "description": "Scorpion's attack will create an Acid area with a radius of {0}m at the hit point. The Acid area lasts for {1}s, units within the Acid liquid lose {2}% HP per second and will take {3}% damage when attacked.",
+  "description_de": "Der Angriff des Skorpions erzeugt am Aufschlagpunkt eine Säurefläche mit einem Radius von {0} m. Die Säurefläche hält {1} Sek. lang an, Einheiten innerhalb der säurehaltigen Flüssigkeit verlieren {2} % TP und erleiden {3} % Schaden durch Angriffe.",
+  "name": "Acid Attack",
+  "name_de": "Säureangriff",
+  "nums": [
+   "180519",
+   "18055019"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180526",
+  "description": "Activate Scanning Radar, increases range of allied units within {0}m by {1}. Effects of multiple Scanning Radars do not stack up.",
+  "description_de": "Aktiviere ein Scan-Radar, das die Reichweite verbündeter Einheiten innerhalb von {0} m um {1} erhöht. Die Effekte mehrerer Scan-Radare sind nicht stapelbar.",
+  "name": "Scanning Radar",
+  "name_de": "Scan-Radar",
+  "nums": [
+   "180526",
+   "18055026"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180530",
+  "description": "Void Eye causes electromagnetic interference on enemies attacking it, temporarily disabling their Tech and reducing their movement speed by {1}% for {0} seconds.",
+  "description_de": "Void Eye verursacht elektromagnetische Interferenzen bei Gegnern, die es angreifen, wodurch ihre Technologie vorübergehend deaktiviert und ihre Bewegungsgeschwindigkeit für {0} Sekunden um {1}% reduziert wird.",
+  "name": "Electromagnetic Armor",
+  "name_de": "Elektromagnetische Panzerung",
+  "nums": [
+   "180530",
+   "18055030"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180562",
+  "description": "The attack of Experimental Stormcaller will create an Acid area with a radius of {0}m at the hit point. The Acid area lasts for {1}s, units within the Acid liquid lose {2}% HP per second and will take {3}% damage when attacked.",
+  "description_de": "Der Angriff des experimentellen Sturmrufers erzeugt am Aufschlagpunkt eine Säurefläche mit einem Radius von {0} m. Die Säurefläche hält {1} Sek. lang an, Einheiten innerhalb der säurehaltigen Flüssigkeit verlieren {2} % TP und erleiden {3} % Schaden durch Angriffe.",
+  "name": "Acid Attack",
+  "name_de": "Säureangriff",
+  "nums": [
+   "180562"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180565",
+  "description": "Enters Overload state {0}s after the battle starts, increasing ATK by {1}%, and restoring {2}% of Max HP per second.",
+  "description_de": "Löst {0} Sek. nach Kampfbeginn den Überladungszustand aus, der den ANG um {1} % erhöht und {2} % der max. TP pro Sekunde wiederherstellt.",
+  "name": "Super Overload",
+  "name_de": "Super-Überladung",
+  "nums": [
+   "180565"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180569",
+  "description": "Experimental Scorpion's attack will create an Acid area with a radius of {0}m at the hit point. The Acid area lasts for {1}s, units within the Acid liquid lose {2}% HP per second and will take {3}% damage when attacked.",
+  "description_de": "Der Angriff des experimentellen Skorpions erzeugt am Aufschlagpunkt eine Säurefläche mit einem Radius von {0} m. Die Säurefläche hält {1} Sek. lang an, Einheiten innerhalb der säurehaltigen Flüssigkeit verlieren {2} % TP und erleiden {3} % Schaden durch Angriffe.",
+  "name": "Acid Attack",
+  "name_de": "Säureangriff",
+  "nums": [
+   "180569"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1806153",
+  "description": "Experimental units cannot operate stably and will begin to self-destruct {0} seconds after the battle begins: losing {1}% of HP per second.",
+  "description_de": "Experimentelle Einheiten können nicht stabil arbeiten und beginnen {0} Sekunden nach Beginn des Gefechts mit der Selbstzerstörung, wodurch pro Sekunde {1} % an TP verloren gehen.",
+  "name": "Experimental Unit",
+  "name_de": "Experimentelle Einheit",
+  "nums": [
+   "1806153",
+   "1806167",
+   "1806168",
+   "180651",
+   "180652",
+   "180653",
+   "180654",
+   "180661",
+   "180669",
+   "180672",
+   "180673"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180620",
+  "description": "Increases HP by {2}%. Taking damage increases the Fire Badger's Range by {0} for {1}s.",
+  "description_de": "Erhöht TP um {2}%. Wenn du Schaden erleidest, erhöht sich die Reichweite des Feuerdachs für {1} s um {0}.",
+  "name": "Counter-Fire",
+  "name_de": "Gegenfeuer",
+  "nums": [
+   "180620"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "18065020",
+  "description": "HP increases by {2}%. After taking damage, Fire Badger's range increases by {0}, ATK increases by {3}%, lasting {1} seconds.",
+  "description_de": "Gesundheit erhöht sich um {2}%. Nach erlittenem Schaden erhöht sich die Reichweite von Feuerdachs um {0}, die Angriffskraft erhöht sich um {3}%, was {1} Sekunden lang anhält.",
+  "name": "Counter-Fire",
+  "name_de": "Gegenfeuer",
+  "nums": [
+   "18065020"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180805",
+  "description": "Rhino's HP increases by {0}% and ATK by {1}% per second during battle.",
+  "description_de": "Rhinos HP steigen im Kampf um {0}% und ATK um {1}% pro Sekunde.",
+  "name": "Combat Evolvement",
+  "name_de": "Entwicklung des Kampfes",
+  "nums": [
+   "180805",
+   "18085005"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180808",
+  "description": "The Steel Ball gains {1}m extra range for every {0}m it moves, up to a maximum of {2}m.",
+  "description_de": "Die Stahlkugel gewinnt mit jedem {0} m, den sie bewegt, um {1} m zusätzliche Reichweite, bis zu einem Maximum von {2} m.",
+  "name": "Kinetic Charge",
+  "name_de": "Kinetische Ladung",
+  "nums": [
+   "180808",
+   "18085008"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180828",
+  "description": "Increases Hound's attack interval by {1} seconds. During battle, Hound's ATK increases by {0}% per second. This bonus resets after attacking.",
+  "description_de": "Erhöht das Angriffsintervall von Hound um {1} Sekunden. Während eines Gefechts erhöhen sich die ATK von Hound um {0}% pro Sekunde. Dieser Bonus wird nach einem Angriff zurückgesetzt.",
+  "name": "Chamber Compression",
+  "name_de": "Kammerkompression",
+  "nums": [
+   "180828",
+   "18085028"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "180931",
+  "description": "Increases Vortex's range by {2}. Increases ATK of ground friendly units within {0}m by {1}% (Does not stack).",
+  "description_de": "Erhöht die Reichweite von Vortex um {2}. Erhöht die ATK freundlicher Bodeneinheiten innerhalb von {0} m um {1}% (nicht stapelbar).",
+  "name": "Mobile Power Station",
+  "name_de": "Mobiles Kraftwerk",
+  "nums": [
+   "180931",
+   "18095031"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "181032",
+  "description": "Centurion's basic attack marks its target, and marked units take an additional {0}% damage when attacked.",
+  "description_de": "Der Basisangriff von Zenturio markiert sein Ziel, und markierte Einheiten erleiden zusätzlich {0}% Schaden, wenn sie angegriffen werden.",
+  "name": "Marker Bullet",
+  "name_de": "Markierungspunkt",
+  "nums": [
+   "181032"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "18105032",
+  "description": "Centurion's basic attack marks its target, and marked units take an additional {0}% damage when attacked.",
+  "description_de": "Der Basisangriff von Zenturio markiert sein Ziel, und markierte Einheiten erleiden zusätzlichen {0}% Schaden, wenn sie angegriffen werden.",
+  "name": "Marker Round",
+  "name_de": "Marker-Runde",
+  "nums": [
+   "18105032"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1812",
+  "description": "Causes electromagnetic interference on hit, temporarily disabling the target unit's Tech and decreasing its movement speed by {0}%",
+  "description_de": "Verursacht bei einem Treffer eine elektromagnetische Störung, die die Technik der Zieleinheit vorübergehend deaktiviert und ihre Bewegungsgeschwindigkeit um {0} % verringert.",
+  "name": "Electromagnetic Explosion",
+  "name_de": "Elektromagnetische Explosion",
+  "nums": [
+   "1812",
+   "1826",
+   "185012",
+   "185026"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1814",
+  "description": "Causes electromagnetic interference on hit, temporarily disabling the target unit's Tech and decreasing its movement speed by {0}%",
+  "description_de": "Verursacht bei einem Treffer eine elektromagnetische Störung, die die Technik der Zieleinheit vorübergehend deaktiviert und ihre Bewegungsgeschwindigkeit um {0} % verringert.",
+  "name": "Electromagnetic Interference",
+  "name_de": "Elektromagnetische Interferenz",
+  "nums": [
+   "1814",
+   "185014"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "18400101",
+  "description": "Missiles apply an EMP effect on hit, disabling the target's tech and reducing movement speed by {0}% for {1} seconds.",
+  "description_de": "Raketen wenden bei einem Treffer einen EMP-Effekt an, der die Technologie des Ziels deaktiviert und die Bewegungsgeschwindigkeit für {1} Sekunden um {0}% reduziert.",
+  "name": "Electromagnetic Shot",
+  "name_de": "Elektromagnetischer Schuss",
+  "nums": [
+   "18400101",
+   "18520301"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1856",
+  "description": "Implants virus on hit, temporarily disabling the target unit's Tech and decreasing their movement speed by {0}% and ATK by {1}%.",
+  "description_de": "Implantiert einen Virus bei einem Treffer, der die Technik der Zieleinheit vorübergehend deaktiviert und ihre Bewegungsgeschwindigkeit um {0} % und ihren ANG um {1} % verringert.",
+  "name": "Viral Ammo",
+  "name_de": "Virus-Munition",
+  "nums": [
+   "1856"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1863",
+  "description": "Enters Overload state after the battle starts, increasing ATK by {0}% and decreasing attack interval by {1}% for {2}s.",
+  "description_de": "Löst nach Kampfbeginn den Überladungszustand aus, der den ANG um {0} % erhöht und das Angriffsintervall {2} Sek. lang um {1} % verringert.",
+  "name": "Overload Modification",
+  "name_de": "Überladungsmodifikation",
+  "nums": [
+   "1863"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "BuffTechnologyData",
+  "num": "1864",
+  "description": "Paralyzes the unit's kinetic system and makes it unable to move on hit.",
+  "description_de": "Lähmt das kinetische System der Einheit und macht sie unfähig, sich bei einem Treffer zu bewegen.",
+  "name": "Kinetic Disruption",
+  "name_de": "Kinetische Zerrüttung",
+  "nums": [
+   "1864"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ClearRangeItemTechData",
+  "num": "4228",
+  "description": "Hound will clear fire, acid and smoke effects on the ground within {0}m",
+  "description_de": "Der Jagdhund entfernt Feuer-, Säure- und Raucheffekte auf dem Boden innerhalb von {0} m",
+  "name": "Fire Extinguisher",
+  "name_de": "Feuerlöscher",
+  "nums": [
+   "4228",
+   "425028"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ControllBeamLifeRecoveryTechnologyData",
+  "num": "1714",
+  "description": "Units under Hacker's control will immediately recover their maximum HP",
+  "description_de": "Einheiten, die unter der Kontrolle des Hackers stehen, erhalten sofort ihre maximalen TP zurück.",
+  "name": "Enhanced Control",
+  "name_de": "Verbesserte Kontrolle",
+  "nums": [
+   "1714",
+   "175014"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ControllBeamLifeRecoveryTechnologyData",
+  "num": "1764",
+  "description": "Units under the control of Experimental Hacker will immediately recover their Max HP.",
+  "description_de": "Die vom experimentellen Hacker kontrollierten Einheiten regenerieren sofort ihre max. TP",
+  "name": "Enhanced Control",
+  "name_de": "Verbesserte Kontrolle",
+  "nums": [
+   "1764"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DamageIntensifyTechnologyData",
+  "num": "506",
+  "description": "Increases ATK against ground units by {0}%",
+  "description_de": "Erhöht den ANG gegen Bodeneinheiten um {0} %.",
+  "name": "Ground Specialization",
+  "name_de": "Bodenspezialisierung",
+  "nums": [
+   "506",
+   "55006"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DamageIntensifyTechnologyData",
+  "num": "507",
+  "description": "Increases ATK against aerial units by {0}%",
+  "description_de": "Erhöht den ANG gegen Lufteinheiten um {0} %.",
+  "name": "Aerial Specialization",
+  "name_de": "Luftspezialisierung",
+  "nums": [
+   "507",
+   "523",
+   "55007",
+   "55023"
+  ],
+  "kind": "Ziel Luft/Boden"
+ },
+ {
+  "table": "DamageShareTechnologyData",
+  "num": "608",
+  "description": "Chains adjacent Steel Balls together, increasing HP by {0}% and sharing damage received equally between them",
+  "description_de": "Verkettet benachbarte Stahlkugeln miteinander, erhöht die TP um {0} % und teilt den erlittenen Schaden gleichmäßig auf sie auf.",
+  "name": "Damage Sharing",
+  "name_de": "Schadensteilung",
+  "nums": [
+   "608",
+   "65008"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "DamageShareTechnologyData",
+  "num": "61002",
+  "description": "Chains adjacent Sabertooths together, increasing ATK by {0}% and sharing damage received equally between them.",
+  "description_de": "Verkettet benachbarte Säbelzähne miteinander, erhöht den ANG um {0} % und teilt den erlittenen Schaden gleichmäßig auf sie auf.",
+  "name": "Energy Chain",
+  "name_de": "Energiekette",
+  "nums": [
+   "61002"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "DamageShareTechnologyData",
+  "num": "613",
+  "description": "Chains adjacent Sledgehammers together, increasing HP by {0}% and sharing damage received equally between them",
+  "description_de": "Verkettet benachbarte Vorschlaghämmer miteinander, erhöht die TP um {0} % und teilt den erlittenen Schaden gleichmäßig auf sie auf.",
+  "name": "Damage Sharing",
+  "name_de": "Schadensteilung",
+  "nums": [
+   "613",
+   "65013"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "DamageShareTechnologyData",
+  "num": "631",
+  "description": "Links with other Vortex within {1}m. Increases ATK by {0}% for each additional linked unit, up to a maximum of {2}%.",
+  "description_de": "Verbindet sich mit anderen Wirbeln innerhalb von {1} m. Erhöht die ATK für jede weitere verknüpfte Einheit um {0}%, bis zu einem Maximum von {2}%.",
+  "name": "Grid Integration",
+  "name_de": "Netzintegration",
+  "nums": [
+   "631",
+   "65031"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DamageShareTechnologyData",
+  "num": "657",
+  "description": "Chains adjacent Experimental Mustangs together, increasing HP by {0}% and sharing damage received equally between them",
+  "description_de": "Verkettet benachbarte experimentelle Mustangs miteinander, erhöht die TP um {0} % und teilt den erlittenen Schaden gleichmäßig auf sie auf.",
+  "name": "Super Damage Sharing",
+  "name_de": "Super-Schadensteilung",
+  "nums": [
+   "657"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "DeadAcidRangeItemTechnologyData",
+  "num": "2710",
+  "description": "Destroyed Crawlers leave Acid liquid on the ground in a radius of {0}m. Units within the Acid liquid lose {1}% HP per second and will take {2}% damage when attacked.",
+  "description_de": "Zerstörte Kriecher hinterlassen eine säurehaltige Flüssigkeit auf dem Boden in einem Radius von {0} m. Einheiten in der säurehaltigen Flüssigkeit verlieren {1} % TP pro Sekunde und erleiden {2} % Schaden durch Angriffe.",
+  "name": "Acidic Explosion",
+  "name_de": "Säurenexplosion",
+  "nums": [
+   "2710",
+   "275010"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "DeadExplosiveTechnologyData",
+  "num": "2805",
+  "description": "Rhinos activate a self-destruct mechanism at 0 HP, dealing damage equivalent to Rhino's Max HP to all units within {0}m.",
+  "description_de": "Rhino aktivieren bei 0 TP einen Selbstzerstörungsmechanismus, der allen Einheiten innerhalb von {0} m Schaden in Höhe der maximalen TP des Rhinos zufügt.",
+  "name": "Final Blitz",
+  "name_de": "Letzter Blitz",
+  "nums": [
+   "2805"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadExplosiveTechnologyData",
+  "num": "285005",
+  "description": "HP increased by {1}%. When Rhino's HP reaches 0, it activates a self-destruct device, dealing damage equal to Rhino's maximum HP to all units within {0} meters.",
+  "description_de": "Die Gesundheit wird um {1}% erhöht. Wenn die Gesundheit von Rhino auf 0 sinkt, wird eine Selbstzerstörungsvorrichtung aktiviert, die allen Einheiten innerhalb von {0} Metern Schaden in Höhe der maximalen Gesundheit von Rhino zufügt.",
+  "name": "Final Blitz",
+  "name_de": "Letzter Blitz",
+  "nums": [
+   "285005"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadLineTechData",
+  "num": "4607",
+  "description": "Attacks instantly destroy targets with current HP below {0} (+{1} per additional Rank). Decreases ATK by {2}%.",
+  "description_de": "Angriffe zerstören sofort Ziele mit aktuellen HP unter {0} (+ {1} pro zusätzlichem Rang). Verringert ATK um {2}%.",
+  "name": "Culling Rounds",
+  "name_de": "Runden ausscheiden",
+  "nums": [
+   "4607",
+   "465007"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadSummonTechnologyData",
+  "num": "13023",
+  "description": "Destroyed Sandworm creates {0} Larvas of the same Rank as Sandworm to continue fighting.",
+  "description_de": "Ein zerstörter Sandwurm erschafft {0} Larven mit demselben Rang wie der Sandwurm, die in den Kampf einsteigen.",
+  "name": "Mechanical Division",
+  "name_de": "Mechanische Teilung",
+  "nums": [
+   "13023",
+   "135023"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadSummonTechnologyData",
+  "num": "13055",
+  "description": "Destroyed Experimental Rhino creates {0} Rank {1} Rhinos with Final Blitz to continue fighting",
+  "description_de": "Zerstörte experimentelle Rhinos erschaffen {0} Rhinos Rang {1} mit Letzter Blitz, um den Kampf fortzusetzen.",
+  "name": "Super Mechanical Division",
+  "name_de": "Mechanische Super-Teilung",
+  "nums": [
+   "13055"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadSummonTechnologyData",
+  "num": "13058",
+  "description": "Destroyed Experimental Steel Ball creates {0} Steel Balls of the same Rank as Experimental Steel Ball to continue fighting.",
+  "description_de": "Die zerstörte experimentelle Stahlkugel erschafft {0} Stahlkugeln mit demselben Rang, um den Kampf fortzusetzen.",
+  "name": "Super Mechanical Division",
+  "name_de": "Mechanische Super-Teilung",
+  "nums": [
+   "13058"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "DeadSummonTechnologyData",
+  "num": "1308",
+  "description": "Destroyed Steel Balls create {0} Rank {1} Crawlers to continue fighting",
+  "description_de": "Zerstörte Stahlkugeln erzeugen {0} Rang-{1}-Kriecher, um den Kampf fortzusetzen.",
+  "name": "Mechanical Division",
+  "name_de": "Mechanische Teilung",
+  "nums": [
+   "1308",
+   "135008"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "EnergyShieldTechnologyData",
+  "num": "201",
+  "description": "Obtain an Energy Shield that absorbs damage equal to the unit's HP and can block at least one instance of damage.",
+  "description_de": "Erhalte einen Energieschild, der Schaden in Höhe der TP der Einheit absorbiert und mindestens einen Schaden blockieren kann.",
+  "name": "Energy Shield",
+  "name_de": "Energieschild",
+  "nums": [
+   "201",
+   "202",
+   "203",
+   "204",
+   "206",
+   "207",
+   "208",
+   "211",
+   "212",
+   "213",
+   "216",
+   "219",
+   "225",
+   "227",
+   "230",
+   "25006",
+   "25016",
+   "25025",
+   "25027",
+   "25030",
+   "256",
+   "259",
+   "266"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "EnergyShieldTechnologyData",
+  "num": "205",
+  "description": "Obtain an Energy Shield that absorbs damage equal to the unit's HP and can block at least one instance of damage.",
+  "description_de": "Erhalte einen Energieschild, der Schaden in Höhe der TP der Einheit absorbiert und mindestens einen Schaden blockieren kann.",
+  "name": "Portable Shield",
+  "name_de": "Tragbarer Schild",
+  "nums": [
+   "205"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "EnergyShieldTechnologyData",
+  "num": "209",
+  "description": "Every Fang obtains an Energy Shield that absorbs damage equal to the unit's HP and can block at least one instance of damage.",
+  "description_de": "Jeder Fang erhält einen Energieschild, der Schaden in Höhe der TP der Einheit absorbiert und mindestens einen Schadensangriff blockieren kann.",
+  "name": "Portable Shield",
+  "name_de": "Tragbarer Schild",
+  "nums": [
+   "209",
+   "25009"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "EnergyShieldTechnologyData",
+  "num": "210",
+  "description": "Every Crawler obtains an Energy Shield that absorbs damage equal to the unit's HP and can block at least one instance of damage.",
+  "description_de": "Jeder Kriecher erhält einen Energieschild, der Schaden in Höhe der TP der Einheit absorbiert und mindestens einen Schadensangriff blockieren kann.",
+  "name": "Portable Shield",
+  "name_de": "Tragbarer Schild",
+  "nums": [
+   "210"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1101",
+  "description": "[Takes effect at Rank {0}] Launches {2} ground rockets at the enemy every {1}s. The rockets spread over a wide area. Each rocket deals {3} damage and has a range of {4}m",
+  "description_de": "[Wirkt ab Rang {0}] Feuert alle {1} Sek. {2} Bodenraketen auf den Feind ab. Die Raketen verteilen sich über ein großes Gebiet. Jede Rakete verursacht {3} Schaden und hat eine Reichweite von {4} m.",
+  "name": "Rocket Barrage",
+  "name_de": "Raketensperrfeuer",
+  "nums": [
+   "1101",
+   "1104"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11010",
+  "description": "Launches slowing Sticky Oil Bombs at enemies every {0}s. Sticky Oil Bombs have a range of {1}m and a minimum range of {2}m.",
+  "description_de": "Schießt alle {0} Sek. langsame klebrige Ölbomben auf Gegner. Klebrige Ölbomben haben eine Reichweite von {1} m und eine Mindestreichweite von {2} m.",
+  "name": "Sticky Oil Bomb",
+  "name_de": "Klebrige Ölbombe",
+  "nums": [
+   "11010",
+   "115010"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11014",
+  "description": "Decreases Hacker's range by {0}m but allows Hacker to fire {1} Control Beams that each has {2}% of their original control efficiency.",
+  "description_de": "Verringert die Reichweite von Hacker um {0} m, ermöglicht es Hacker aber, {1} Kontrollstrahlen abzufeuern, die jeweils über {2} % ihrer ursprünglichen Kontrolleffizienz verfügen.",
+  "name": "Multi Control",
+  "name_de": "Multi-Kontrolle",
+  "nums": [
+   "11014",
+   "115014"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11015021",
+  "description": "Fires {1} anti-air missiles every {0} seconds to attack air enemies, each missile dealing {2} damage.",
+  "description_de": "Feuert alle {0} Sekunden {1} Flugabwehrraketen ab, um Luftgegner anzugreifen, wobei jede Rakete {2} Schaden verursacht.",
+  "name": "Anti-Air Missile",
+  "name_de": "Luftabwehrrakete",
+  "nums": [
+   "11015021"
+  ],
+  "kind": "Ziel Luft/Boden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11015029",
+  "description": "Bombards enemy ground units within a {1}m radius every {0}s, causing them to lose {2}% of their current HP and reducing their movement speed by {4}% for {3}s.",
+  "description_de": "Bombardiert gegnerische Bodeneinheiten innerhalb eines Radius von {1} m alle {0} s, wodurch sie {2}% ihrer aktuellen HP verlieren und ihre Bewegungsgeschwindigkeit {3} s lang um {4}% reduziert wird.",
+  "name": "Disintegration",
+  "name_de": "Zerfall",
+  "nums": [
+   "11015029",
+   "11029"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11015201",
+  "description": "Decreases Death Knell's range by {0} but allows Death Knell to fire {1} rays that each deal {2}% of their original damage",
+  "description_de": "Verringert die Reichweite von Todesknell um {0}, ermöglicht aber Todesknell, {1} Strahlen abzufeuern, die jeweils {2}% ihres ursprünglichen Schadens verursachen",
+  "name": "Energy Diffraction",
+  "name_de": "Energiebeugung",
+  "nums": [
+   "11015201",
+   "1102001"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11015202",
+  "description": "Launches a rocket from its arm cannons every {0} seconds. The rocket has a range of {2}, causing {4} damage to enemies within a {3}m radius of the hit point. Damage increases by {4} per unit Rank increased.",
+  "description_de": "Feuert alle {0} Sekunden eine Rakete aus seinen Armkanonen ab. Die Rakete hat eine Reichweite von {2} und fügt Gegnern innerhalb eines Radius von {3} m um den Trefferpunkt {4} Schaden zu. Der Schaden erhöht sich um {4} pro Einheit. Der Rang wurde erhöht.",
+  "name": "Gun-launched Missile",
+  "name_de": "Mit Waffen abgefeuerte Rakete",
+  "nums": [
+   "11015202",
+   "11020021"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110181",
+  "description": "Increases the number of Wraith's floating cannons from 4 to {0}.",
+  "description_de": "Erhöht die Anzahl der schwebenden Kanonen von Geist von 4 auf {0}.",
+  "name": "Floating Artillery Array",
+  "name_de": "Schwebende Artillerieanlage",
+  "nums": [
+   "110181",
+   "115018"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11020",
+  "description": "Increases the Fire Badger's HP by {0}%. When its HP drops below {1}%, it charges an enemy and detonates, dealing damage equal to its remaining HP to all units in a {2}m radius and igniting the ground at the impact site.",
+  "description_de": "Erhöht die TP des Feuerdachs um {0}%. Wenn seine TP unter {1}% fallen, greift er einen Gegner an und detoniert, wobei er allen Einheiten in einem Radius von {2} m Schaden in Höhe seiner verbleibenden TP zufügt und den Boden an der Einschlagstelle entzündet.",
+  "name": "Scorching Charge",
+  "name_de": "Sengende Ladung",
+  "nums": [
+   "11020",
+   "115020"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11020012",
+  "description": "Launches {1} electromagnetic shots at the enemy every {0}s. Each electromagnetic shot deals {2} damage to the Energy Shield, slows all hit units, and disables their Tech for {3}s. Electromagnetic shots have a range of {4}m",
+  "description_de": "Schießt alle {0} Sek. {1} elektromagnetische Schüsse auf den Gegner ab. Jeder elektromagnetische Schuss fügt dem Energieschild {2} Schaden zu, verlangsamt alle getroffenen Einheiten und schaltet ihre Technik für {3} Sek. aus. Elektromagnetische Schüsse haben eine Reichweite von {4} m.",
+  "name": "Electromagnetic Bomb",
+  "name_de": "Elektromagnetische Bombe",
+  "nums": [
+   "11020012",
+   "11025201"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11020022",
+  "description": "Launches {1} Smoke Bombs towards the enemy every {0}s. The Smoke Bombs have a max range of {2}m and a minimum range of {3}m. The range of units within the smoke is reduced by {4}%.",
+  "description_de": "Wirft alle {0} s {1} Rauchbomben auf den Feind zu. Die Rauchbomben haben eine maximale Reichweite von {2} m und eine minimale Reichweite von {3} m. Die Reichweite der Einheiten im Rauch wird um {4}% reduziert.",
+  "name": "Smoke Bomb",
+  "name_de": "Rauchbombe",
+  "nums": [
+   "11020022",
+   "11025202"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110201",
+  "description": "Fortress Launches its fists to attack enemies, triggering when Fortress's HP is below {0}% and {1}% respectively. The Rocket Punch has a range of {2}m, dealing {4} damage to the target and enemies within {3}m. The damage of Rocket Punch increases by {5} per unit Rank increased.",
+  "description_de": "Die Festung greift Gegner mit seinen Fäusten an. Dieser Effekt wird ausgelöst, wenn die TP der Festung unter {0} % bzw. {1} % sinken. Die Reichweite des Raketenschlags beträgt {2} m. Er fügt dem Ziel und Gegnern innerhalb eines Radius von {3} m {4} Schaden zu. Der Schaden des Raketenschlags erhöht sich pro Einheitenrang um {5}.",
+  "name": "Rocket Punch",
+  "name_de": "Raketenschlag",
+  "nums": [
+   "110201",
+   "11025001"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1102022",
+  "description": "Every {0} seconds, fires a marker missile with a range of {1} meters, marking enemy air units within a {2}-meter radius of the target. Marked units have their range reduced by {4} and take {3}% additional damage for {5} seconds.",
+  "description_de": "Feuert alle {0} Sekunden eine Markierungsrakete mit einer Reichweite von {1} Metern ab und markiert feindliche Lufteinheiten innerhalb eines Radius von {2} Metern um das Ziel. Markierte Einheiten haben eine um {4} reduzierte Reichweite und erleiden {5} Sekunden lang {3}% zusätzlichen Schaden.",
+  "name": "Air Defense Mark",
+  "name_de": "Luftverteidigungszeichen",
+  "nums": [
+   "1102022",
+   "11025022"
+  ],
+  "kind": "Ziel Luft/Boden, Flächenschaden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110211",
+  "description": "Add 1 secondary gun to each of the left and right sides of Sabertooth, attacking once every {1} seconds and dealing {2} damage; damage increases with unit level, increasing by {2} damage per level.",
+  "description_de": "Füge jeweils 1 Sekundärgeschütz an der linken und rechten Seite von Säbelzahn hinzu, das einmal alle {1} Sekunden angreift und {2} Schaden verursacht; der Schaden steigt mit der Einheitenstufe und erhöht sich pro Stufe um {2} Schaden.",
+  "name": "Secondary Armament",
+  "name_de": "Sekundärbewaffnung",
+  "nums": [
+   "110211"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110212",
+  "description": "Fire {1} anti-air missiles every {0} seconds to attack air enemies, each missile dealing {2} damage",
+  "description_de": "Feuere alle {0} Sekunden {1} Flugabwehrraketen ab, um Luftgegner anzugreifen, wobei jede Rakete {2} Schaden verursacht",
+  "name": "Anti-Air Missile",
+  "name_de": "Luftabwehrrakete",
+  "nums": [
+   "110212"
+  ],
+  "kind": "Ziel Luft/Boden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11022",
+  "description": "Launches {1} homing missiles at distant enemies every {0}s, each dealing {2} damage (damage increases by {2} for each level up) with a range of {4}m to {3}m.",
+  "description_de": "Schießt alle {0} Sek. {1} Lenkraketen mit einer Reichweite von {4} m bis {3} m auf entfernte Ziele, die {2} Schaden verursachen (der Schaden erhöht sich für jedes neue Level um {2}).",
+  "name": "Homing Missile",
+  "name_de": "Lenkrakete",
+  "nums": [
+   "11022"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11024",
+  "description": "Fires {1} Spider Mines with {2} HP every {0} seconds. The Spider Mines will charge at the enemy and self-destruct, dealing {4} damage to all units within {3} m. Spider Mine's attributes enhance with Tarantula's level, HP increases by {2} and damage increases by {4} per unit Rank increased.",
+  "description_de": "Feuert alle {0} Sekunden {1} Spinnenminen mit {2} TP ab. Die Spinnenminen stürmen auf den Feind zu und zerstören sich selbst, wobei sie {4} Schaden gegen alle Einheiten im Umkreis von {3} m verursachen. Die Attribute der Spinnenminen steigen mit der Stufe der Tarantel: Die TP erhöhen sich um {2} und der Schaden erhöht sich um {4} pro erhöhtem Einheitenrang.",
+  "name": "Spider Mine",
+  "name_de": "Spinnenmine",
+  "nums": [
+   "11024",
+   "115024"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11025",
+  "description": "Launches a slowing Sticky Oil Bomb at enemies every {0} seconds. The Sticky Oil Bomb has a range of {1}m and can be ignited by fire.",
+  "description_de": "Verschießt alle {0} Sekunden eine langsamer werdende klebrige Ölbombe auf Gegner. Die Klebrige Ölbombe hat eine Reichweite von {1} m und kann durch Feuer entzündet werden.",
+  "name": "Sticky Oil Bomb",
+  "name_de": "Klebrige Ölbombe",
+  "nums": [
+   "11025",
+   "115025"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11025021",
+  "description": "Equip 1 secondary gun on each of the left and right sides of Sabertooth, attacking once every {1} seconds and dealing {2} damage. Damage increases with unit level, increasing by {2} damage per level.",
+  "description_de": "Rüste an der linken und rechten Seite von Säbelzahn je 1 Sekundärgeschütz aus, das einmal alle {1} Sekunden angreift und {2} Schaden verursacht. Der Schaden nimmt mit der Einheitenstufe zu und erhöht sich pro Stufe um {2} Schaden.",
+  "name": "Secondary Armament",
+  "name_de": "Sekundärbewaffnung",
+  "nums": [
+   "11025021"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11025027",
+  "description": "Decreases Raiden's range by {0}, but increases the number of lightning bolts fired per attack from {1} to {2}.",
+  "description_de": "Verringert Raidens Reichweite um {0}, erhöht aber die Anzahl der pro Angriff abgefeuerten Blitze von {1} auf {2}.",
+  "name": "Fork",
+  "name_de": "Gabel",
+  "nums": [
+   "11025027",
+   "110271"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11025029",
+  "description": "Launches {1} missiles at nearby ground enemies every {0} seconds. Each missile deals {2} with a range of {3}m. Damage increases by {2} per unit Rank increased.",
+  "description_de": "Verschießt alle {0} Sekunden {1} Raketen auf Gegner in der Nähe. Jede Rakete verursacht {2} mit einer Reichweite von {3} m. Der Schaden erhöht sich um {2} pro Einheit. Der Rang erhöht sich um {2}.",
+  "name": "Swarm Missiles",
+  "name_de": "Schwarmraketen",
+  "nums": [
+   "11025029",
+   "110291"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11028",
+  "description": "Launches {3} Incendiary Bombs every {0}s to ignite the ground beneath the enemy's feet. Incendiary Bombs have a max range of {1}m and a minimum range of {2}m.",
+  "description_de": "Schießt alle {0} s {3} Brandbomben ab, um den Boden unter den Füßen des Feindes zu entzünden. Brandbomben haben eine maximale Reichweite von {1} m und eine minimale Reichweite von {2} m.",
+  "name": "Incendiary Bomb",
+  "name_de": "Brandbombe",
+  "nums": [
+   "11028",
+   "115028"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1103",
+  "description": "Launches a barrage of Incendiary Bombs every {0}s to ignite the ground beneath the enemy's feet. Incendiary Bombs have a max range of {1}m and a minimum range of {2}m.",
+  "description_de": "Wirft alle {0} Sek. ein Sperrfeuer von Brandbomben ab, um den Boden unter den Füßen des Feindes zu entzünden. Brandbomben haben eine Maximalreichweite von {1} m und eine Mindestreichweite von {2} m.",
+  "name": "Incendiary Bomb",
+  "name_de": "Brandbombe",
+  "nums": [
+   "1103",
+   "115003"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110321",
+  "description": "The Centurion wields a rifle in each hand, capable of attacking two enemies simultaneously, but range decreases by {0}.",
+  "description_de": "Der Zenturio führt in jeder Hand ein Gewehr, kann zwei Gegner gleichzeitig angreifen, aber die Reichweite verringert sich um {0}.",
+  "name": "Dual Wield",
+  "name_de": "Beidhändigkeit",
+  "nums": [
+   "110321",
+   "11035021"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110322",
+  "description": "Fires {1} tracking missiles at distant enemies every {0}s. Max range is {3}m, min range is {4}m. Each deals {2} damage with an explosion radius of {5}m.",
+  "description_de": "Feuert alle {0}s {1} zielsuchende Raketen auf entfernte Gegner. Maximale Reichweite beträgt {3}m, minimale Reichweite beträgt {4}m. Jede verursacht {2} Schaden mit einem Explosionsradius von {5}m.",
+  "name": "Homing Missile",
+  "name_de": "Lenkrakete",
+  "nums": [
+   "110322"
+  ],
+  "kind": "Flächenschaden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11035022",
+  "description": "Fires {1} tracking missiles at distant enemies every {0}s. Max range is {3}m, min range is {4}m. Each deals {2} damage (damage increases by {2} for each level up)  with an explosion radius of {5}m.",
+  "description_de": "Feuert alle {0}s {1} zielsuchende Raketen auf weit entfernte Gegner ab. Die maximale Reichweite beträgt {3}m, die minimale Reichweite beträgt {4}m. Jede verursacht {2} Schaden (der Schaden erhöht sich pro Stufenaufstieg um {2})  mit einem Explosionsradius von {5}m.",
+  "name": "Homing Missile",
+  "name_de": "Lenkrakete",
+  "nums": [
+   "11035022"
+  ],
+  "kind": "Flächenschaden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1105",
+  "description": "Launches {1} anti-air barrages at the enemy every {0}s. The barrages only damage aerial units. Each guided missile deals {2} damage and has a range of {3}m",
+  "description_de": "Feuert alle {0} Sek. {1} Luftabwehrsalven auf den Gegner ab. Die Geschütze richten nur bei Lufteinheiten Schaden an. Jede Lenkrakete verursacht {2} Schaden und hat eine Reichweite von {3} m.",
+  "name": "Anti-Air Barrage",
+  "name_de": "Anti-Luftsperrfeuer",
+  "nums": [
+   "1105",
+   "115005"
+  ],
+  "kind": "Ziel Luft/Boden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11051",
+  "description": "Launches {1} Rocket Barrages at the enemy every {0}s. Each missile deals {2} damage and has a range of {3}m",
+  "description_de": "Feuert alle {0} Sek. {1} Raketensalven auf den Gegner ab. Jede Rakete verursacht {2} Schaden und hat eine Reichweite von {3} m.",
+  "name": "Super Rocket Barrage",
+  "name_de": "Super-Raketen-Sperrfeuer",
+  "nums": [
+   "11051",
+   "11069"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11053",
+  "description": "Launches {0} Sticky Oil Bombs over a wide area every {1}s.",
+  "description_de": "Schießt alle {1} Sek. {0} klebrige Ölbomben über einem großen Gebiet ab.",
+  "name": "Super Sticky Oil Bomb",
+  "name_de": "Superklebrige Ölbombe",
+  "nums": [
+   "11053",
+   "110531"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110532",
+  "description": "Launches a barrage of Incendiary Bombs every {0}s to ignite the ground beneath the enemy's feet. Incendiary Bombs have a max range of {1}m and a minimum range of {2}m.",
+  "description_de": "Wirft alle {0} Sek. ein Sperrfeuer von Brandbomben ab, um den Boden unter den Füßen des Feindes zu entzünden. Brandbomben haben eine Maximalreichweite von {1} m und eine Mindestreichweite von {2} m.",
+  "name": "Super Incendiary Bomb",
+  "name_de": "Super-Brandbombe",
+  "nums": [
+   "110532"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11054",
+  "description": "Decreases Melting Point's range by {0} but allows Melting Point to fire {1} rays that each deal {2}% of their original damage",
+  "description_de": "Verringert die Reichweite von Schmelzpunkt um {0}, ermöglicht es Schmelzpunkt aber, {1} Strahlen abzufeuern, die jeweils {2} % ihres ursprünglichen Schadens verursachen.",
+  "name": "Super Spread",
+  "name_de": "Superstreuung",
+  "nums": [
+   "11054"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110542",
+  "description": "Launches {1} electromagnetic shots at the enemy every {0}s. Each electromagnetic shot deals {2} damage to the Energy Shield, slows all hit units, and disables their Tech for {3}s. Electromagnetic shots have a range of {4}m",
+  "description_de": "Schießt alle {0} Sek. {1} elektromagnetische Schüsse auf den Gegner ab. Jeder elektromagnetische Schuss fügt dem Energieschild {2} Schaden zu, verlangsamt alle getroffenen Einheiten und schaltet ihre Technik für {3} Sek. aus. Elektromagnetische Schüsse haben eine Reichweite von {4} m.",
+  "name": "Super Electromagnetic Bomb",
+  "name_de": "Elektromagnetische Superbombe",
+  "nums": [
+   "110542",
+   "110642"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11055",
+  "description": "Launches {0} Smoke Bombs every {1}s.",
+  "description_de": "Schießt alle {1} Sek. {0} Rauchbomben.",
+  "name": "Smoke Bomb Launching",
+  "name_de": "Rauchbombenwurf",
+  "nums": [
+   "11055",
+   "11061"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110551",
+  "description": "When there are multiple enemies nearby, Rhino attacks them with a whirlwind, dealing {0} times the damage of Rhino's ATK over a long time.",
+  "description_de": "Wenn mehrere Gegner in der Nähe sind, greift Rhino sie mit einem Wirbelwind an, der über einen langen Zeitraum das {0}-Fache des Schadens von Rhinos ANG verursacht.",
+  "name": "Super Whirlwind",
+  "name_de": "Super-Wirbelwind",
+  "nums": [
+   "110551"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1106",
+  "description": "Launches {1} electromagnetic shots at the enemy every {0}s. Each electromagnetic shot deals {2} damage to the Energy Shield, slows all hit units, and disables their Tech for {3}s. Electromagnetic shots have a range of {4}m",
+  "description_de": "Schießt alle {0} Sek. {1} elektromagnetische Schüsse auf den Gegner ab. Jeder elektromagnetische Schuss fügt dem Energieschild {2} Schaden zu, verlangsamt alle getroffenen Einheiten und schaltet ihre Technik für {3} Sek. aus. Elektromagnetische Schüsse haben eine Reichweite von {4} m.",
+  "name": "Electromagnetic Barrage",
+  "name_de": "Elektromagnetisches Sperrfeuer",
+  "nums": [
+   "1106",
+   "115006"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110611",
+  "description": "Installs two Super Overlord Artilleries that have a range of {0} for the Overlord. They attack once every {1}s to deal {2} damage. Damage increases by {2} per unit Rank increased.",
+  "description_de": "Installiert zwei Super-Overlord-Artillerien, die für den Overlord eine Reichweite von {0} haben. Sie greifen alle {1} Sek. mit {2} Schaden an. Der Schaden erhöht sich um {2} pro erhöhtem Einheitenrang.",
+  "name": "Super Overlord Artillery",
+  "name_de": "Super-Overlord-Artillerie",
+  "nums": [
+   "110611"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110641",
+  "description": "Increases the range of Experimental Hacker by {0}m and allows it to fire {1} Control Beams that each has {2}% of their original control efficiency.",
+  "description_de": "Erhöht die Reichweite des experimentellen Hackers um {0} m und erlaubt ihm, {1} Kontrollstrahlen abzufeuern, die jeweils büer {2} % ihrer ursprünglichen Kontrolleffizienz verfügen.",
+  "name": "Super Multi Control",
+  "name_de": "Super-Multi-Kontrolle",
+  "nums": [
+   "110641"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11068",
+  "description": "Launches {0} Acid Bombs every {1}s.",
+  "description_de": "Schießt alle {1} Sek. {0} Säurebomben.",
+  "name": "Acid Bomb Launching",
+  "name_de": "Säurebombenwurf",
+  "nums": [
+   "11068"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "110681",
+  "description": "Increases the number of Experimental Wraith's floating cannons from 4 to {1}.",
+  "description_de": "Erhöht die Anzahl der schwebenden Kanonen des Experimentellen Geistes von 4 auf {1}.",
+  "name": "Floating Artillery Array",
+  "name_de": "Schwebende Artillerieanlage",
+  "nums": [
+   "110681"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1107",
+  "description": "Decreases Melting Point's range by {0} but allows Melting Point to fire {1} rays that each deal {2}% of their original damage",
+  "description_de": "Verringert die Reichweite von Schmelzpunkt um {0}, ermöglicht es Schmelzpunkt aber, {1} Strahlen abzufeuern, die jeweils {2} % ihres ursprünglichen Schadens verursachen.",
+  "name": "Energy Diffraction",
+  "name_de": "Energiebeugung",
+  "nums": [
+   "1107",
+   "115007"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11070",
+  "description": "Launches {1} missiles at aerial targets every {0}s, each dealing {2} damage (damage increases by {2} for each level up) with a range of {3}m.",
+  "description_de": "Schießt alle {0} Sek. {1} Raketen mit einer Reichweite von {3} m auf Luftziele, die {2} Schaden verursachen (der Schaden erhöht sich für jedes neue Level um {2}).",
+  "name": "Anti-Air Missile",
+  "name_de": "Luftabwehrrakete",
+  "nums": [
+   "11070"
+  ],
+  "kind": "Ziel Luft/Boden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11072",
+  "description": "Launches {1} homing missiles at distant enemies every {0}s, each dealing {2} damage (damage increases by {2} for each level up) with a range of {4}m to {3}m.",
+  "description_de": "Schießt alle {0} Sek. {1} Lenkraketen mit einer Reichweite von {4} m bis {3} m auf entfernte Ziele, die {2} Schaden verursachen (der Schaden erhöht sich für jedes neue Level um {2}).",
+  "name": "Super Homing Missile",
+  "name_de": "Super-Lenkrakete",
+  "nums": [
+   "11072"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1108",
+  "description": "Install two ground-only cannons that have a range of {0} for the Overlord. The cannons attack every {1}s to deal {2} damage. Damage increases by {2} per unit Rank increased",
+  "description_de": "Installiere zwei Bodenkanonen mit einer Reichweite von {0} für den Overlord. Die Kanonen greifen alle {1} Sek. an und verursachen {2} Schaden. Der Schaden erhöht sich um {2} pro erhöhtem Einheitenrang.",
+  "name": "Overlord Artillery",
+  "name_de": "Overlord-Artillerie",
+  "nums": [
+   "1108",
+   "115008"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "1109",
+  "description": "When there are multiple enemies nearby, Rhino attacks them with a whirlwind, dealing {0} times the damage of Rhino's ATK over a long time.",
+  "description_de": "Wenn mehrere Gegner in der Nähe sind, greift Rhino sie mit einem Wirbelwind an, der über einen langen Zeitraum das {0}-Fache des Schadens von Rhinos ANG verursacht.",
+  "name": "Whirlwind",
+  "name_de": "Wirbelwind",
+  "nums": [
+   "1109",
+   "115009"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11400101",
+  "description": "Equips {1} additional laser weapon on the left, right, and rear sides of the unit. All laser beams deal {2}% of the original damage.",
+  "description_de": "Rüste {1} zusätzliche Laserwaffe an der linken, rechten und hinteren Seite der Einheit aus. Alle Laserstrahlen verursachen {2}% des ursprünglichen Schadens.",
+  "name": "Laser Trial",
+  "name_de": "Laserversuch",
+  "nums": [
+   "11400101",
+   "11520301"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11400102",
+  "description": "Reduces range by {0}, but fires {1} additional laser beams. Each beam deals {2}% of its original damage.",
+  "description_de": "Reduziert die Reichweite um {0}, feuert aber {1} zusätzliche Laserstrahlen ab. Jeder Strahl verursacht {2}% seines ursprünglichen Schadens.",
+  "name": "Hyper Diffraction",
+  "name_de": "Hyperbeugung",
+  "nums": [
+   "11400102",
+   "11520302"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ExtraWeaponTechnologyData",
+  "num": "11400103",
+  "description": "Every {0} seconds, fires {1} missiles with a range of {3} and a splash radius of {4}. Each missile deals {2} damage, increasing by {2} per unit rank.",
+  "description_de": "Feuert alle {0} Sekunden {1} Raketen mit einer Reichweite von {3} und einem Spritzradius von {4} ab. Jede Rakete verursacht {2} Schaden, der sich pro Einheitenrang um {2} erhöht.",
+  "name": "Barrage Trial",
+  "name_de": "Barrage-Prozess",
+  "nums": [
+   "11400103",
+   "11520303"
+  ],
+  "kind": "Flächenschaden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "FireIntensifyTechnologyData",
+  "num": "812",
+  "description": "Decreases range by {3}, the unit's attacks will ignite an area of {1}m for {0}s, dealing {2} damage per second. Allied forces are vulnerable to this damage.",
+  "description_de": "Reichweite um {3} verringert. Angriffe der Einheit entzünden einen Bereich von {1} m für {0} Sek. und verursachen {2} Schaden pro Sekunde. Verbündete sind gegen diesen Schaden nicht immun.",
+  "name": "Incendiary Bomb",
+  "name_de": "Brandbombe",
+  "nums": [
+   "812"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "FireIntensifyTechnologyData",
+  "num": "819",
+  "description": "The unit's attacks will ignite an area of {1}m for {0}s, dealing {2} damage per second. Allied forces are vulnerable to this damage.",
+  "description_de": "Die Angriffe der Einheit entzünden einen Bereich von {1} m für {0} Sek. und verursachen {2} Schaden pro Sekunde. Verbündete sind durch diesen Schaden verwundbar.",
+  "name": "Incendiary Bomb",
+  "name_de": "Brandbombe",
+  "nums": [
+   "819",
+   "85012",
+   "85019",
+   "863",
+   "866"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "FireIntensifyTechnologyData",
+  "num": "820",
+  "description": "Decreases HP by {3}%, attacks will ignite an area of {0}m around the target. The area burns for {1}s, dealing {2} damage per second.",
+  "description_de": "TP um {3} % verringert. Angriffe entzünden einen Bereich von {0} m um das Ziel herum. Der Bereich brennt für {1} Sek. und verursacht {2} Schaden pro Sekunde.",
+  "name": "Napalm",
+  "name_de": "Napalm",
+  "nums": [
+   "820"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "FireIntensifyTechnologyData",
+  "num": "85020",
+  "description": "Attacks will ignite an area of {0}m around the target. The area burns for {1}s, dealing {2} damage per second.",
+  "description_de": "Die Angriffe entzünden einen Bereich von {0} m um das Ziel herum. Der Bereich brennt für {1} Sek. und verursacht {2} Schaden pro Sekunde.",
+  "name": "Napalm",
+  "name_de": "Napalm",
+  "nums": [
+   "85020"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "FireIntensifyTechnologyData",
+  "num": "870",
+  "description": "Attacks will ignite an area of {0}m around the target. The area burns for {1}s, dealing {2} damage per second.",
+  "description_de": "Die Angriffe entzünden einen Bereich von {0} m um das Ziel herum. Der Bereich brennt für {1} Sek. und verursacht {2} Schaden pro Sekunde.",
+  "name": "Super Napalm",
+  "name_de": "Super-Napalm",
+  "nums": [
+   "870"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "FlyTechData",
+  "num": "4418",
+  "description": "Wraith becomes a ground unit. It can no longer attack air targets, but its Attack Range increases by {0}, and its attack interval increases by {1} seconds.",
+  "description_de": "Wraith wird eine Bodeneinheit. Es kann keine Luftziele mehr angreifen, aber seine Angriffsreichweite erhöht sich um {0} und sein Angriffsintervall erhöht sich um {1} Sekunden.",
+  "name": "Land Cruiser",
+  "name_de": "Landkreuzer",
+  "nums": [
+   "4418",
+   "445018"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "FlyTechData",
+  "num": "4430",
+  "description": "Void Eye transforms into a flying unit that can attack air and its movement speed is increased by {1}, but its range is reduced by {0}.",
+  "description_de": "Void Eye verwandelt sich in eine fliegende Einheit, die Luft angreifen kann. Ihre Bewegungsgeschwindigkeit wird um {1} erhöht, aber ihre Reichweite wird um {0} reduziert.",
+  "name": "Aerial Mode",
+  "name_de": "Luftmodus",
+  "nums": [
+   "4430"
+  ],
+  "kind": "Ziel Luft/Boden, wird Lufteinheit"
+ },
+ {
+  "table": "FlyTechData",
+  "num": "445030",
+  "description": "Void Eye becomes a flying unit capable of attacking air, movement speed increased by {1}",
+  "description_de": "Leeres Auge wird zu einer fliegenden Einheit, die Luftziele angreifen kann, Bewegungsgeschwindigkeit um {1} erhöht.",
+  "name": "Aerial Mode",
+  "name_de": "Luftmodus",
+  "nums": [
+   "445030"
+  ],
+  "kind": "Ziel Luft/Boden, wird Lufteinheit"
+ },
+ {
+  "table": "IgnoreBuffEffectTechnologyData",
+  "num": "2505",
+  "description": "Increases HP by {0}% and grants immunity to slow",
+  "description_de": "Erhöht die TP um {0} % und gewährt Immunität gegen Verlangsamung.",
+  "name": "Power Armor",
+  "name_de": "Macht-Rüstung",
+  "nums": [
+   "2505",
+   "255005"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "IgnoreBuffEffectTechnologyData",
+  "num": "2560",
+  "description": "Increases HP by {0}% and grants immunity to slow",
+  "description_de": "Erhöht die TP um {0} % und gewährt Immunität gegen Verlangsamung.",
+  "name": "Super Power Armor",
+  "name_de": "Super-Macht-Rüstung",
+  "nums": [
+   "2560"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "InterceptMissileTechnologyData",
+  "num": "3307",
+  "description": "Try to intercept enemy missiles within {0}m (Battlefield Powers cannot be intercepted), continuous interception for a long time will lead to a decrease in interception efficiency. Interception efficiency is independent of Mustang's ATK and Rank.",
+  "description_de": "Versucht, feindliche Raketen im Umkreis von {0} m abzufangen (Schlachtfeldfähigkeiten können nicht abgefangen werden). Kontinuierliches Abfangen über einen längeren Zeitraum führt zu einer Verringerung der Abfangeffizienz. Die Abfangeffizienz ist unabhängig von ANG und Rang des Mustangs.",
+  "name": "Missile Interceptor",
+  "name_de": "Raketenabfangjäger",
+  "nums": [
+   "3307",
+   "335007"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "InterceptMissileTechnologyData",
+  "num": "3317",
+  "description": "Try to intercept enemy missiles within {0}m (Battlefield Powers cannot be intercepted), continuous interception for a long time will lead to a decrease in interception efficiency. Interception efficiency is independent of War Factory's ATK and Rank.",
+  "description_de": "Versucht, feindliche Raketen im Umkreis von {0} m abzufangen (Schlachtfeldfähigkeiten können nicht abgefangen werden). Kontinuierliches Abfangen über einen längeren Zeitraum führt zu einer Verringerung der Abfangeffizienz. Die Abfangeffizienz ist unabhängig von ANG und Rang der Kriegsfabrik.",
+  "name": "Missile Interceptor",
+  "name_de": "Raketenabfangjäger",
+  "nums": [
+   "3317",
+   "335017"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "InterceptMissileTechnologyData",
+  "num": "3321",
+  "description": "Try to intercept enemy missiles within {0}m (Battlefield Powers cannot be intercepted). Continuous interception for a long time will lead to a decrease in interception efficiency. Interception efficiency is independent of Sabertooth's ATK and Rank.",
+  "description_de": "Versucht, feindliche Raketen im Umkreis von {0} m abzufangen (Schlachtfeldfähigkeiten können nicht abgefangen werden). Kontinuierliches Abfangen über einen längeren Zeitraum führt zu einer Verringerung der Abfangeffizienz. Die Abfangeffizienz ist unabhängig von ANG und Rang des Säbelzahns.",
+  "name": "Missile Interceptor",
+  "name_de": "Raketenabfangjäger",
+  "nums": [
+   "3321",
+   "335021"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "InterceptMissileTechnologyData",
+  "num": "3326",
+  "description": "Try to intercept enemy missiles within {0}m (Battlefield Powers cannot be intercepted), continuous interception for a long time will lead to a decrease in interception efficiency. Interception efficiency is independent of Farseer's ATK and Rank.",
+  "description_de": "Versucht, feindliche Raketen im Umkreis von {0} m abzufangen (Schlachtfeldfähigkeiten können nicht abgefangen werden). Kontinuierliches Abfangen über einen längeren Zeitraum führt zu einer Verringerung der Abfangeffizienz. Die Abfangeffizienz ist unabhängig von ANG und Rang des Weitblickers.",
+  "name": "Missile Interceptor",
+  "name_de": "Raketenabfangjäger",
+  "nums": [
+   "3326",
+   "335026"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "InterceptMissileTechnologyData",
+  "num": "3371",
+  "description": "Try to intercept enemy missiles within {0}m (Battlefield Powers cannot be intercepted). Interception efficiency remains constant. Interception efficiency is independent of Sabertooth's ATK and Rank.",
+  "description_de": "Versucht, feindliche Raketen im Umkreis von {0} m abzufangen (Schlachtfeldfähigkeiten können nicht abgefangen werden). Die Abfangeffizienz bleibt konstant. Die Abfangeffizienz ist unabhängig von ANG und Rang des Säbelzahns.",
+  "name": "Super Missile Interceptor",
+  "name_de": "Super-Raketenabfangjäger",
+  "nums": [
+   "3371"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "IterationHitDamageTechData",
+  "num": "4027",
+  "description": "Decreases Raiden's range by {2}, the lightning bolts it fires will jump to other enemies within {0} radius after hitting the enemy, dealing {1}% damage.",
+  "description_de": "Verringert Raidens Reichweite um {2}. Die von ihm abgefeuerten Blitze springen auf andere Gegner im Umkreis von {0}, nachdem sie den Feind getroffen haben, und verursachen {1}% Schaden.",
+  "name": "Chain",
+  "name_de": "Kette",
+  "nums": [
+   "4027",
+   "405027"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "KillExplosionTechData",
+  "num": "5322",
+  "description": "Units destroyed by the Typhoon explode violently, dealing {1} damage to all units within a {0}m radius.",
+  "description_de": "Durch den Taifun zerstörte Einheiten explodieren heftig und fügen allen Einheiten in einem Umkreis von {0} m {1} Schaden zu.",
+  "name": "Wreckage Detonation",
+  "name_de": "Detonation von Wrackteilen",
+  "nums": [
+   "5322",
+   "535022"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "LaserIntensifyTechData",
+  "num": "5408",
+  "description": "Steel Ball's maximum ATK is reduced by {0}%, and ATK increase speed is increased by {1}%",
+  "description_de": "Der maximale Angriff von Stahlkugel wird um {0}% reduziert, und die Angriffssteigerungsgeschwindigkeit wird um {1}% erhöht.",
+  "name": "Pulse Compression",
+  "name_de": "Pulskompression",
+  "nums": [
+   "5408"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "LaserIntensifyTechData",
+  "num": "545008",
+  "description": "Steel Ball's Max ATK is reduced by {0}%, and ATK increase speed is increased by {1}%",
+  "description_de": "Der Max. ANG von Stahlkugel wird um {0}% verringert, und die ANG-Erhöhungsgeschwindigkeit wird um {1}% erhöht.",
+  "name": "Pulse compression",
+  "name_de": "Pulskompression",
+  "nums": [
+   "545008"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "LifeBuffTechnologyData",
+  "num": "15055",
+  "description": "Experimental Rhino unleashes an Electromagnetic Impact when their HP is below {0}%, disabling Tech and decreasing the movement speed and the ATK of nearby enemies within 8s.",
+  "description_de": "Der experimentelle Rhino läst einen elektromagnetischen Aufprall aus, wenn seine TP unter {0} % fallen. Dadurch werden innerhalb von 8 Sek. die Technik von Feinden in der Nähe deaktiviert und ihre Bewegungsgeschwindigkeit und ihr ANG verringert.",
+  "name": "Stress Response",
+  "name_de": "Stressreaktion",
+  "nums": [
+   "15055"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "LifestealTechnologyData",
+  "num": "304",
+  "description": "Increases HP by {0}% and converts damage dealt to HP",
+  "description_de": "Erhöht die TP um {0} % und wandelt erlittenen Schaden in TP um.",
+  "name": "Energy Absorption",
+  "name_de": "Energieabsorption",
+  "nums": [
+   "304",
+   "308",
+   "32001",
+   "330",
+   "3400101",
+   "35004",
+   "35008",
+   "35030",
+   "35201",
+   "3520301"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "LifestealTechnologyData",
+  "num": "357",
+  "description": "Increases HP by {0}% and converts damage dealt to HP",
+  "description_de": "Erhöht die TP um {0} % und wandelt erlittenen Schaden in TP um.",
+  "name": "Super Energy Absorption",
+  "name_de": "Super-Energieabsorption",
+  "nums": [
+   "357"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MeleeModeTechData",
+  "num": "5532",
+  "description": "Equips powerful melee weaponry, but cannot carry spare ammo. The rifle magazine holds {0} rounds. Upon ammo depletion, the Centurion switches to melee mode and charges at the enemy: Movement Speed increases by {5}, HP increase by {1}%,  ATK increases by {2}%, Attack Interval increases by {3} seconds, and attacks deal {4}m Splash Damage.",
+  "description_de": "Rüstet mächtige Nahkampfwaffen aus, kann jedoch keine Ersatzmunition tragen. Das Gewehrmagazin fasst {0} Schuss. Bei Munitionserschöpfung wechselt Zenturio in den Nahkampfmodus und stürmt auf den Feind zu: Bewegungsgeschwindigkeit erhöht sich um {5}, LP erhöhen sich um {1}%,  ANG erhöht sich um {2}%, Angriffsintervall erhöht sich um {3} Sekunden, und Angriffe verursachen {4}m Flächenschaden.",
+  "name": "Melee Mode",
+  "name_de": "Nahkampfmodus",
+  "nums": [
+   "5532",
+   "555032"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "MobilityIntensifyTechnologyData",
+  "num": "1606",
+  "description": "Increases Wasp's movement speed by {0} and allows Wasp to be freely repositioned during the deployment phase of every round",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit der Wespe um {0} und ermöglicht es, die Wespe in der Planungsphase jeder Runde frei zu positionieren.",
+  "name": "Jump Drive",
+  "name_de": "Sprungantrieb",
+  "nums": [
+   "1606",
+   "165006"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MobilityIntensifyTechnologyData",
+  "num": "1611",
+  "description": "Increases Overlord's movement speed by {0} and allows Overlord to be freely repositioned during the deployment phase of every round",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit des Overlord um {0} und ermöglicht es, den Overlord in der Planungsphase jeder Runde frei zu positionieren.",
+  "name": "Jump Drive",
+  "name_de": "Sprungantrieb",
+  "nums": [
+   "1611",
+   "165011"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MobilityIntensifyTechnologyData",
+  "num": "1616",
+  "description": "Increases Phoenix's movement speed by {0} and allows Phoenix to be freely repositioned during the deployment phase of every round",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit des Phoenix um {0} und ermöglicht es, Phoenix in der Planungsphase jeder Runde frei zu positionieren.",
+  "name": "Jump Drive",
+  "name_de": "Sprungantrieb",
+  "nums": [
+   "1616",
+   "165016"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MobilityIntensifyTechnologyData",
+  "num": "1629",
+  "description": "Increases Abyss's movement speed by {0} and allows Abyss to be freely repositioned during the deployment phase of every round",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit von Abyss um {0} und ermöglicht es, Abyss während der Einsatzphase jeder Runde frei neu zu positionieren",
+  "name": "Jump Drive",
+  "name_de": "Sprungantrieb",
+  "nums": [
+   "1629",
+   "165029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MoveAbilityAttackIntensifyTechData",
+  "num": "3823",
+  "description": "Sandworms emerge from the ground faster, and their first attack after emerging is stronger: ATK increased by {0}%, splash range increased by {1}m.",
+  "description_de": "Sandwürmer tauchen schneller aus dem Boden auf und ihr erster Angriff nach dem Auftauchen ist stärker: Die ANG wurde um {0} % erhöht, die Spritzwasserreichweite um {1} m erhöht.",
+  "name": "Strike",
+  "name_de": "Schlag",
+  "nums": [
+   "3823",
+   "385023"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "MoveAbilityDynamicTechData",
+  "num": "3925",
+  "description": "Increases Phantom Ray's ATK by {1}%, HP by {2}%, and it is cloaked by default. Phantom Ray cannot be targeted by the enemy while cloaked, but will reveal itself when attacking.",
+  "description_de": "Erhöht die ATK von Phantom Ray um {1}%, seine HP um {2}% und er ist standardmäßig getarnt. Phantom Ray kann nicht getarnt vom Feind ins Visier genommen werden, zeigt sich aber, wenn er angreift.",
+  "name": "Stealth Cloak",
+  "name_de": "Tarnmantel",
+  "nums": [
+   "3925",
+   "395025"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MoveAbilityRangeItemTechData",
+  "num": "3723",
+  "description": "When Sandworm emerges out of the ground, creates a sandstorm with a radius of {0}m for {1} seconds. Units in the sandstorm: Range is reduced by {2}% and damage taken from ranged attacks is reduced by {3}%",
+  "description_de": "Wenn der Sandwurm aus dem Boden auftaucht, erzeugt er für {1} Sekunden einen Sandsturm mit einem Radius von {0} m. Einheiten im Sandsturm: Reichweite wird um {2} % reduziert und der Schaden durch Fernkampfangriffe wird um {3} % reduziert.",
+  "name": "Sandstorm",
+  "name_de": "Sandsturm",
+  "nums": [
+   "3723",
+   "375023",
+   "3773"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "MoveAbilitySummonTechData",
+  "num": "3623",
+  "description": "Each time Sandworm emerges from the ground, creates {0} Larvas of the same Rank as Sandworm to continue fighting.",
+  "description_de": "Jedes Mal, wenn der Sandwurm aus dem Boden auftaucht, erschafft er {0} Larven mit demselben Rang wie der Sandwurm, die in den Kampf einsteigen.",
+  "name": "Replicate",
+  "name_de": "Replizieren",
+  "nums": [
+   "3623",
+   "365023"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MoveAbilitySummonTechData",
+  "num": "3673",
+  "description": "Each time Experimental Sandworm emerges from the ground, creates {0} Larvas.",
+  "description_de": "Jedes Mal, wenn der Experimentelle Sandwurm aus dem Boden auftaucht, entstehen {0} Larven.",
+  "name": "Super Replicate",
+  "name_de": "Super-Replizieren",
+  "nums": [
+   "3673"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "701",
+  "description": "Each attack fires {0} shells in succession but increases reload time by {1}%",
+  "description_de": "Jeder Angriff feuert {0} Granaten nacheinander ab, erhöht aber die Nachladezeit um {1} %.",
+  "name": "Doubleshot",
+  "name_de": "Doppelschuss",
+  "nums": [
+   "701",
+   "719",
+   "721",
+   "75001",
+   "75019",
+   "75021"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "702",
+  "description": "Each attack fires {0} bullets in succession but increases reload time by {1}%",
+  "description_de": "Jeder Angriff feuert {0} Kugeln nacheinander ab, erhöht aber die Nachladezeit um {1} %.",
+  "name": "Doubleshot",
+  "name_de": "Doppelschuss",
+  "nums": [
+   "702",
+   "75002"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "72002",
+  "description": "Increases splash range by {2}, and each attack fires {0} shells in succession, and shells spread out over a wide area, but increases attack interval by {1}%.",
+  "description_de": "Erhöht die Spritzreichweite um {2} und bei jedem Angriff werden nacheinander {0} Granaten abgefeuert. Die Granaten verteilen sich über ein weites Gebiet, erhöht jedoch das Angriffsintervall um {1}%.",
+  "name": "Saturation Bombardment",
+  "name_de": "Sättigungsbombardierung",
+  "nums": [
+   "72002",
+   "75202"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "725",
+  "description": "Each attack launches {1} missiles, but increases reload time by {0}%.",
+  "description_de": "Bei jedem Angriff werden {1} Raketen abgefeuert, die Nachladezeit wird jedoch um {0}% erhöht.",
+  "name": "Burst Mode",
+  "name_de": "Burst-Modus",
+  "nums": [
+   "725",
+   "726",
+   "75025",
+   "75026"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "730",
+  "description": "Fires a barrage of {0} laser beams per attack, but increases attack interval by {1}%.",
+  "description_de": "Feuert ein Sperrfeuer von {0} Laserstrahlen pro Angriff ab, erhöht aber das Angriffsintervall um {1}%.",
+  "name": "Doubleshot",
+  "name_de": "Doppelschuss",
+  "nums": [
+   "730",
+   "75030"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "7400201",
+  "description": "Fires {0} additional missiles per volley.",
+  "description_de": "Feuert {0} zusätzliche Raketen pro Salve ab.",
+  "name": "Magazine Expansion",
+  "name_de": "Erweiterung des Magazins",
+  "nums": [
+   "7400201",
+   "7520301"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "751",
+  "description": "Each attack fires {0} shells in succession and decreases reload time by {1}%",
+  "description_de": "Jeder Angriff feuert {0} Granaten nacheinander ab und reduziert die Nachladezeit um {1} %.",
+  "name": "Super Doubleshot",
+  "name_de": "Super-Doppelschuss",
+  "nums": [
+   "751",
+   "765"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "MultiAttackTechnologyData",
+  "num": "771",
+  "description": "Each attack fires {0} shells in succession",
+  "description_de": "Jeder Angriff feuert {0} Granaten nacheinander ab.",
+  "name": "Super Doubleshot",
+  "name_de": "Super-Doppelschuss",
+  "nums": [
+   "771"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "RVORadiusChangeTechnologyTechData",
+  "num": "3510",
+  "description": "Decreases HP by {0}%, Crawlers will move in a looser formation.",
+  "description_de": "TP um {0} % verringert. Kriecher bewegen sich in einer lockereren Formation.",
+  "name": "Loose Formation",
+  "name_de": "Lockere Formation",
+  "nums": [
+   "3510",
+   "355010"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "ReactiveArmorTechData",
+  "num": "5122",
+  "description": "Reduces incoming damage by {0}%, up to {1} times.",
+  "description_de": "Reduziert den erlittenen Schaden um {0}%, bis zu {1} mal.",
+  "name": "Reactive Armor",
+  "name_de": "Reaktive Panzerung",
+  "nums": [
+   "5122",
+   "5132",
+   "515022",
+   "515032"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "RebirthTechnologyData",
+  "num": "2916",
+  "description": "The cockpit of a destroyed Phoenix will follow behind the nearest Phoenix of Our Forces and will be fully restored in {0}s. This effect can only be triggered {1} times per battle",
+  "description_de": "Das Cockpit eines zerstörten Phoenix folgt dem nächstgelegenen Phoenix unserer Streitkräfte und wird in {0} Sek. vollständig wiederhergestellt. Dieser Effekt kann nur {1}-mal pro Kampf ausgelöst werden.",
+  "name": "Quantum Reassembly",
+  "name_de": "Quantenzusammenbau",
+  "nums": [
+   "2916",
+   "295016"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "RebirthTechnologyData",
+  "num": "2922",
+  "description": "When destroyed, the Typhoon begins field reassembly and returns to combat in {0} seconds with 100% HP. Limited to {1} activation per round.",
+  "description_de": "Wenn der Taifun zerstört wird, setzt er sich wieder zusammen und kehrt in {0} Sekunden mit 100% HP in den Kampf zurück. Limitiert auf {1} Aktivierung pro Runde.",
+  "name": "Field Reassembly",
+  "name_de": "Remontage vor Ort",
+  "nums": [
+   "2922",
+   "295022"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "RebirthTechnologyData",
+  "num": "2966",
+  "description": "The cockpit of a destroyed Experimental Phoenix will follow behind the nearest Experimental Phoenix of Our Forces and will be fully restored in {0}s. This effect can only be triggered {1} times per battle",
+  "description_de": "Das Cockpit eines zerstörten experimentellen Phoenix folgt dem nächstgelegenen experimentellen Phoenix unserer Streitkräfte und wird in {0} Sek. vollständig wiederhergestellt. Dieser Effekt kann nur {1}-mal pro Kampf ausgelöst werden.",
+  "name": "Super Quantum Reassembly",
+  "name_de": "Super-Quantenzusammenbau",
+  "nums": [
+   "2966"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "RecoveryTechData",
+  "num": "5222",
+  "description": "Every {1} seconds, restores {2} HP to the Typhoon and friendly units within {0} meters. The healing amount increases by {3} per level.",
+  "description_de": "Stellt alle {1} Sekunden {2} TP des Taifuns und verbündeter Einheiten im Umkreis von {0} Metern wieder her. Die Heilmenge erhöht sich pro Level um {3}.",
+  "name": "Maintenance Array",
+  "name_de": "Wartungs-Array",
+  "nums": [
+   "5222",
+   "525022"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SearchTargetModifyTechnologyData",
+  "num": "2404",
+  "description": "[Takes effect at Melting Point Rank 2] When switching targets, lock-on priority is given to the unit with the highest HP in range",
+  "description_de": "[Wirkt ab Schmelzpunkt Rang 2] Beim Zielwechsel hat die Einheit mit den höchsten TP in Reichweite Vorrang beim Anvisieren.",
+  "name": "Fortified Target Lock",
+  "name_de": "Verstärktes Ziel erfassen",
+  "nums": [
+   "2404",
+   "245004"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SearchTargetModifyTechnologyData",
+  "num": "2408",
+  "description": "When it switches the target, lock-on priority is given to the enemy unit with the highest HP in range",
+  "description_de": "Wenn das Ziel gewechselt wird, hat die feindliche Einheit mit den höchsten TP in Reichweite Vorrang beim Anvisieren.",
+  "name": "Fortified Target Lock",
+  "name_de": "Verstärktes Ziel erfassen",
+  "nums": [
+   "2408",
+   "2427",
+   "245008",
+   "245027"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SearchTargetModifyTechnologyData",
+  "num": "2428",
+  "description": "When it switches the target, lock-on priority is given to the enemy unit with the lowest HP in range",
+  "description_de": "Wenn es das Ziel wechselt, wird der gegnerischen Einheit mit den niedrigsten HP in Reichweite Priorität eingeräumt.",
+  "name": "Light Unit Targeting",
+  "name_de": "Zielerfassung von Lichteinheiten",
+  "nums": [
+   "2428",
+   "245028"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SearchTargetModifyTechnologyData",
+  "num": "2452",
+  "description": "When it switches the target, lock-on priority is given to the enemy unit with the highest HP in range",
+  "description_de": "Wenn das Ziel gewechselt wird, hat die feindliche Einheit mit den höchsten TP in Reichweite Vorrang beim Anvisieren.",
+  "name": "Super Fortified Target Lock",
+  "name_de": "Super-verstärktes Ziel erfassen",
+  "nums": [
+   "2452"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SearchTargetModifyTechnologyData",
+  "num": "2458",
+  "description": "Increases attack range by {0}. When it switches the target, lock-on priority is given to the enemy unit with the highest HP in range",
+  "description_de": "Erhöht die Angriffsreichweite um {0}. Wenn das Ziel gewechselt wird, hat die feindliche Einheit mit den höchsten TP in Reichweite Vorrang beim Anvisieren.",
+  "name": "Super Fortified Target Lock",
+  "name_de": "Super-verstärktes Ziel erfassen",
+  "nums": [
+   "2458"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SecondaryDamageIntensifyTechData",
+  "num": "4515",
+  "description": "Decreases Arclight's Attack Range by {0}. Attacks generate a shockwave, dealing {2} damage to enemies within {1}m of the target.",
+  "description_de": "Verringert die Angriffsreichweite von Arclight um {0}. Angriffe erzeugen eine Schockwelle, die Gegnern im Umkreis von {1} m um das Ziel {2} Schaden zufügt.",
+  "name": "Shockwave",
+  "name_de": "Schockwelle",
+  "nums": [
+   "4515"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SecondaryDamageIntensifyTechData",
+  "num": "4531",
+  "description": "Attacks inflict Electromagnetic interference on the target and enemies within a {0}m radius.",
+  "description_de": "Angriffe fügen dem Ziel und Feinden in einem Umkreis von {0} m elektromagnetische Störungen zu.",
+  "name": "Electromagnetic Cloud",
+  "name_de": "Elektromagnetische Wolke",
+  "nums": [
+   "4531",
+   "455031"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SecondaryDamageIntensifyTechData",
+  "num": "455015",
+  "description": "When attacking, generates a shockwave, dealing {2} damage to enemies within {1} meters around the target.",
+  "description_de": "Beim Angriff wird eine Schockwelle erzeugt, die Feinden innerhalb von {1} Metern um das Ziel {2} Schaden zufügt.",
+  "name": "Shockwave",
+  "name_de": "Schockwelle",
+  "nums": [
+   "455015"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SiegeModeTechData",
+  "num": "4721",
+  "description": "Deploys a trench at the start of battle. While entrenched, Sabertooth cannot move, HP increases by {0}%, Range increases by {2}, and Attack Interval decreases by {1}%. If no enemies are in range for {3} seconds, Sabertooth will leave and destroy the trench.",
+  "description_de": "Stellt zu Beginn der Schlacht einen Graben auf. Solange der Säbelzahn verschanzt ist, kann er sich nicht bewegen, HP erhöhen sich um {0}%, die Reichweite erhöht sich um {2} und das Angriffsintervall verringert sich um {1}%. Wenn sich {3} Sekunden lang keine Gegner in Reichweite befinden, verlässt Säbelzahn den Graben und zerstört ihn.",
+  "name": "Field Entrenchment ",
+  "name_de": "Feldverschanzung ",
+  "nums": [
+   "4721",
+   "475021"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SiegeModeTechData",
+  "num": "4722",
+  "description": "At the start of battle, deploys a trench in place. While garrisoned, cannot move. HP increased by {0}%, range increased by {1}. If no enemies are within range for {2}s, the Typhoon leaves and destroys the trench.",
+  "description_de": "Stellt zu Beginn des Gefechts einen Graben an Ort und Stelle auf. Während der Garnison kann er sich nicht bewegen. HP um {0}% erhöht, Reichweite um {1} erhöht. Wenn sich {2} s lang keine Gegner in Reichweite befinden, verlässt der Taifun den Graben und zerstört ihn.",
+  "name": "Field Entrenchment ",
+  "name_de": "Feldverschanzung ",
+  "nums": [
+   "4722",
+   "475022"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SpawnAdvancedShieldTechData",
+  "num": "493101",
+  "description": "Accumulates energy while attacking. Every {0} attacks, deploys a shield with a radius of {1} at the current location , and increases the required attacks for the next shield by {3}. The shield has a base HP of {2}, increasing by an additional {2} HP per Vortex level.",
+  "description_de": "Sammelt beim Angriff Energie an. Bei jedem {0} Angriff wird ein Schild mit einem Radius von {1} an der aktuellen Position eingesetzt und die Anzahl der erforderlichen Angriffe für den nächsten Schild um {3} erhöht. Der Schild hat eine Basis-HP von {2}, die sich pro Vortex-Level um weitere {2} HP erhöht.",
+  "name": "Accumulator Shield",
+  "name_de": "Akkumulator-Schild",
+  "nums": [
+   "493101",
+   "495031"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "401",
+  "description": "Increases splash damage range by {0}m but decreases ATK by {1}%",
+  "description_de": "Erhöht die Reichweite des Streuschadens um {0} m, verringert aber den ANG um {1} %.",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "401",
+   "404",
+   "405",
+   "406",
+   "407",
+   "412",
+   "413",
+   "422",
+   "424",
+   "425",
+   "45001",
+   "45004",
+   "45005",
+   "45007",
+   "45012",
+   "45022"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "411",
+  "description": "Increases the splash damage range of Overlord's missiles by {0}m, but decreases ATK by {1}%",
+  "description_de": "Erhöht die Reichweite des Streuschadens der Raketen des Overlord um {0} m, verringert aber den ANG um {1} %.",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "411",
+   "45011"
+  ],
+  "kind": "Flächenschaden, Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "417",
+  "description": "Increases the splash damage range of the main guns by {0}m, but decreases ATK by {1}%",
+  "description_de": "Erhöht die Reichweite des Streuschadens der Hauptwaffen um {0} m, verringert aber den ANG um {1} %.",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "417",
+   "45017"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "418",
+  "description": "Increases the splash damage range of the floating cannon by {0}m, but decreases ATK by {1}%",
+  "description_de": "Erhöht die Reichweite des Streuschadens der schwebenden Kanone um {0} m, verringert aber den ANG um {1} %.",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "418"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "45006",
+  "description": "Increases the splash damage range of attacks by {0} meters",
+  "description_de": "Erhöht die Reichweite des Flächenschadens von Angriffen um {0} Meter",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "45006"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "45013",
+  "description": "Increases the splash damage range caused by attacks by {0} meters",
+  "description_de": "Erhöht die Reichweite des durch Angriffe verursachten Flächenschadens um {0} Meter",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "45013",
+   "45024",
+   "45025"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "45018",
+  "description": "Drone's splash damage range increased by {0} meters",
+  "description_de": "Die Reichweite des Flächenschadens der Drohne wurde um {0} Meter erhöht.",
+  "name": "High-Explosive Ammo",
+  "name_de": "Hochexplosive Munition",
+  "nums": [
+   "45018"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "456",
+  "description": "Experimental Wasp deals splash damage within {0}m on attack.",
+  "description_de": "Der experimentelle Wespe fügt beim Angriff innerhalb von {0} m Streuschaden zu.",
+  "name": "Super High-Explosive Ammo",
+  "name_de": "Hochexplosive Super-Munition",
+  "nums": [
+   "456"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "457",
+  "description": "Experimental Mustang deals splash damage within {0}m on attack.",
+  "description_de": "Der experimentelle Mustang fügt beim Angriff innerhalb von {0} m Streuschaden zu.",
+  "name": "Super High-Explosive Ammo",
+  "name_de": "Hochexplosive Super-Munition",
+  "nums": [
+   "457"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "459",
+  "description": "Experimental Fang deals splash damage within {0}m on attack.",
+  "description_de": "Der experimentelle Fang fügt beim Angriff innerhalb von {0} m Streuschaden zu.",
+  "name": "Super High-Explosive Ammo",
+  "name_de": "Hochexplosive Super-Munition",
+  "nums": [
+   "459"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "460",
+  "description": "Experimental Crawler deals splash damage within {0}m with Drill attack, and their ATK is increased by {1}%",
+  "description_de": "Der experimentelle Kriecher verursacht Streuschaden mit einem Bohrangriff innerhalb von {0} m. Sein ANG wird um {1} % erhöht.",
+  "name": "Explosive Drill",
+  "name_de": "Explosiver Bohrer",
+  "nums": [
+   "460"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "462",
+  "description": "Experimental Stormcaller deals splash damage within a range of {0}m.",
+  "description_de": "Experimenteller Sturmrufer fügt innerhalb von {0} m Streuschaden zu.",
+  "name": "Super High-Explosive Ammo",
+  "name_de": "Hochexplosive Super-Munition",
+  "nums": [
+   "462"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "SplashTechnologyData",
+  "num": "463",
+  "description": "Experimental tanks deal splash damage within a range of {0}m.",
+  "description_de": "Experimentelle Panzer fügen innerhalb von {0} m Streuschaden zu.",
+  "name": "Super High-Explosive Ammo",
+  "name_de": "Hochexplosive Super-Munition",
+  "nums": [
+   "463"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "StealthTechData",
+  "num": "503101",
+  "description": "When HP first falls below {0}%, activates Emergency Armor, resisting all damage and becoming untargetable for {1} seconds. Emergency Armor will not activate if HP reaches {2}.",
+  "description_de": "Wenn TP zum ersten Mal unter {0}% fallen, aktiviert Notfallpanzerung, widersteht jeglichem Schaden und wird {1} Sekunden lang unanvisierbar. Die Notfallpanzerung wird nicht aktiviert, wenn HP {2} erreicht.",
+  "name": "Emergency Armor",
+  "name_de": "Notfallpanzerung",
+  "nums": [
+   "503101",
+   "505031"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1201",
+  "description": "Produces {1} Fangs to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Fang-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Fang Production",
+  "name_de": "Fang-Produktion",
+  "nums": [
+   "1201",
+   "120511",
+   "120521",
+   "12059",
+   "120621",
+   "125001"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12015017",
+  "description": "Produces {1} Phoenix(es) to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Phoenix-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Phoenix Production",
+  "name_de": "Phoenix-Produktion",
+  "nums": [
+   "12015017",
+   "12017",
+   "12161"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "120153",
+  "description": "Produces {1} Marksmen to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Scharfschützen-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Marksman Production",
+  "name_de": "Scharfschützen-Produktion",
+  "nums": [
+   "120153",
+   "120522"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1201531",
+  "description": "Produces {1} Wasps to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Wespe-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Wasp Production",
+  "name_de": "Wespe-Produktion",
+  "nums": [
+   "1201531",
+   "12061"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1201532",
+  "description": "Produces {1} Wraiths to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Geist-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Wraith Production",
+  "name_de": "Geist-Produktion",
+  "nums": [
+   "1201532",
+   "12167"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1201681",
+  "description": "Produces {1} Crawlers to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Kriecher-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Crawler Production",
+  "name_de": "Kriecher-Produktion",
+  "nums": [
+   "1201681",
+   "120173",
+   "1204",
+   "120541",
+   "120622",
+   "120641",
+   "125004"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1201682",
+  "description": "Produces {1} Sledgehammer(s) to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Vorschlaghammer-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Sledgehammer Production",
+  "name_de": "Vorschlaghammer-Produktion",
+  "nums": [
+   "1201682",
+   "12035017",
+   "120642",
+   "12217"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1202",
+  "description": "At the beginning of the combat, summon {0} Fangs at the same Rank as Marksman to fight with you",
+  "description_de": "Beschwöre zu Beginn des Kampfes {0} Fangs mit demselben Rang wie der Scharfschütze, um mit dir zu kämpfen.",
+  "name": "Shooting Squad",
+  "name_de": "Schieß-Squad",
+  "nums": [
+   "1202",
+   "125002"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1202001",
+  "description": "Produces {1} Steel Ball(s) to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Stahlkugel-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Steel Ball Production",
+  "name_de": "Stahlkugel-Produktion",
+  "nums": [
+   "1202001",
+   "12025017",
+   "12054",
+   "12117"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1202002",
+  "description": "Produces {1} Mustangs to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Mustang-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Mustang Production",
+  "name_de": "Mustang-Produktion",
+  "nums": [
+   "1202002",
+   "12069",
+   "120721"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12029",
+  "description": "At the beginning of the battle, summon 1 Wraith at the same Rank as Abyss.",
+  "description_de": "Ruft zu Beginn des Kampfes 1 Geist mit demselben Rang wie Abyss herbei.",
+  "name": "Dark Companion",
+  "name_de": "Dunkler Begleiter",
+  "nums": [
+   "12029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1203",
+  "description": "At the beginning of the combat, summon {0} Marksman at the same Rank as Vulcan to fight with you",
+  "description_de": "Beschwöre zu Beginn des Kampfes {0} Scharfschützen mit demselben Rang wie Vulkan, um mit dir zu kämpfen.",
+  "name": "Best Partner",
+  "name_de": "Bester Partner",
+  "nums": [
+   "1203",
+   "125003"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12051",
+  "description": "Produces {1} Rank 3 Arclights to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Arclight-Einheit(en) Rang 3, die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Arclight Production",
+  "name_de": "Arclight-Produktion",
+  "nums": [
+   "12051"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "120512",
+  "description": "Produces {1} Arclights to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Arclight-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Arclight Production",
+  "name_de": "Arclight-Produktion",
+  "nums": [
+   "120512"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12052",
+  "description": "Produces {1} Marksmen at the same Rank as Experimental Marksman every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal alle {0} Sek. {1} Scharfschützen mit demselben Rang wie der experimentelle Scharfschütze.",
+  "name": "Super Shooting Squad",
+  "name_de": "Super-Schieß-Squad",
+  "nums": [
+   "12052"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12058",
+  "description": "Produces {1} Steel Balls at the same Rank as Experimental Steel Ball every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal alle {0} Sek. {1} Stahlkugel-Einheit(en) mit demselben Rang der experimentellen Stahlkugel.",
+  "name": "Steel Ball Production",
+  "name_de": "Stahlkugel-Produktion",
+  "nums": [
+   "12058"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12067",
+  "description": "Produces {1} Scorpions to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Skorpion-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Scorpion Production",
+  "name_de": "Skorpion-Produktion",
+  "nums": [
+   "12067",
+   "120722"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "120691",
+  "description": "Produces {1} Rhinos to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Rhino-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Rhino Production",
+  "name_de": "Rhino-Produktion",
+  "nums": [
+   "120691",
+   "12267"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1211",
+  "description": "Produces {1} Wasps to join the battle every {0}s for {2} times",
+  "description_de": "Produziert {2}-mal {1} Wespe-Einheit(en), die alle {0} Sek. dem Kampf beitritt/beitreten.",
+  "name": "Mothership",
+  "name_de": "Mutterschiff",
+  "nums": [
+   "1211",
+   "125011"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "123101",
+  "description": "At the start of battle, spawns {0} Level {3} Vortex Mirage behind itself. The Mirage has {1} HP and {2}% of a standard Vortex's ATK.",
+  "description_de": "Spawnt zu Beginn des Gefechts {0} Stufe {3} Wirbel Klon hinter sich. Der Klon hat {1} HP und {2}% der ATK eines Standart Wirbels.",
+  "name": "Electromagnetic Twin",
+  "name_de": "Elektromagnetischer Zwilling",
+  "nums": [
+   "123101",
+   "125031"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "1232",
+  "description": "At the start of battle, summons {0} Hounds of the same level as the Centurion.",
+  "description_de": "Zu Beginn des Kampfes beschwört {0} Jagdhunds derselben Stufe wie Zenturio.",
+  "name": "Summon Hounds",
+  "name_de": "Beschwöre Jagdhunds",
+  "nums": [
+   "1232",
+   "125032"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12400101",
+  "description": "Generates {0} Rank {1} Death Knell replica with no tech at battle start.",
+  "description_de": "Generiert zu Beginn des Gefechts {0} Rang {1} eine Replik des Todesknells ohne Technologie.",
+  "name": "Replication Trial",
+  "name_de": "Replikationsversuch",
+  "nums": [
+   "12400101",
+   "12520301"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12400102",
+  "description": "The replica inherits the level and tech of the original unit (excluding replication tech).",
+  "description_de": "Das Replikat erbt das Level und die Technik der Originaleinheit (ohne Replikationstechnologie).",
+  "name": "Perfect Replica",
+  "name_de": "Perfekte Replik",
+  "nums": [
+   "12400102",
+   "12520302"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12400103",
+  "description": "At the start of battle, generates {0} additional replica. The HP of all replicas is reduced by {1}%.",
+  "description_de": "Generiert zu Beginn des Gefechts {0} zusätzliche Replik. Die HP aller Repliken werden um {1}% reduziert.",
+  "name": "Mass Replication",
+  "name_de": "Massenreplikation",
+  "nums": [
+   "12400103",
+   "12520303"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12400104",
+  "description": "Increases the range of all replicas by {0}.",
+  "description_de": "Erhöht die Reichweite aller Repliken um {0}.",
+  "name": "Replica Range Extension",
+  "name_de": "Erweiterung des Replica-Sortiments",
+  "nums": [
+   "12400104",
+   "12520304"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "12400105",
+  "description": "{0} seconds after the battle starts, generates {1} additional replica.",
+  "description_de": "{0} Sekunden nach Beginn des Gefechts generiert {1} zusätzliche Replik.",
+  "name": "Reserves",
+  "name_de": "Reserven",
+  "nums": [
+   "12400105",
+   "12520305"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "125029",
+  "description": "Produces {1} Wraith every {0} seconds",
+  "description_de": "Erzeugt alle {0} Sekunden {1} Geist",
+  "name": "Dark Companion",
+  "name_de": "Dunkler Begleiter",
+  "nums": [
+   "125029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SupportUnitTechnologyData",
+  "num": "125201",
+  "description": "Produce {1} Steel Ball every {0} seconds",
+  "description_de": "Produziere {1} Stahlkugel alle {0} Sekunden",
+  "name": "Steel Ball Production",
+  "name_de": "Stahlkugel-Produktion",
+  "nums": [
+   "125201"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "SweepSkillIntensifyTechData",
+  "num": "4329",
+  "description": "Abyss's ATK increased by {0}%, and the laser now sweeps vertically.",
+  "description_de": "Die ATK von Abyss wurde um {0}% erhöht und der Laser bewegt sich jetzt vertikal.",
+  "name": "Vertical Sweep",
+  "name_de": "Vertikaler Schwung",
+  "nums": [
+   "4329",
+   "435029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10019",
+  "description": "Scorpion enters siege mode, increasing range by {0}m, but decreases ATK by {1}% and increases attack interval by {3}s, and it cannot attack enemies within {2}m around it.",
+  "description_de": "Der Skorpion aktiviert den Belagerungsmodus, wodurch die Reichweite um {0} m erhöht wird. Der ANG wird jedoch um {1} % reduziert, das Angriffsintervall um {3} Sek. erhöht und er kann Einheiten im Umkreis von {2} m nicht angreifen.",
+  "name": "Siege Mode",
+  "name_de": "Belagerungsmodus",
+  "nums": [
+   "10019",
+   "1005019"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10069",
+  "description": "Experimental Scorpion enters siege mode, increases range by {0}m, but cannot attack nearby enemies within {2}m.",
+  "description_de": "Der experimentelle Skorpion aktiviert den Belagerungsmodus, wodurch die Reichweite um {0} m erhöht wird. Er kann jedoch Feinde innerhalb von {2} m nicht angreifen.",
+  "name": "Super Siege Mode",
+  "name_de": "Super-Belagerungsmodus",
+  "nums": [
+   "10069"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10102",
+  "description": "Marksman's HP is increased by {0}%, movement speed is increased by {1}, ATK is increased by {2}%, and attacks have an area damage within {3}m, but range is reduced by {4}.",
+  "description_de": "Erhöht die TP des Scharfschützen um {0} %, die Bewegungsgeschwindigkeit um {1}, den ANG um {2} % und die Angriffe lösen Flächenschaden innerhalb von {3} m aus. Die Reichweite wird jedoch um {4} reduziert.",
+  "name": "Assault Mode",
+  "name_de": "Angriffsmodus",
+  "nums": [
+   "10102",
+   "1015002"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10131",
+  "description": "Experience gain speed increased by {0}%",
+  "description_de": "Erfahrungszuwachsgeschwindigkeit um {0}% erhöht",
+  "name": "Machine Learning",
+  "name_de": "Maschinelles Lernen",
+  "nums": [
+   "10131"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10153",
+  "description": "Increases Experimental Vulcan's HP by {0}, movement speed by {1} and splash range by {2} but decreases range by {3}",
+  "description_de": "Erhöht die TP von Experimenteller Vulkan um {0}, die Bewegungsgeschwindigkeit um {1} und die Streureichweite um {2}, verringert aber die Reichweite um {3}.",
+  "name": "Super Assault Mode",
+  "name_de": "Super-Angriffsmodus",
+  "nums": [
+   "10153"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10161",
+  "description": "Decreases Experimental Overlord's movement speed by {0} and increases range by {1} and HP by {2}%",
+  "description_de": "Reduziert die Bewegungsgeschwindigkeit des experimentellen Overlords um {0} und erhöht die Reichweite um {1} und die TP um {2} %.",
+  "name": "Aerial Stronghold",
+  "name_de": "Luftbollwerk",
+  "nums": [
+   "10161"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10201",
+  "description": "Increases attack range by {0}",
+  "description_de": "Erhöht die Angriffsreichweite um {0}.",
+  "name": "Range Enhancement",
+  "name_de": "Reichweitenerhöhung",
+  "nums": [
+   "10201",
+   "10202",
+   "10203",
+   "10204",
+   "10206",
+   "1025001",
+   "1025002",
+   "1025003",
+   "1025004",
+   "1025006"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10207",
+  "description": "Increases range by {0}",
+  "description_de": "Erhöht die Reichweite um {0}.",
+  "name": "Range Enhancement",
+  "name_de": "Reichweitenerhöhung",
+  "nums": [
+   "10207",
+   "10208",
+   "10209",
+   "10211",
+   "10212",
+   "10213",
+   "10214",
+   "10215",
+   "10216",
+   "10217",
+   "10218",
+   "10219",
+   "10220",
+   "1022001",
+   "1022002",
+   "10221",
+   "10222",
+   "10224",
+   "10225",
+   "10226",
+   "10227",
+   "10228",
+   "10229",
+   "10230",
+   "10231",
+   "10232",
+   "1025007",
+   "1025008",
+   "1025009",
+   "1025011",
+   "1025012",
+   "1025013",
+   "1025014",
+   "1025015",
+   "1025016",
+   "1025017",
+   "1025018",
+   "1025019",
+   "1025020",
+   "1025021",
+   "1025022",
+   "1025024",
+   "1025025",
+   "1025026",
+   "1025027",
+   "1025028",
+   "1025029",
+   "1025030",
+   "1025031",
+   "1025032",
+   "1025201",
+   "1025202",
+   "10254",
+   "1400101",
+   "1520301"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "102153",
+  "description": "Increases range by {0}",
+  "description_de": "Erhöht die Reichweite um {0}.",
+  "name": "Super Range Enhancement",
+  "name_de": "Super-Reichweitenerhöhung",
+  "nums": [
+   "102153",
+   "102167",
+   "102168",
+   "10253",
+   "10256",
+   "10257",
+   "10259",
+   "10261",
+   "10263",
+   "10267",
+   "10268",
+   "10270",
+   "10271",
+   "10272"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10301",
+  "description": "Decreases Fortress' attack interval by {0}% and range by {1}m",
+  "description_de": "Verringert das Angriffsintervall der Festung um {0} % und die Reichweite um {1} m.",
+  "name": "Launcher Overload",
+  "name_de": "Werfer-Überlastung",
+  "nums": [
+   "10301",
+   "1035001"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10311",
+  "description": "Decreases Overlord's attack interval by {0}% and range by {1}m",
+  "description_de": "Verringert das Angriffsintervall von Overlord um {0} % und die Reichweite um {1} m.",
+  "name": "Launcher Overload",
+  "name_de": "Werfer-Überlastung",
+  "nums": [
+   "10311",
+   "1035011"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10312",
+  "description": "The attack interval of the Stormcaller is reduced by {0}%, the range is reduced by {1}m, and the movement speed is increased by {2}",
+  "description_de": "Das Angriffsintervall des Sturmrufers wird um {0} % und die Reichweite um {1} m reduziert. Die Bewegungsgeschwindigkeit wird um {2} erhöht.",
+  "name": "Launcher Overload",
+  "name_de": "Werfer-Überlastung",
+  "nums": [
+   "10312",
+   "1035012"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10316",
+  "description": "Decreases attack interval by {0}% and range by {1}m",
+  "description_de": "Verringert das Angriffsintervall um {0} % und die Reichweite um {1} m.",
+  "name": "Launcher Overload",
+  "name_de": "Werfer-Überlastung",
+  "nums": [
+   "10316",
+   "1035016"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10317",
+  "description": "Decreases War Factory's attack interval by {0}% and range by {1}m",
+  "description_de": "Verringert das Angriffsintervall der Kriegsfabrik um {0} % und die Reichweite um {1} m.",
+  "name": "Launcher Overload",
+  "name_de": "Werfer-Überlastung",
+  "nums": [
+   "10317",
+   "1035017"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1032002",
+  "description": "Increases range by {0}, but decreases ATK by {1}%.",
+  "description_de": "Erhöht die Reichweite um {0}, verringert aber die ATK um {1}%.",
+  "name": "Extended Range Ammo",
+  "name_de": "Ammos mit erweiterter Reichweite",
+  "nums": [
+   "1032002",
+   "1035202"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10351",
+  "description": "Decreases Experimental Fortress's attack interval by {0}% and range by {1}m",
+  "description_de": "Verringert das Angriffsintervall der experimentellen Festung um {0} % und die Reichweite um {1} m.",
+  "name": "Super Launcher Overload",
+  "name_de": "Super-Werfer-Überlastung",
+  "nums": [
+   "10351"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10361",
+  "description": "Decreases Experimental Overlord's attack interval by {0}%, increases range by {1}m",
+  "description_de": "Verringert das Angriffsintervall des Experimentellen Overlords um {0} % und erhöht die Reichweite um {1} m.",
+  "name": "Super Launcher Overload",
+  "name_de": "Super-Werfer-Überlastung",
+  "nums": [
+   "10361"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10362",
+  "description": "Decreases attack interval of Experimental Stormcaller by {0}%",
+  "description_de": "Verringert das Angriffsintervall des experimentellen Sturmrufers um {0} %.",
+  "name": "Super Launcher Overload",
+  "name_de": "Super-Werfer-Überlastung",
+  "nums": [
+   "10362"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10365",
+  "description": "Increases Experimental Arclight's attack interval by {0}%, splash range by {1}, range by {2}, and ATK by {3}%",
+  "description_de": "Erhöht das Angriffsintervall von Experimenteller Arclight um {0} %, die Streureichweite um {1}, die Reichweite um {2} und den ANG um {3} %.",
+  "name": "Charged Laser",
+  "name_de": "Geladener Laser",
+  "nums": [
+   "10365"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10371",
+  "description": "Decreases the attack interval of Experimental Sabertooth by {0}%",
+  "description_de": "Verringert das Angriffsintervall des experimentellen Säbelzahns um {0} %.",
+  "name": "Super Launcher Overload",
+  "name_de": "Super-Werfer-Überlastung",
+  "nums": [
+   "10371"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10401",
+  "description": "Increases Fortress's Attack Range by {0} and Attack Interval by {2}s, but decreases splash range by {1}.",
+  "description_de": "Erhöht die Angriffsreichweite von Fortress um {0} und das Angriffsintervall um {2} s, verringert aber die Splash-Reichweite um {1}.",
+  "name": "Solid Shot",
+  "name_de": "Solider Schuss",
+  "nums": [
+   "10401",
+   "1045001"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10402",
+  "description": "Decreases attack interval by {0}% but ATK by {1}%",
+  "description_de": "Verringert das Angriffsintervall um {0}% und den Angriff um {1}%",
+  "name": "Quick Reload",
+  "name_de": "Schnelles Nachladen",
+  "nums": [
+   "10402"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10419",
+  "description": "Increases attack range by {0} and reduces attack interval by {1}s, but decreases splash range by {2}",
+  "description_de": "Erhöht die Angriffsreichweite um {0} und reduziert das Angriffsintervall um {1} s, verringert aber die Splash-Reichweite um {2}",
+  "name": "Convergent Fire",
+  "name_de": "Konvergentes Feuer",
+  "nums": [
+   "10419",
+   "1045019"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1045002",
+  "description": "Marksman's attack speed is doubled, but each bullet's damage is halved",
+  "description_de": "Die Angriffsgeschwindigkeit von Scharfschütze wird verdoppelt, aber der Schaden jeder Kugel wird halbiert.",
+  "name": "Quick Reload",
+  "name_de": "Schnelles Nachladen",
+  "nums": [
+   "1045002"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10452",
+  "description": "Significantly increases Experimental Marksman's attack speed at the cost of lowered damage for each bullet by 80%",
+  "description_de": "Erhöht die Angriffsgeschwindigkeit von Experimenteller Scharfschütze erheblich, was auf Kosten eines geringeren Schadens von 80 % pro Kugel passiert.",
+  "name": "Super Quick Reload",
+  "name_de": "Superschnelles Nachladen",
+  "nums": [
+   "10452"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "104521",
+  "description": "Increases range by {0}",
+  "description_de": "Erhöht die Reichweite um {0}.",
+  "name": "Sniper Mode",
+  "name_de": "Scharfschützenmodus",
+  "nums": [
+   "104521",
+   "104651"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10466",
+  "description": "Significantly increases Experimental Phoenix's attack speed at the cost of decreased range by {0}m and lowered ATK by 80%",
+  "description_de": "Erhöht die Angriffsgeschwindigkeit von Experimenteller Phoenix erheblich, was auf Kosten einer geringeren Reichweite von {0} m und eines um 80 % niedrigeren ANG passiert.",
+  "name": "Super Launcher Overload",
+  "name_de": "Super-Werfer-Überlastung",
+  "nums": [
+   "10466"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10505",
+  "description": "Increases the units' movement speed by {0} and reduces attack interval by {1}s",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit der Einheiten um {0} und verringert das Angriffsintervall um {1} Sek.",
+  "name": "Mechanical Rage",
+  "name_de": "Mechanische Wut",
+  "nums": [
+   "10505",
+   "10509",
+   "10510",
+   "10513",
+   "10523",
+   "10524",
+   "10528",
+   "1055005",
+   "1055009",
+   "1055010",
+   "1055013",
+   "1055023",
+   "1055024",
+   "1055028"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10560",
+  "description": "Increases the units' movement speed by {0} and reduces attack interval by {1}s",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit der Einheiten um {0} und verringert das Angriffsintervall um {1} Sek.",
+  "name": "Super Mechanical Rage",
+  "name_de": "Mechanische Super-Wut",
+  "nums": [
+   "10560"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10572",
+  "description": "Increases the units' movement speed by {0} and ATK by {1}%.",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit der Einheit um {0} und ihren ANG um {1} %.",
+  "name": "Super Mechanical Rage",
+  "name_de": "Mechanische Super-Wut",
+  "nums": [
+   "10572"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10603",
+  "description": "Increases Vulcan's ATK by {0}%",
+  "description_de": "Erhöht den ANG von Vulkan um {0} %.",
+  "name": "Scorching Fire",
+  "name_de": "Sengendes Feuer",
+  "nums": [
+   "10603",
+   "1065003"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10606",
+  "description": "Increases ATK by {0}%",
+  "description_de": "Erhöht den ANG um {0} %.",
+  "name": "Armor-Piercing Bullets",
+  "name_de": "Panzerbrechende Kugeln",
+  "nums": [
+   "10606",
+   "10607",
+   "10609",
+   "10622",
+   "10624",
+   "1065006",
+   "1065007",
+   "1065009",
+   "1065022",
+   "1065024",
+   "1095012"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10613",
+  "description": "Increases ATK by {0}% but increases attack interval by {1}%",
+  "description_de": "Erhöht den ANG um {0} % und auch das Angriffsintervall um {1} %.",
+  "name": "Armor-Piercing Bullets",
+  "name_de": "Panzerbrechende Kugeln",
+  "nums": [
+   "10613",
+   "1065013"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10620",
+  "description": "Increases Fire Badger’s ATK by {0}%",
+  "description_de": "Erhöht den ANG des Feuerdachses um {0} %.",
+  "name": "Scorching Fire",
+  "name_de": "Sengendes Feuer",
+  "nums": [
+   "10620",
+   "1065020"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10653",
+  "description": "Increases Experimental Vulcan's ATK by {0}%",
+  "description_de": "Erhöht den ANG von Experimenteller Vulkan um {0} %.",
+  "name": "Super Scorching Fire",
+  "name_de": "Sengendes Super-Feuer",
+  "nums": [
+   "10653"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10710",
+  "description": "Increases ATK by {0}%",
+  "description_de": "Erhöht den ANG um {0} %.",
+  "name": "Impact Drill",
+  "name_de": "Schlagbohrer",
+  "nums": [
+   "10710",
+   "1075010"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10801",
+  "description": "Effect increases with unit Rank, increasing range by {0} and ATK by {1}% per Rank increased",
+  "description_de": "Der Effekt nimmt mit dem Einheitenrang zu und erhöht die Reichweite um {0} und den ANG um {1} % pro erhöhtem Rang.",
+  "name": "Elite Marksman",
+  "name_de": "Elite-Scharfschütze",
+  "nums": [
+   "10801",
+   "10802",
+   "10806",
+   "10815",
+   "10816",
+   "1085001",
+   "1085002",
+   "1085006",
+   "1085015",
+   "1085016"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10912",
+  "description": "Increases ATK by {0}%, increases Missile HP by {2}%, but increases Attack Interval by {1}%",
+  "description_de": "Erhöht die ATK um {0}%, erhöht die HP der Rakete um {2}%, erhöht aber das Angriffsintervall um {1}%",
+  "name": "Heavy Missile",
+  "name_de": "Schwere Rakete",
+  "nums": [
+   "10912"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10915",
+  "description": "Increases ATK by {0}% but increases attack interval by {1}%",
+  "description_de": "Erhöht den ANG um {0} % und auch das Angriffsintervall um {1} %.",
+  "name": "Charged Shot",
+  "name_de": "Aufgeladener Schuss",
+  "nums": [
+   "10915",
+   "10930",
+   "1095015",
+   "1095030"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10916",
+  "description": "Increases ATK by {0}% but reduces range by {1}",
+  "description_de": "Erhöht ANG um {0} %, verringert jedoch die Reichweite um {1}.",
+  "name": "Charged Shot",
+  "name_de": "Aufgeladener Schuss",
+  "nums": [
+   "10916",
+   "1095016"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "10956",
+  "description": "Increases ATK by {0}%, range by {1}, and attack interval by {2}%",
+  "description_de": "Erhöht den ANG um {0} %, die Reichweite um {1} und auch das Angriffsintervall um {2} %.",
+  "name": "Super Charged Shot",
+  "name_de": "Aufgeladener Super-Schuss",
+  "nums": [
+   "10956"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1400102",
+  "description": "Reduces the missile firing interval by {0} seconds.",
+  "description_de": "Reduziert das Raketenabschussintervall um {0} Sekunden.",
+  "name": "Rapid Reload",
+  "name_de": "Schnelles Nachladen",
+  "nums": [
+   "1400102",
+   "1520302"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1400103",
+  "description": "Increases missile range by {0}.",
+  "description_de": "Erhöht die Raketenreichweite um {0}.",
+  "name": "Extended Range Missile",
+  "name_de": "Rakete mit erweiterter Reichweite",
+  "nums": [
+   "1400103",
+   "1520303"
+  ],
+  "kind": "Raketenabwehr/Tarnung"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1400104",
+  "description": "Increases the splash radius of laser beams by {0}.",
+  "description_de": "Erhöht den Spritzradius von Laserstrahlen um {0}.",
+  "name": "Thermal Diffusion",
+  "name_de": "Thermische Diffusion",
+  "nums": [
+   "1400104",
+   "1520304"
+  ],
+  "kind": "Flächenschaden"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "1520305",
+  "description": "Laser beam range increased by {0}, ATK increased by {1}%",
+  "description_de": "Laserstrahlreichweite um {0} erhöht, Angriffskraft um {1}% erhöht",
+  "name": "Laser Trial",
+  "name_de": "Laserversuch",
+  "nums": [
+   "1520305"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "TechnologyData",
+  "num": "3022",
+  "description": "Increases the units' movement speed by {0} and ATK by {1}%.",
+  "description_de": "Erhöht die Bewegungsgeschwindigkeit der Einheit um {0} und ihren ANG um {1} %.",
+  "name": "Mechanical Rage",
+  "name_de": "Mechanische Wut",
+  "nums": [
+   "3022"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "WreckageRecoveryTechnologyData",
+  "num": "2305",
+  "description": "Increases ATK by {0}%, upon destroying an enemy, restores HP equal to the enemy's HP",
+  "description_de": "Erhöht den ATK um {0}%. Beim Zerstören eines Gegners werden die TP des Gegners wiederhergestellt.",
+  "name": "Wreckage Recycling",
+  "name_de": "Wrack-Recycling",
+  "nums": [
+   "2305",
+   "2329",
+   "235005",
+   "235029"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ },
+ {
+  "table": "WreckageRecoveryTechnologyData",
+  "num": "2353",
+  "description": "Upon destroying an enemy, restores HP equal to the enemy's HP",
+  "description_de": "Wenn du einen Gegner vernichtest, stellst du TP in Höhe der TP des Gegners wieder her.",
+  "name": "Wreckage Recycling",
+  "name_de": "Wrack-Recycling",
+  "nums": [
+   "2353",
+   "2368",
+   "2373"
+  ],
+  "kind": "Zahlenwert / Sonstiges"
+ }
+]

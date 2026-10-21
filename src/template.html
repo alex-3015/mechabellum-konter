@@ -1,0 +1,983 @@
+<title>Mechabellum Konter</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<script>
+  // Farbschema, Größe und Farbschwäche-Modus vor dem ersten Zeichnen setzen (Standard: dunkel), damit nichts aufblitzt
+  (function () {
+    var t = 'dark', s = 'normal', cb = '0';
+    try {
+      t = localStorage.getItem('mbk.theme') === 'light' ? 'light' : 'dark';
+      s = localStorage.getItem('mbk.size') === 'large' ? 'large' : 'normal';
+      cb = localStorage.getItem('mbk.cb') === '1' ? '1' : '0';
+    } catch (e) {}
+    var r = document.documentElement;
+    r.setAttribute('data-mbk-theme', t);
+    r.setAttribute('data-mbk-size', s);
+    r.setAttribute('data-mbk-cb', cb);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap">
+<style>
+/* Layout: HUD-Leiste oben, links das Einheiten-Raster nach Klasse, rechts ein fest stehendes Detail-Panel. Dark-first fürs Spielen. */
+:root {
+  --bg: #0e1317;
+  --surface: #151c22;
+  --surface-2: #1c252d;
+  --line: #2a3640;
+  --fg: #e4e9ed;
+  --muted: #8b99a6;
+  --accent: #e9a640;
+  --accent-bg: rgba(233,166,64,.16);
+  --good: #4fc78d;
+  --good-bg: rgba(79,199,141,.15);
+  --bad: #f2695e;
+  --bad-bg: rgba(242,105,94,.15);
+  --badge: #2c3945;
+  --badge-fg: #dfe6ec;
+  --font-display: "Chakra Petch", "Bahnschrift", "Segoe UI", sans-serif;
+  --font-ui: "Barlow Semi Condensed", "Bahnschrift", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #edf0f2; --surface: #ffffff; --surface-2: #f3f5f7; --line: #cfd7de;
+    --fg: #131a20; --muted: #5a6875; --accent: #a8680b; --accent-bg: rgba(168,104,11,.12);
+    --good: #19834f; --good-bg: rgba(25,131,79,.11); --bad: #c13a2f; --bad-bg: rgba(193,58,47,.10);
+    --badge: #dbe2e8; --badge-fg: #1b252e; color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #edf0f2; --surface: #ffffff; --surface-2: #f3f5f7; --line: #cfd7de;
+  --fg: #131a20; --muted: #5a6875; --accent: #a8680b; --accent-bg: rgba(168,104,11,.12);
+  --good: #19834f; --good-bg: rgba(25,131,79,.11); --bad: #c13a2f; --bad-bg: rgba(193,58,47,.10);
+  --badge: #dbe2e8; --badge-fg: #1b252e; color-scheme: light;
+}
+/* Umschalter auf der Seite hat Vorrang vor System- und App-Einstellung (steht deshalb zuletzt) */
+:root[data-mbk-theme="dark"] {
+  --bg: #0e1317; --surface: #151c22; --surface-2: #1c252d; --line: #2a3640;
+  --fg: #e4e9ed; --muted: #8b99a6; --accent: #e9a640; --accent-bg: rgba(233,166,64,.16);
+  --good: #4fc78d; --good-bg: rgba(79,199,141,.15); --bad: #f2695e; --bad-bg: rgba(242,105,94,.15);
+  --badge: #2c3945; --badge-fg: #dfe6ec; color-scheme: dark;
+}
+:root[data-mbk-theme="light"] {
+  --bg: #edf0f2; --surface: #ffffff; --surface-2: #f3f5f7; --line: #cfd7de;
+  --fg: #131a20; --muted: #5a6875; --accent: #a8680b; --accent-bg: rgba(168,104,11,.12);
+  --good: #19834f; --good-bg: rgba(25,131,79,.11); --bad: #c13a2f; --bad-bg: rgba(193,58,47,.10);
+  --badge: #dbe2e8; --badge-fg: #1b252e; color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 400 15px/1.45 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 14px 28px;
+}
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* HUD-Leiste */
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; justify-content: space-between; }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+h1 { margin: 0; font: 700 22px/1 var(--font-display); letter-spacing: .06em; text-transform: uppercase; }
+h1 b { color: var(--accent); font-weight: 700; }
+.patch { font: 500 13px/1 var(--font-ui); color: var(--muted); letter-spacing: .04em; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.search input {
+  width: min(260px, 70vw); height: 36px; padding: 0 12px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  color: var(--fg); font: 500 15px var(--font-ui);
+}
+.search input::placeholder { color: var(--muted); }
+.toggle {
+  display: inline-flex; align-items: center; gap: 9px; height: 36px; padding: 0 12px 0 8px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px; cursor: pointer;
+  font: 600 14px var(--font-ui); letter-spacing: .03em;
+}
+.toggle .track { width: 30px; height: 16px; border-radius: 8px; background: var(--badge); position: relative; transition: background .15s; }
+.toggle .track::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--muted); transition: transform .15s, background .15s; }
+.toggle[aria-pressed="true"] { border-color: var(--accent); }
+.toggle[aria-pressed="true"] .track { background: var(--accent-bg); }
+.toggle[aria-pressed="true"] .track::after { transform: translateX(14px); background: var(--accent); }
+
+/* Sprachwahl DE / EN */
+.lang { display: inline-flex; height: 36px; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.lang button {
+  min-width: 40px; padding: 0 10px; border: 0; background: none; cursor: pointer;
+  font: 700 13px var(--font-display); letter-spacing: .08em; color: var(--muted);
+}
+.lang button + button { border-left: 1px solid var(--line); }
+.lang button[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent); }
+
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0 14px; font: 500 14px var(--font-ui); color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 14px; height: 14px; border-radius: 3px; border: 1px solid; display: inline-grid; place-items: center; font-size: 9px; }
+.sw.good { background: var(--good-bg); border-color: var(--good); color: var(--good); }
+.sw.bad { background: var(--bad-bg); border-color: var(--bad); color: var(--bad); }
+.sw.sel { background: var(--accent-bg); border-color: var(--accent); }
+
+/* Hauptbereich */
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 400px); gap: 20px; align-items: start; }
+/* Jede Klasse ist eine Spalte, darin von oben nach unten nach Kosten sortiert */
+.roster { display: grid; grid-template-columns: repeat(auto-fit, minmax(178px, 1fr)); gap: 16px 8px; align-items: start; min-width: 0; }
+.group { min-width: 0; }
+/* große Gruppen (z. B. Stufe I) belegen zwei Spalten */
+.group.wide { grid-column: span 2; }
+.group.wide .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.roman { font: 700 16px/1 var(--font-display); color: var(--accent); letter-spacing: .04em; }
+.stage-cost { font: 500 12.5px/1 var(--font-ui); letter-spacing: .02em; text-transform: none; }
+.group-title {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 7px; padding: 0 2px 7px; border-bottom: 1px solid var(--line);
+  font: 600 13px/1 var(--font-display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+}
+.group-title .count { font-family: var(--font-ui); letter-spacing: 0; opacity: .7; margin-left: auto; }
+.tiles { display: grid; grid-template-columns: minmax(0, 1fr); gap: 5px; }
+
+.tile {
+  position: relative; display: grid; grid-template-columns: 46px minmax(0, 1fr); align-items: center; gap: 10px;
+  min-height: 58px; padding: 5px 22px 5px 5px; text-align: left; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 7px;
+  transition: opacity .12s, background .12s, border-color .12s;
+}
+.tile:hover { border-color: var(--muted); }
+.tname { display: block; font: 600 15.5px/1.1 var(--font-ui); hyphens: manual; overflow-wrap: anywhere; }
+.tname.long { font-size: 14.5px; }
+.tmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 7px; font: 500 12px/1.2 var(--font-ui); color: var(--muted); margin-top: 3px; font-variant-numeric: tabular-nums; }
+.tg { display: inline-flex; align-items: center; gap: 4px; }
+.ico { display: inline-flex; }
+.ico svg { height: 12px; width: auto; fill: currentColor; }
+.ico.on { color: var(--fg); }
+.ico.off { color: var(--muted); opacity: .3; }
+.ico.tech { color: var(--accent); opacity: 1; }
+.mark { position: absolute; top: 5px; right: 7px; font-size: 12px; line-height: 1; }
+/* Unbeteiligte Einheiten entfärbt und abgedunkelt, damit Konter sofort herausstechen */
+.roster.focus .tile[data-rel=""] { opacity: .5; }
+.roster.focus .tile[data-rel=""] .pic img { filter: grayscale(1) brightness(.75); }
+.roster.focus .tile[data-rel=""] .tname { color: var(--muted); }
+.tile[data-rel="good"] { background: var(--good-bg); border-color: var(--good); }
+.tile[data-rel="good"] .mark { color: var(--good); }
+.tile[data-rel="bad"] { background: var(--bad-bg); border-color: var(--bad); }
+.tile[data-rel="bad"] .mark { color: var(--bad); }
+.tile[data-rel="sel"] { background: var(--accent-bg); border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.tile.dim { opacity: .15 !important; }
+
+/* Einheitenbild; ohne Bild ein Kürzel-Abzeichen */
+.pic {
+  width: 46px; height: 46px; flex: none; display: grid; place-items: center; overflow: hidden;
+  border-radius: 5px; background: var(--badge); color: var(--badge-fg);
+  font: 700 13px/1 var(--font-display); letter-spacing: .02em;
+}
+.pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile[data-rel="good"] .pic { box-shadow: 0 0 0 2px var(--good); }
+.tile[data-rel="bad"] .pic { box-shadow: 0 0 0 2px var(--bad); }
+.tile[data-rel="sel"] .pic { box-shadow: 0 0 0 2px var(--accent); }
+
+/* Detail-Panel */
+.panel {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px);
+  max-height: calc(100vh - 24px); overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px;
+  min-width: 0;
+}
+.p-head { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 14px; align-items: center; }
+.p-head .pic { width: 76px; height: 76px; border-radius: 7px; font-size: 20px; box-shadow: 0 0 0 2px var(--accent); }
+.p-head h2 { margin: 0; font: 700 24px/1.05 var(--font-display); letter-spacing: .02em; text-wrap: balance; }
+.p-alt { font: 500 13px/1.2 var(--font-ui); color: var(--muted); margin-top: 3px; }
+.p-meta { font: 500 14px/1.3 var(--font-ui); color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 12px 0 2px; }
+.chip { font: 600 12px/1 var(--font-ui); letter-spacing: .04em; padding: 5px 7px; border-radius: 4px; background: var(--surface-2); border: 1px solid var(--line); color: var(--fg); }
+.sec { margin-top: 16px; }
+.sec h3 {
+  display: flex; align-items: center; gap: 8px; margin: 0 0 6px; padding-bottom: 6px; border-bottom: 1px solid var(--line);
+  font: 700 13px/1.2 var(--font-display); letter-spacing: .1em; text-transform: uppercase;
+}
+.sec.good h3 { color: var(--good); }
+.sec.bad h3 { color: var(--bad); }
+.sec h3 small { font: 500 13px var(--font-ui); letter-spacing: 0; text-transform: none; color: var(--muted); margin-left: auto; }
+.rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
+.go {
+  width: 100%; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; align-items: center;
+  padding: 5px 6px; background: none; border: 0; border-radius: 5px; text-align: left; cursor: pointer;
+}
+.go:hover { background: var(--surface-2); }
+.row .pic { width: 40px; height: 40px; font-size: 11px; }
+.sec.good .row .pic { box-shadow: 0 0 0 2px var(--good); }
+.sec.bad .row .pic { box-shadow: 0 0 0 2px var(--bad); }
+.sec .row.tend .pic { outline: 2px dashed var(--bg); outline-offset: -2px; }
+.row.gone .rn, .row.gone .rw { text-decoration: line-through; opacity: .55; }
+.sec .row.gone .pic { box-shadow: none; filter: grayscale(1); opacity: .5; }
+.rs { display: block; font: 600 12.5px/1.3 var(--font-ui); color: var(--accent); margin-top: 3px; }
+.hints { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 6px 4px 56px; }
+.hint {
+  font: 600 12px/1.2 var(--font-ui); padding: 4px 7px; border-radius: 4px; cursor: pointer; text-align: left;
+  border: 1px dashed var(--line); background: none; color: var(--muted);
+}
+.hint:hover { border-color: var(--accent); color: var(--fg); }
+.maybe { margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--line); }
+.maybe-title { font: 600 12px var(--font-ui); color: var(--muted); letter-spacing: .04em; padding: 0 6px 2px; }
+
+/* Kurzübersicht im Panel */
+.quick { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 8px; margin-top: 10px; }
+.qt { font: 700 11.5px/1.2 var(--font-display); letter-spacing: .08em; text-transform: uppercase; }
+.quick.good .qt { color: var(--good); }
+.quick.bad .qt { color: var(--bad); }
+.qi { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
+.qb { padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; }
+.qb .pic { width: 34px; height: 34px; font-size: 11px; }
+.quick.good .qb .pic { box-shadow: 0 0 0 2px var(--good); }
+.quick.bad .qb .pic { box-shadow: 0 0 0 2px var(--bad); }
+.quick .qb.tend .pic { box-shadow: none; outline: 2px dashed var(--muted); outline-offset: 0; }
+.qb:hover .pic { transform: translateY(-1px); }
+.qmore { font: 600 13px var(--font-ui); color: var(--muted); }
+
+/* Techs */
+.lvl {
+  display: inline-block; margin-left: 6px; padding: 2px 5px; border-radius: 3px; vertical-align: 1px;
+  font: 700 10px/1.1 var(--font-display); letter-spacing: .08em; text-transform: uppercase;
+}
+.lvl.belegt { border: 1px solid var(--fg); color: var(--fg); }
+.lvl.tendenz { border: 1px dashed var(--muted); color: var(--muted); }
+.sec.tech h3 { color: var(--accent); }
+.techs { display: flex; flex-direction: column; gap: 6px; }
+.tech-opt {
+  width: 100%; display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 9px; padding: 8px 9px; text-align: left; cursor: pointer;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px;
+}
+.tech-opt:hover { border-color: var(--muted); }
+.tech-opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-bg); }
+.tech-opt .box { width: 18px; height: 18px; margin-top: 1px; border: 1.5px solid var(--muted); border-radius: 4px; display: grid; place-items: center; font-size: 12px; line-height: 1; }
+.tech-opt[aria-pressed="true"] .box { border-color: var(--accent); background: var(--accent); color: var(--bg); }
+.tech-name { font: 600 15px/1.2 var(--font-ui); }
+.tech-eff { display: block; font-size: 13.5px; line-height: 1.35; margin-top: 3px; }
+.tech-game { display: block; font-size: 12.5px; line-height: 1.35; color: var(--muted); margin-top: 3px; }
+.techbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: -4px 0 14px; font: 500 14px var(--font-ui); color: var(--muted); }
+.tchip {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 3px 8px; cursor: pointer;
+  border: 1px solid var(--accent); border-radius: 5px; background: var(--accent-bg); color: var(--fg); font: 600 13px var(--font-ui);
+}
+.tchip .x { color: var(--muted); font-size: 14px; }
+.linkbtn { background: none; border: 0; padding: 0 4px; color: var(--muted); text-decoration: underline; cursor: pointer; font: 500 13px var(--font-ui); }
+.tile[data-tend="1"] { border-style: dashed; }
+.ttech { color: var(--accent); font-weight: 700; }
+.row .rn { font: 600 16px/1.1 var(--font-ui); }
+.row .rw { display: block; font: 400 13.5px/1.3 var(--font-body); color: var(--muted); margin-top: 1px; }
+.row .rw em { font-style: normal; opacity: .75; }
+.empty { color: var(--muted); font-size: 14px; padding: 4px 6px; }
+.note { margin: 14px 0 0; padding: 9px 11px; border-radius: 5px; background: var(--surface-2); font-size: 13.5px; color: var(--muted); }
+.note b { color: var(--fg); font-weight: 500; }
+
+footer { margin-top: 26px; color: var(--muted); font-size: 13px; max-width: 80ch; }
+footer a { color: var(--muted); }
+footer p { margin: 4px 0; }
+kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; color: var(--fg); }
+
+[hidden] { display: none !important; }
+
+/* Ansicht-Menü */
+.menu { position: relative; }
+.menu > summary { list-style: none; }
+.menu > summary::-webkit-details-marker { display: none; }
+.menu-btn {
+  display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; cursor: pointer; user-select: none;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px; font: 600 14px var(--font-ui); letter-spacing: .03em;
+}
+.menu[open] > .menu-btn { border-color: var(--accent); }
+.menu-btn .caret { font-size: 10px; color: var(--muted); }
+.menu-panel {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 40; display: grid; gap: 9px; padding: 12px; min-width: 300px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+.mrow { display: grid; grid-template-columns: 74px auto; align-items: center; gap: 10px; }
+.mlabel { font: 600 13px var(--font-ui); color: var(--muted); letter-spacing: .03em; }
+.mrow .lang { justify-self: start; }
+
+/* Hinweis an der Kachel */
+.tip {
+  position: fixed; z-index: 50; max-width: 270px; padding: 7px 10px; pointer-events: none;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 8px 22px rgba(0,0,0,.35);
+  font: 400 13.5px/1.35 var(--font-body); color: var(--fg);
+}
+.tip b { display: block; font: 600 14.5px/1.2 var(--font-ui); margin-bottom: 2px; }
+.tip.good b { color: var(--good); }
+.tip.bad b { color: var(--bad); }
+.tip .tw { display: block; color: var(--muted); }
+
+/* Leerer Zustand des Panels */
+.empty-state h2 { margin: 0 0 6px; font: 700 20px/1.2 var(--font-display); letter-spacing: .02em; }
+.empty-state p { margin: 0; color: var(--muted); font-size: 14px; }
+
+/* Größe: alles im Hauptbereich etwas größer */
+:root[data-mbk-size="large"] { --zoom: 1.2; }
+:root[data-mbk-size="large"] .layout { zoom: 1.2; }
+:root[data-mbk-size="large"] .panel { max-height: calc((100vh - 24px) / var(--zoom)); top: calc((env(safe-area-inset-top, 0px) + 12px) / var(--zoom)); }
+
+/* Farbschwäche: Blau/Orange statt Grün/Rot, Auswahl neutral hell bzw. dunkel */
+:root[data-mbk-cb="1"][data-mbk-theme="dark"] {
+  --good: #5aa9ff; --good-bg: rgba(90,169,255,.17); --bad: #ff8c42; --bad-bg: rgba(255,140,66,.17);
+  --accent: #eef1f4; --accent-bg: rgba(238,241,244,.13);
+}
+:root[data-mbk-cb="1"][data-mbk-theme="light"] {
+  --good: #1f6fd1; --good-bg: rgba(31,111,209,.12); --bad: #c25400; --bad-bg: rgba(194,84,0,.12);
+  --accent: #1d2731; --accent-bg: rgba(29,39,49,.09);
+}
+
+/* Abgeschrägte Ecken im Stil der Spieloberfläche; Browser ohne corner-shape behalten abgerundete Ecken */
+@supports (corner-shape: bevel) {
+  .tile, .panel, .pic, .tech-opt, .menu-panel, .search input, .toggle, .menu-btn, .lang, .tchip, .chip, .tip, .note, .go, .hint, .sw { corner-shape: bevel; }
+  .tile { border-radius: 10px; }
+  .panel { border-radius: 16px; }
+  .pic { border-radius: 8px; }
+  .p-head .pic { border-radius: 12px; }
+  .qb .pic, .row .pic { border-radius: 7px; }
+  .tech-opt, .menu-panel { border-radius: 10px; }
+  .search input, .toggle, .menu-btn, .lang { border-radius: 8px; }
+  .mark { top: 7px; right: 10px; }
+}
+
+@media (max-width: 820px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .panel { position: static; max-height: none; order: -1; }
+}
+@media (max-width: 420px) {
+  .roster { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .tile { grid-template-columns: 40px minmax(0, 1fr); gap: 8px; }
+  .tile .pic { width: 40px; height: 40px; }
+}
+@media (max-width: 360px) {
+  .group.wide { grid-column: auto; }
+  .group.wide .tiles { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<script type="application/json" id="unit-data">
+/*__UNIT_DATA__*/
+</script>
+<script type="application/json" id="unit-icons">
+/*__ICON_DATA__*/
+</script>
+<script type="application/json" id="tech-data">
+/*__TECH_DATA__*/
+</script>
+
+<header class="bar">
+  <div class="brand">
+    <h1>Mechabellum <b>Konter</b></h1>
+    <span class="patch" id="patch"></span>
+  </div>
+  <div class="controls">
+    <label class="search" for="q"><input id="q" type="search" placeholder="Einheit suchen … (einfach tippen)" autocomplete="off" spellcheck="false" aria-label="Einheit suchen"></label>
+    <button id="hover-toggle" class="toggle" type="button" aria-pressed="false" title="Einheiten per Mauszeiger auswählen, ohne Klick"><span class="track"></span>Hover-Modus</button>
+    <details class="menu" id="view-menu">
+      <summary class="menu-btn">Ansicht <span class="caret" aria-hidden="true">▼</span></summary>
+      <div class="menu-panel">
+        <div class="mrow"><span class="mlabel">Namen</span>
+          <div class="lang" role="group" aria-label="Sprache der Einheitennamen">
+            <button type="button" data-lang="de" aria-pressed="true" title="Deutsche Namen wie im Spiel">DE</button>
+            <button type="button" data-lang="en" aria-pressed="false" title="Englische Namen wie im Spiel">EN</button>
+          </div></div>
+        <div class="mrow"><span class="mlabel">Gruppen</span>
+          <div class="lang" role="group" aria-label="Gruppierung der Einheiten">
+            <button type="button" data-group-set="class" aria-pressed="true" title="Nach Klasse gruppieren (Klein, Mittel, Groß …)">Klasse</button>
+            <button type="button" data-group-set="stage" aria-pressed="false" title="Wie im Spiel nach Stufe I–IV gruppieren">Stufe I–IV</button>
+          </div></div>
+        <div class="mrow"><span class="mlabel">Design</span>
+          <div class="lang" role="group" aria-label="Farbschema">
+            <button type="button" data-theme-set="dark" aria-pressed="true" title="Dunkles Design">Dunkel</button>
+            <button type="button" data-theme-set="light" aria-pressed="false" title="Helles Design">Hell</button>
+          </div></div>
+        <div class="mrow"><span class="mlabel">Größe</span>
+          <div class="lang" role="group" aria-label="Größe">
+            <button type="button" data-size-set="normal" aria-pressed="true" title="Normale Größe">Normal</button>
+            <button type="button" data-size-set="large" aria-pressed="false" title="Alles etwas größer, z. B. für einen weiter entfernten Monitor">Groß</button>
+          </div></div>
+        <div class="mrow"><span class="mlabel">Farben</span>
+          <div class="lang" role="group" aria-label="Farben für Konter">
+            <button type="button" data-cb-set="0" aria-pressed="true" title="Grün für Konter, Rot für gekonterte Einheiten">Grün/Rot</button>
+            <button type="button" data-cb-set="1" aria-pressed="false" title="Für Rot-Grün-Schwäche: Blau und Orange">Blau/Orange</button>
+          </div></div>
+      </div>
+    </details>
+  </div>
+</header>
+
+<div class="legend" aria-label="Legende">
+  <span><i class="sw sel"></i>gewählte Einheit</span>
+  <span><i class="sw good">▲</i>kontert die gewählte Einheit</span>
+  <span><i class="sw bad">▼</i>wird von ihr gekontert</span>
+  <span><i class="sw" style="border-style:dashed"></i>gestrichelt: Tendenz durch Tech</span>
+  <span><span class="ico on"><svg viewBox="0 0 24 16" aria-hidden="true"><path d="M8 2.5h6v3.5H8zM14 3.4h8.5v1.6H14zM3.5 6h15.5v4H3.5zM3.2 10.6h17.6a2.2 2.2 0 0 1 0 4.4H3.2a2.2 2.2 0 0 1 0-4.4z"/></svg></span>trifft Boden
+    <span class="ico on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg></span>trifft Luft · blass = nein</span>
+</div>
+<div class="techbar" id="techbar" hidden></div>
+
+<main class="layout">
+  <section class="roster" id="roster" aria-label="Alle Einheiten"></section>
+  <aside class="panel" id="panel" aria-live="polite"></aside>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+(function () {
+  const DATA = JSON.parse(document.getElementById('unit-data').textContent);
+  let ICONS = {};
+  try { ICONS = JSON.parse(document.getElementById('unit-icons').textContent) || {}; } catch (e) {}
+  let TECHS = [];
+  try { TECHS = JSON.parse(document.getElementById('tech-data').textContent) || []; } catch (e) {}
+  const CLASS_ORDER = ['small', 'medium', 'large', 'giant', 'air', 'titan'];
+  const CLASS_LABEL = { small: 'Klein', medium: 'Mittel', large: 'Groß', giant: 'Riesen', air: 'Luft', titan: 'Titanen' };
+  const CLASS_ONE = { small: 'Klein', medium: 'Mittel', large: 'Groß', giant: 'Riese', air: 'Flieger', titan: 'Titan' };
+  const TARGETS = { ground: 'trifft nur Boden', air: 'trifft nur Luft', both: 'trifft Boden & Luft' };
+  const TARGET_SHORT = { ground: 'Boden', air: 'nur Luft', both: 'Boden + Luft' };
+
+  const store = {
+    get(k) { try { return localStorage.getItem('mbk.' + k); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem('mbk.' + k, v); } catch (e) {} }
+  };
+
+  function normClass(c, tags) {
+    if ((tags || []).some(x => /titan/i.test(x))) return 'titan';
+    c = String(c || '').toLowerCase();
+    if (c.includes('air')) return 'air';
+    if (c.includes('giant')) return 'giant';
+    if (c.includes('large')) return 'large';
+    if (c.includes('medium')) return 'medium';
+    return 'small';
+  }
+  function normTargets(t) {
+    t = String(t || '').toLowerCase();
+    if (t.includes('both') || (t.includes('air') && t.includes('ground'))) return 'both';
+    if (t.includes('air')) return 'air';
+    return 'ground';
+  }
+
+  const units = DATA.units.map(u => ({
+    ...u, cls: normClass(u.class, u.tags), tgt: normTargets(u.targets),
+    flies: u.class === 'air' || (u.tags || []).some(x => /fliegt|flying/i.test(x)),
+    strong: u.strong || [], weak: u.weak || []
+  }));
+  const byId = Object.fromEntries(units.map(u => [u.id, u]));
+
+  // Kürzel als Ersatz, falls ein Bild fehlt
+  const used = new Set();
+  units.forEach(u => {
+    const words = u.name.replace(/[^A-Za-z0-9 ]/g, '').split(/\s+/).filter(Boolean);
+    const cands = [];
+    if (words.length > 1) cands.push(words[0][0].toUpperCase() + words[1][0].toUpperCase());
+    const w = words.join('');
+    for (let i = 1; i < w.length; i++) cands.push(w[0].toUpperCase() + w[i].toLowerCase());
+    u.abbr = cands.find(c => !used.has(c)) || w.slice(0, 3);
+    used.add(u.abbr);
+  });
+
+  // Sprache der Einheiten- und Tech-Namen
+  let lang = store.get('lang') === 'en' ? 'en' : 'de';
+  const nm = u => (lang === 'de' && u.name_de) || u.name;
+  const alt = u => lang === 'de' ? u.name : (u.name_de || '');
+  // Feste Trennstellen (weiches Trennzeichen) für lange Namen, damit sie nur an sinnvollen Stellen umbrechen
+  const SHY = '­';
+  const HYPH = {
+    'Vorschlaghammer': 'Vorschlag|hammer', 'Phantomstrahl': 'Phantom|strahl', 'Kriegsfabrik': 'Kriegs|fabrik',
+    'Schmelzpunkt': 'Schmelz|punkt', 'Scharfschütze': 'Scharf|schütze', 'Weitblicker': 'Weit|blicker',
+    'Totenglocke': 'Toten|glocke', 'Feuerdachs': 'Feuer|dachs', 'Stahlkugel': 'Stahl|kugel', 'Sturmrufer': 'Sturm|rufer',
+    'Säbelzahn': 'Säbel|zahn', 'Sledgehammer': 'Sledge|hammer', 'Stormcaller': 'Storm|caller', 'Sabertooth': 'Saber|tooth'
+  };
+  const nmh = u => { const n = nm(u); return HYPH[n] ? HYPH[n].replace('|', SHY) : n; };
+  const tn = t => (lang === 'de' && t.name_de) || t.name;
+  const gameText = t => String((lang === 'de' && t.desc_de) || t.desc || '').replace(/\{\d+\}/g, '…');
+  const swapList = units.filter(u => u.name_de && u.name_de !== u.name)
+    .sort((a, b) => b.name.length - a.name.length)
+    .map(u => [new RegExp('\\b' + u.name.replace(/ /g, '\\s') + 's?\\b', 'g'), u.name_de]);
+  const tx = s => {
+    if (!s || lang !== 'de') return s;
+    return swapList.reduce((acc, [re, de]) => acc.replace(re, de), s);
+  };
+
+  // ---------- Techs ----------
+  const techByKey = Object.fromEntries(TECHS.map(t => [t.key, t]));
+  const techsOf = {};
+  TECHS.forEach(t => (techsOf[t.unit] = techsOf[t.unit] || []).push(t));
+  let active = new Set();
+  try { (JSON.parse(store.get('techs') || '[]') || []).forEach(k => techByKey[k] && active.add(k)); } catch (e) {}
+  const saveTechs = () => store.set('techs', JSON.stringify([...active]));
+
+  // Wirksame Eigenschaften einer Einheit unter den aktiven Techs
+  function flags(u, act) {
+    const f = { hitsAir: u.tgt !== 'ground', hitsGround: u.tgt !== 'air', flies: u.flies, src: {} };
+    (techsOf[u.id] || []).forEach(t => {
+      if (!act.has(t.key) || !t.set) return;
+      Object.entries(t.set).forEach(([k, v]) => { f[k] = v; f.src[k] = t; });
+    });
+    return f;
+  }
+  const tgtOf = f => f.hitsAir && f.hitsGround ? 'both' : f.hitsAir ? 'air' : 'ground';
+
+  // Macht eine Tech den Konter "a schlägt b" unmöglich? Gibt die Tech zurück, 'base' wenn schon ohne Tech unstimmig.
+  function breaker(a, b, why, act) {
+    const fa = flags(a, act), fb = flags(b, act);
+    if (fb.flies && !fa.hitsAir) return fa.src.hitsAir || fb.src.flies || 'base';
+    if (!fb.flies && !fa.hitsGround) return fa.src.hitsGround || fb.src.flies || 'base';
+    if (/Luft nicht treffen/i.test(why || '')) {
+      if (!fa.flies) return fa.src.flies || 'base';
+      if (fb.hitsAir) return fb.src.hitsAir || 'base';
+    }
+    return null;
+  }
+  const weakEntry = (t, a, b) => (t.weaken || []).find(w => w.a === a.id && w.b === b.id);
+
+  // Grund-Konter einer Einheit in beide Richtungen
+  function basePairs(x) {
+    const out = [], seen = new Set();
+    const push = (dir, other, why) => {
+      if (seen.has(other) || !byId[other]) return;
+      seen.add(other);
+      out.push({ dir, id: other, why, a: dir === 'good' ? byId[other] : x, b: dir === 'good' ? x : byId[other] });
+    };
+    x.weak.forEach(r => push('good', r.id, r.why));
+    x.strong.forEach(r => push('bad', r.id, r.why));
+    units.forEach(u => {
+      if (u.id === x.id) return;
+      u.strong.forEach(r => { if (r.id === x.id) push('good', u.id, r.why); });
+      u.weak.forEach(r => { if (r.id === x.id) push('bad', u.id, r.why); });
+    });
+    return out;
+  }
+
+  function evaluate(x, act) {
+    const list = basePairs(x).map(p => {
+      const br = breaker(p.a, p.b, p.why, act);
+      if (br && br !== 'base') return { ...p, status: 'gone', tech: br, level: br.level };
+      const wt = TECHS.find(t => act.has(t.key) && weakEntry(t, p.a, p.b));
+      if (wt) return { ...p, status: 'weak', tech: wt, level: 'tendenz', note: weakEntry(wt, p.a, p.b).why };
+      return { ...p, status: 'ok' };
+    });
+    const have = new Set(list.map(p => p.id));
+    TECHS.filter(t => act.has(t.key)).forEach(t => (t.add || []).forEach(ad => {
+      const dir = ad.b === x.id ? 'good' : ad.a === x.id ? 'bad' : null;
+      if (!dir) return;
+      const other = dir === 'good' ? ad.a : ad.b;
+      if (have.has(other) || !byId[other] || breaker(byId[ad.a], byId[ad.b], '', act)) return;
+      have.add(other);
+      list.push({ dir, id: other, why: ad.why, a: byId[ad.a], b: byId[ad.b], status: 'new', tech: t, level: ad.level || 'tendenz' });
+    }));
+    return list;
+  }
+
+  // Welche noch nicht aktive Tech würde diesen Konter ändern?
+  function hintsFor(p) {
+    if (p.status !== 'ok') return [];
+    const cands = [...(techsOf[p.a.id] || []), ...(techsOf[p.b.id] || [])].filter(t => !active.has(t.key));
+    const out = [];
+    cands.forEach(t => {
+      const act2 = new Set(active); act2.add(t.key);
+      if (breaker(p.a, p.b, p.why, act2) === t) out.push({ t, eff: 'entfällt' });
+      else if (weakEntry(t, p.a, p.b)) out.push({ t, eff: 'geschwächt' });
+    });
+    return out;
+  }
+  // Neue Konter, die erst mit einer (noch nicht aktiven) Tech entstehen
+  function maybeNew(x, dir, have) {
+    const out = [];
+    TECHS.filter(t => !active.has(t.key)).forEach(t => (t.add || []).forEach(ad => {
+      const d = ad.b === x.id ? 'good' : ad.a === x.id ? 'bad' : null;
+      const other = d === 'good' ? ad.a : ad.b;
+      if (d !== dir || have.has(other) || !byId[other]) return;
+      const act2 = new Set(active); act2.add(t.key);
+      if (breaker(byId[ad.a], byId[ad.b], '', act2)) return;
+      out.push({ t, id: other, why: ad.why });
+    }));
+    return out;
+  }
+
+  // ---------- Darstellung ----------
+  const roster = document.getElementById('roster');
+  const panel = document.getElementById('panel');
+  const techbar = document.getElementById('techbar');
+  const q = document.getElementById('q');
+  const hoverBtn = document.getElementById('hover-toggle');
+  const langBtns = [...document.querySelectorAll('.lang button[data-lang]')];
+  const themeBtns = [...document.querySelectorAll('.lang button[data-theme-set]')];
+  const sizeBtns = [...document.querySelectorAll('.lang button[data-size-set]')];
+  const cbBtns = [...document.querySelectorAll('.lang button[data-cb-set]')];
+  const menu = document.getElementById('view-menu');
+  const tip = document.createElement('div');
+  tip.className = 'tip';
+  tip.hidden = true;
+  tip.setAttribute('role', 'tooltip');
+  document.body.appendChild(tip);
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const pic = u => ICONS[u.id]
+    ? `<span class="pic"><img src="${ICONS[u.id]}" alt="" loading="lazy" decoding="async"></span>`
+    : `<span class="pic">${esc(u.abbr)}</span>`;
+  const lvl = l => `<span class="lvl ${l}">${l === 'belegt' ? 'belegt' : 'Tendenz'}</span>`;
+  // Zieltyp-Symbole: Panzer = trifft Boden, Flugzeug = trifft Luft (hell = ja, blass = nein, Akzentfarbe = durch Tech)
+  const ICO_G = '<svg viewBox="0 0 24 16" aria-hidden="true"><path d="M8 2.5h6v3.5H8zM14 3.4h8.5v1.6H14zM3.5 6h15.5v4H3.5zM3.2 10.6h17.6a2.2 2.2 0 0 1 0 4.4H3.2a2.2 2.2 0 0 1 0-4.4z"/></svg>';
+  const ICO_A = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>';
+  function targetIcons(f) {
+    const cls = (on, src) => 'ico ' + (on ? 'on' : 'off') + (src ? ' tech' : '');
+    const label = TARGETS[tgtOf(f)] + (f.src.hitsAir ? ' (durch Tech)' : '');
+    return `<span class="tg" role="img" aria-label="${esc(label)}" title="${esc(label)}"><span class="${cls(f.hitsGround, f.src.hitsGround)}">${ICO_G}</span><span class="${cls(f.hitsAir, f.src.hitsAir)}">${ICO_A}</span></span>`;
+  }
+  const owner = t => esc(nm(byId[t.unit]));
+
+  // Gruppierung: nach Klasse oder wie im Spiel nach Stufe I–IV (Zuordnung aus dem Spiel abgelesen)
+  const STAGES = [{ n: 'I', stage: 1 }, { n: 'II', stage: 2 }, { n: 'III', stage: 3 }, { n: 'IV', stage: 4 }];
+  const groupBtns = [...document.querySelectorAll('.lang button[data-group-set]')];
+  let grouping = store.get('group') === 'stage' ? 'stage' : 'class';
+  let tiles = [], tileById = {};
+  const byCost = (a, b) => (a.cost || 0) - (b.cost || 0) || a.name.localeCompare(b.name);
+  const tileHtml = u => `
+        <button type="button" class="tile" data-id="${esc(u.id)}" data-rel="">
+          ${pic(u)}
+          <span><span class="tname"></span><span class="tmeta"></span></span>
+          <span class="mark" aria-hidden="true"></span>
+        </button>`;
+
+  function buildRoster() {
+    let groups;
+    if (grouping === 'stage') {
+      groups = STAGES.map(s => ({ title: `<span class="roman">${s.n}</span>`, list: units.filter(u => u.stage === s.stage) }));
+      const rest = units.filter(u => !STAGES.some(s => s.stage === u.stage));
+      if (rest.length) groups.push({ title: 'Ohne Stufe', list: rest });
+    } else {
+      groups = CLASS_ORDER.map(cls => ({ title: CLASS_LABEL[cls], list: units.filter(u => u.cls === cls) }));
+    }
+    roster.innerHTML = groups.filter(g => g.list.length).map(g => {
+      const list = g.list.slice().sort(byCost);
+      return `<div class="group${list.length > 10 ? ' wide' : ''}"><h2 class="group-title">${g.title} <span class="count">${list.length}</span></h2>
+      <div class="tiles">${list.map(tileHtml).join('')}</div></div>`;
+    }).join('');
+    tiles = [...roster.querySelectorAll('.tile')];
+    tileById = Object.fromEntries(tiles.map(t => [t.dataset.id, t]));
+    groupBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.groupSet === grouping ? 'true' : 'false'));
+  }
+  buildRoster();
+
+  function setGrouping(mode) {
+    grouping = mode === 'stage' ? 'stage' : 'class';
+    store.set('group', grouping);
+    buildRoster();
+    updateTiles();
+    matches();
+    if (current) select(current, { force: true, save: false });
+  }
+  groupBtns.forEach(b => b.addEventListener('click', () => setGrouping(b.dataset.groupSet)));
+
+  function updateTiles() {
+    tiles.forEach(t => {
+      const u = byId[t.dataset.id];
+      const f = flags(u, active);
+      const hasTech = (techsOf[u.id] || []).some(x => active.has(x.key));
+      const tn_ = t.querySelector('.tname');
+      tn_.textContent = nmh(u);
+      tn_.classList.toggle('long', nm(u).length > 13);
+      t.querySelector('.tmeta').innerHTML = `${u.cost ? `<span class="tc">${u.cost}</span>` : ''}${targetIcons(f)}${f.flies && (u.cls === 'titan' || !u.flies) ? '<span>fliegt</span>' : ''}${!f.flies && u.flies ? '<span>am Boden</span>' : ''}${hasTech ? '<span class="ttech">⚙ Tech</span>' : ''}`;
+    });
+  }
+
+  let current = null;
+  let relMap = {};
+  function select(id, opts = {}) {
+    const x = byId[id];
+    if (!x || (id === current && !opts.force)) return;
+    current = id;
+    if (opts.save !== false) store.set('sel', id);
+    const list = evaluate(x, active);
+    const rel = {};
+    list.forEach(p => { if (p.status !== 'gone') rel[p.id] = p; });
+    relMap = rel;
+    tiles.forEach(t => {
+      const tid = t.dataset.id;
+      const p = rel[tid];
+      const r = tid === id ? 'sel' : p ? p.dir : '';
+      t.dataset.rel = r;
+      t.dataset.tend = p && p.status !== 'ok' && p.level === 'tendenz' ? '1' : '';
+      t.querySelector('.mark').textContent = r === 'good' ? '▲' : r === 'bad' ? '▼' : '';
+      t.setAttribute('aria-pressed', r === 'sel' ? 'true' : 'false');
+    });
+    roster.classList.add('focus');
+    renderPanel(x, list);
+  }
+
+  // Auswahl aufheben (Klick ins Leere oder Esc)
+  function renderEmpty() {
+    panel.innerHTML = `<div class="empty-state"><h2>Keine Einheit gewählt</h2>
+      <p>Kachel anklicken${hover ? ' oder mit der Maus darüberfahren' : ''}, oder einfach den Namen tippen.</p></div>`;
+  }
+  function deselect() {
+    if (!current) return;
+    current = null;
+    relMap = {};
+    store.set('sel', '');
+    tiles.forEach(t => {
+      t.dataset.rel = '';
+      t.dataset.tend = '';
+      t.querySelector('.mark').textContent = '';
+      t.setAttribute('aria-pressed', 'false');
+    });
+    roster.classList.remove('focus');
+    hideTip();
+    renderEmpty();
+  }
+
+  function statusLine(p) {
+    if (p.status === 'gone') return `<span class="rs">✕ entfällt${lvl(p.level)} durch ${esc(tn(p.tech))} (${owner(p.tech)})</span>`;
+    if (p.status === 'weak') return `<span class="rs">◐ geschwächt${lvl('tendenz')} durch ${esc(tn(p.tech))} (${owner(p.tech)})${p.note ? ': ' + esc(tx(p.note)) : ''}</span>`;
+    if (p.status === 'new') return `<span class="rs">＋ neu${lvl(p.level)} durch ${esc(tn(p.tech))} (${owner(p.tech)})</span>`;
+    return '';
+  }
+
+  function rowList(list, x, dir) {
+    const order = { ok: 0, new: 1, weak: 2, gone: 3 };
+    const sorted = list.filter(p => p.dir === dir).sort((a, b) => order[a.status] - order[b.status]);
+    let html = sorted.length ? '<ul class="rows">' + sorted.map(p => {
+      const u = byId[p.id];
+      const hs = hintsFor(p);
+      const cls = ['row', p.status === 'gone' ? 'gone' : '', p.status !== 'ok' && p.level === 'tendenz' ? 'tend' : ''].join(' ');
+      return `<li class="${cls}">
+        <button type="button" class="go" data-go="${esc(p.id)}">
+          ${pic(u)}
+          <span><span class="rn">${esc(nmh(u))}</span><span class="rw">${esc(tx(p.why)) || '<em>ohne Begründung</em>'}</span>${statusLine(p)}</span>
+        </button>
+        ${hs.length ? `<div class="hints">${hs.map(h => `<button type="button" class="hint" data-tech="${esc(h.t.key)}" title="Tech einschalten">⚙ mit ${esc(tn(h.t))} (${owner(h.t)}): ${h.eff}</button>`).join('')}</div>` : ''}
+      </li>`;
+    }).join('') + '</ul>' : '<p class="empty">Keine klaren Matchups eingetragen.</p>';
+    const mb = maybeNew(x, dir, new Set(list.map(p => p.id)));
+    if (mb.length) {
+      html += `<div class="maybe"><div class="maybe-title">Mit Tech zusätzlich möglich</div><div class="hints" style="padding-left:6px">${mb.map(m =>
+        `<button type="button" class="hint" data-tech="${esc(m.t.key)}" title="Tech einschalten">⚙ ${esc(nm(byId[m.id]))} mit ${esc(tn(m.t))} (${owner(m.t)}): ${esc(tx(m.why))}</button>`).join('')}</div></div>`;
+    }
+    return html;
+  }
+
+  function techSection(x) {
+    const ts = techsOf[x.id] || [];
+    if (!ts.length) return '';
+    return `<div class="sec tech"><h3>⚙ Techs, die Konter ändern <small>anklicken zum Aktivieren</small></h3><div class="techs">${ts.map(t => {
+      const on = active.has(t.key);
+      return `<button type="button" class="tech-opt" data-tech="${esc(t.key)}" aria-pressed="${on}">
+        <span class="box" aria-hidden="true">${on ? '✓' : ''}</span>
+        <span><span class="tech-name">${esc(tn(t))}</span>${lvl(t.level)}
+          <span class="tech-eff">${esc(t.effect)}</span>
+          <span class="tech-game">Spieltext: „${esc(gameText(t))}“</span></span>
+      </button>`;
+    }).join('')}</div></div>`;
+  }
+
+  // Kurzübersicht: Konter als kleine Bilder direkt unter dem Namen
+  function quickRow(list, dir) {
+    const order = { ok: 0, new: 1, weak: 2 };
+    const ps = list.filter(p => p.dir === dir && p.status !== 'gone').sort((a, b) => order[a.status] - order[b.status]);
+    if (!ps.length) return '';
+    const shown = ps.slice(0, 6), rest = ps.length - shown.length;
+    return `<div class="quick ${dir}"><span class="qt">${dir === 'good' ? '▲ Kaufen' : '▼ Meiden'}</span><span class="qi">${shown.map(p => {
+      const u = byId[p.id];
+      return `<button type="button" class="qb${p.status !== 'ok' && p.level === 'tendenz' ? ' tend' : ''}" data-go="${esc(p.id)}" title="${esc(nm(u))}: ${esc(tx(p.why))}" aria-label="${esc(nm(u))}">${pic(u)}</button>`;
+    }).join('')}${rest > 0 ? `<span class="qmore">+${rest}</span>` : ''}</span></div>`;
+  }
+
+  function renderPanel(x, list) {
+    const f = flags(x, active);
+    const flyNote = f.src.flies ? (f.flies ? ' (fliegt durch Tech)' : ' (am Boden durch Tech)') : (x.flies && x.cls === 'titan' ? ' (fliegt)' : '');
+    const tgtNote = TARGETS[tgtOf(f)] + (f.src.hitsAir ? ' (durch Tech)' : '');
+    const meta = [CLASS_ONE[x.cls] + flyNote, x.cost ? x.cost + ' Kosten' : '', x.tier || '', tgtNote].filter(Boolean).join(' · ');
+    const n = esc(nm(x));
+    const a = alt(x);
+    panel.innerHTML = `
+      <div class="p-head">${pic(x)}
+        <div><h2>${esc(nmh(x))}</h2>${a && a !== nm(x) ? `<div class="p-alt">${lang === 'de' ? 'EN' : 'DE'}: ${esc(a)}</div>` : ''}<div class="p-meta">${esc(meta)}</div></div></div>
+      ${quickRow(list, 'good')}${quickRow(list, 'bad')}
+      ${x.tags && x.tags.length ?`<div class="chips">${x.tags.map(t => `<span class="chip">${esc(tx(t))}</span>`).join('')}</div>` : ''}
+      <div class="sec good"><h3>▲ Kontert ${n} <small>dagegen kaufen</small></h3>${rowList(list, x, 'good')}</div>
+      <div class="sec bad"><h3>▼ ${n} kontert <small>nicht dagegen stellen</small></h3>${rowList(list, x, 'bad')}</div>
+      ${techSection(x)}
+      ${x.note ? `<p class="note"><b>Hinweis:</b> ${esc(tx(x.note))}</p>` : ''}`;
+  }
+
+  function renderTechbar() {
+    const on = TECHS.filter(t => active.has(t.key));
+    techbar.hidden = !on.length;
+    techbar.innerHTML = on.length ? `Aktive Techs:${on.map(t =>
+      `<button type="button" class="tchip" data-tech="${esc(t.key)}" title="Tech ausschalten">${owner(t)}: ${esc(tn(t))} <span class="x" aria-hidden="true">✕</span></button>`).join('')}
+      <button type="button" class="linkbtn" data-clear="1">alle aus</button>` : '';
+  }
+
+  function refresh() {
+    updateTiles();
+    renderTechbar();
+    if (current) select(current, { force: true, save: false });
+    else renderEmpty();
+  }
+  function toggleTech(key) {
+    if (!techByKey[key]) return;
+    active.has(key) ? active.delete(key) : active.add(key);
+    saveTechs();
+    refresh();
+  }
+
+  function applyLang(next) {
+    lang = next;
+    store.set('lang', lang);
+    document.documentElement.lang = lang;
+    langBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
+    refresh();
+  }
+  langBtns.forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
+
+  // Farbschema: eigener Umschalter, Standard dunkel
+  function applyTheme(t) {
+    t = t === 'light' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-mbk-theme', t);
+    store.set('theme', t);
+    themeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.themeSet === t ? 'true' : 'false'));
+  }
+  themeBtns.forEach(b => b.addEventListener('click', () => applyTheme(b.dataset.themeSet)));
+  applyTheme(store.get('theme'));
+
+  // Größe und Farbschwäche-Modus
+  function applySize(s) {
+    s = s === 'large' ? 'large' : 'normal';
+    document.documentElement.setAttribute('data-mbk-size', s);
+    store.set('size', s);
+    sizeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.sizeSet === s ? 'true' : 'false'));
+    hideTip();
+  }
+  function applyCb(v) {
+    v = v === '1' ? '1' : '0';
+    document.documentElement.setAttribute('data-mbk-cb', v);
+    store.set('cb', v);
+    cbBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.cbSet === v ? 'true' : 'false'));
+  }
+  sizeBtns.forEach(b => b.addEventListener('click', () => applySize(b.dataset.sizeSet)));
+  cbBtns.forEach(b => b.addEventListener('click', () => applyCb(b.dataset.cbSet)));
+  applySize(store.get('size'));
+  applyCb(store.get('cb'));
+
+  panel.addEventListener('click', e => {
+    const tb = e.target.closest('[data-tech]');
+    if (tb) { toggleTech(tb.dataset.tech); return; }
+    const b = e.target.closest('[data-go]');
+    if (b) { select(b.dataset.go); tileById[b.dataset.go]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+  });
+  techbar.addEventListener('click', e => {
+    if (e.target.closest('[data-clear]')) { active.clear(); saveTechs(); refresh(); return; }
+    const tb = e.target.closest('[data-tech]');
+    if (tb) toggleTech(tb.dataset.tech);
+  });
+  roster.addEventListener('click', e => {
+    const t = e.target.closest('.tile');
+    if (t) select(t.dataset.id);
+  });
+
+  // Hover-Modus: Auswahl folgt dem Mauszeiger und bleibt stehen, wenn die Maus das Raster verlässt
+  let hover = store.get('hover') === '1';
+  let hoverTimer = 0;
+  function setHover(on) {
+    hover = on;
+    hoverBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    store.set('hover', on ? '1' : '0');
+  }
+  setHover(hover);
+  hoverBtn.addEventListener('click', () => setHover(!hover));
+  roster.addEventListener('pointerover', e => {
+    if (!hover || e.pointerType === 'touch') return;
+    const t = e.target.closest('.tile');
+    if (!t) return;
+    clearTimeout(hoverTimer);
+    hoverTimer = setTimeout(() => select(t.dataset.id), 45);
+  });
+  roster.addEventListener('pointerleave', () => { clearTimeout(hoverTimer); hideTip(); });
+
+  // Hinweis an der Kachel: Begründung des Konters (nur ohne Hover-Modus, dort folgt die Auswahl der Maus)
+  function hideTip() { tip.hidden = true; }
+  function showTip(t) {
+    const u = byId[t.dataset.id];
+    const p = relMap[u.id];
+    const x = current && byId[current];
+    let html = '';
+    if (p && x) {
+      const head = p.dir === 'good' ? `▲ ${nm(u)} kontert ${nm(x)}` : `▼ ${nm(x)} kontert ${nm(u)}`;
+      html = `<b>${esc(head)}</b><span class="tw">${esc(tx(p.why))}</span>${p.status !== 'ok' ? statusLine(p) : ''}`;
+      tip.className = 'tip ' + p.dir;
+    } else if (alt(u) && alt(u) !== nm(u)) {
+      html = `<b>${esc(nm(u))}</b><span class="tw">${lang === 'de' ? 'EN' : 'DE'}: ${esc(alt(u))}</span>`;
+      tip.className = 'tip';
+    }
+    if (!html) return hideTip();
+    tip.innerHTML = html;
+    tip.hidden = false;
+    const r = t.getBoundingClientRect();
+    const tw = tip.offsetWidth, th = tip.offsetHeight;
+    const left = Math.max(8, Math.min(window.innerWidth - tw - 8, r.left + r.width / 2 - tw / 2));
+    let top = r.top - th - 8;
+    if (top < 8) top = r.bottom + 8;
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+  roster.addEventListener('pointerover', e => {
+    if (hover || e.pointerType === 'touch') return;
+    const t = e.target.closest('.tile');
+    if (t) showTip(t); else hideTip();
+  });
+  window.addEventListener('scroll', hideTip, { passive: true });
+
+  // Klick ins Leere hebt die Auswahl auf; ein offenes Ansicht-Menü schließt sich zuerst
+  document.addEventListener('click', e => {
+    if (menu.open && !e.target.closest('.menu')) { menu.open = false; return; }
+    if (e.target.closest('.tile, .panel, .menu, .techbar, button, a, input, label, summary')) return;
+    deselect();
+  });
+
+  // Suche findet deutsche und englische Namen
+  function matches() {
+    const s = q.value.trim().toLowerCase();
+    return tiles.filter(t => {
+      const u = byId[t.dataset.id];
+      const hit = !s || u.name.toLowerCase().includes(s) || (u.name_de || '').toLowerCase().includes(s);
+      t.classList.toggle('dim', !hit);
+      return hit;
+    });
+  }
+  q.addEventListener('input', () => {
+    const m = matches();
+    if (q.value.trim() && m.length === 1) select(m[0].dataset.id);
+  });
+  q.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { const m = matches(); if (m[0]) select(m[0].dataset.id); q.select(); }
+    if (e.key === 'Escape') { q.value = ''; matches(); q.blur(); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.target === q || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'Escape') { if (menu.open) menu.open = false; else deselect(); return; }
+    if (e.key === '/') { e.preventDefault(); q.focus(); q.select(); return; }
+    if (e.key.length === 1 && /[a-zA-ZäöüÄÖÜ]/.test(e.key) && !/^(INPUT|TEXTAREA)$/.test(e.target.tagName)) {
+      q.focus(); q.value = ''; // der Buchstabe landet danach im Feld
+    }
+  });
+
+  // Kopf- und Fußzeile
+  document.getElementById('patch').textContent =
+    `${units.length} Einheiten · Stand: Patch ${DATA.patch || 'unbekannt'}${DATA.patchDate ? ' · ' + DATA.patchDate : ''}`;
+  const src = (DATA.sources || []).map(s => {
+    let host = s; try { host = new URL(s).hostname.replace(/^www\./, ''); } catch (e) {}
+    return `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(host)}</a>`;
+  });
+  const uniq = [...new Set(src)];
+  document.getElementById('foot').innerHTML = `
+    <p>Bewertungen sind Community-Konsens für Einheiten ohne besondere Technologien. Spezialisten, Einheitenlevel und reine Zahlen-Buffs sind nicht berücksichtigt.</p>
+    <p><b>Techs:</b> „belegt“ heißt, die Änderung folgt direkt aus dem Spieltext der Tech und den Zieltypen (Boden/Luft). Ein Beispiel: Wer keine Lufteinheiten mehr angreifen kann, kontert sie nicht mehr. „Tendenz“ heißt, die Richtung ist belegt, aber die Stärke ist unbekannt. Eine Tech gilt für die Einheit, egal ob sie dir oder dem Gegner gehört.</p>
+    <p>Einheiten- und Tech-Namen (DE und EN) sowie Spieltexte stammen aus den Spieldateien, Zieltypen und Tech-Zuordnung sind mit dem <a href="https://mbwiki.dreamhaven.com/units/" target="_blank" rel="noopener">Mechabellum Wiki</a> abgeglichen, die Einheitenbilder kommen ebenfalls von dort. Mechabellum und alle Spielinhalte gehören Game River.</p>
+    <p>Bedienung: Buchstaben tippen sucht (deutsch oder englisch), <kbd>Enter</kbd> wählt den ersten Treffer, <kbd>Esc</kbd> leert die Suche bzw. hebt die Auswahl auf, ein Klick ins Leere ebenfalls. Fährst du über eine markierte Kachel, erscheint die Begründung. Einträge in der Liste rechts sind anklickbar, ⚙-Hinweise schalten die jeweilige Tech ein. Sprache, Gruppierung, Design, Größe und Farben stellst du unter „Ansicht“ ein.</p>
+    ${uniq.length ? `<p>Quellen der Matchups: ${uniq.join(' · ')}</p>` : ''}`;
+
+  applyLang(lang);
+  // Start: zuletzt gewählte Einheit, bewusst leere Auswahl bleibt leer, sonst die erste Einheit
+  const start = store.get('sel');
+  if (start === '') renderEmpty();
+  else select(byId[start] ? start : (tiles[0] && tiles[0].dataset.id), { save: false });
+})();
+</script>

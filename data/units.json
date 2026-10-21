@@ -1,0 +1,1847 @@
+{
+ "patch": "2.0.0.4 (Mechabellum 2.0, Season 9)",
+ "patchDate": "14.10.2026",
+ "patchNotes": "2.0 launched 2026-09-22 (new unit Centurion, Star Expedition, Free Edition). Hotfixes 2.0.0.1-2.0.0.3 (Centurion buffs/rework, Sandworm anti-air) and 2.0.0.4 on 2026-10-14 (Void Eye, Vortex, Sabertooth anti-air missile). Previous: 1.11 Season 8 (2026-06-09, Typhoon remake), 1.10 Season 7 (2026-03-12, Vortex added). tier = unlock cost in supply (0 = available from the start). 'class' for air units is 'air'; size is noted in the tags.",
+ "sources": [
+  "https://mbwiki.dreamhaven.com/units/",
+  "https://mbwiki.dreamhaven.com/updates/",
+  "https://mbwiki.dreamhaven.com/updates/update-110-season-7-new-unit-mac-support",
+  "https://mbwiki.dreamhaven.com/updates/update-111-season-8-typhoon-remake-new-anomalies",
+  "https://mechabellum.wiki.gg/wiki/Mechabellum_Wiki",
+  "https://mechabellum.wiki.gg/wiki/Centurion",
+  "https://mechabellum.wiki.gg/wiki/Death_Knell",
+  "https://mechabellum.wiki.gg/wiki/Typhoon",
+  "https://steamcommunity.com/games/669330/announcements/detail/669501491572114039",
+  "https://patchbot.io/games/mechabellum/articles/1508-20-is-here-free-edition-solo-co-op-star-expedition-new-unit-centurion",
+  "https://patchbot.io/games/mechabellum/articles/1611-update-2003",
+  "https://patchbot.io/games/mechabellum/articles/1776-update-2004",
+  "https://allthings.how/?p=226607",
+  "https://steamcommunity.com/app/669330/discussions/0/582806239606748045/",
+  "https://mechabellumwiki.wiki/updates/mechabellum-2-0-update",
+  "https://pressreleases.triplepointpr.com/2026/06/09/dreamhaven-and-game-river-launch-mechabellum-season-8-on-steam-and-the-epic-games-store/",
+  "https://progameguides.com/mechabellum/all-mechabellum-unit-counters-list/",
+  "https://gameplay.tips/guides/mechabellum-list-of-counter-units.html"
+ ],
+ "units": [
+  {
+   "id": "crawler",
+   "name": "Crawler",
+   "name_de": "Kriecher",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "ground",
+   "tags": [
+    "Chaff",
+    "Nahkampf",
+    "Schwarm",
+    "schnell"
+   ],
+   "strong": [
+    {
+     "id": "marksman",
+     "why": "überrennt Einzelschuss-Scharfschützen"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl verpufft an Chaff"
+    },
+    {
+     "id": "sabertooth",
+     "why": "langsame Schüsse gegen Masse"
+    },
+    {
+     "id": "steel_ball",
+     "why": "blockt und zieht Strahl ab"
+    }
+   ],
+   "weak": [
+    {
+     "id": "arclight",
+     "why": "Splash zerlegt Schwärme"
+    },
+    {
+     "id": "fire_badger",
+     "why": "Flammen-Splash gegen Chaff"
+    },
+    {
+     "id": "vulcan",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "wraith",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "fang",
+   "name": "Fang",
+   "name_de": "Fang",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "both",
+   "tags": [
+    "Chaff",
+    "Schwarm",
+    "Flugabwehr",
+    "Fernkampf"
+   ],
+   "strong": [
+    {
+     "id": "marksman",
+     "why": "viele Körper gegen Einzelschuss"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl verpufft an Chaff"
+    },
+    {
+     "id": "wasp",
+     "why": "trifft Luft, mehr Reichweite"
+    },
+    {
+     "id": "phoenix",
+     "why": "Overkill auf billige Ziele"
+    }
+   ],
+   "weak": [
+    {
+     "id": "hound",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "fire_badger",
+     "why": "Flammen-Splash gegen Chaff"
+    },
+    {
+     "id": "vulcan",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "typhoon",
+     "why": "Schnellfeuer zerlegt kleine Einheiten"
+    }
+   ],
+   "note": "Grenade Launcher gibt Splash, Portable Shield schützt vor Arclight.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "hound",
+   "name": "Hound",
+   "name_de": "Jagdhund",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "ground",
+   "tags": [
+    "Anti-Chaff",
+    "Flächenschaden",
+    "billig",
+    "kurze Reichweite"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "fang",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "mustang",
+     "why": "Splash trifft leichte Gruppen"
+    },
+    {
+     "id": "typhoon",
+     "why": "früh in Masse effizient"
+    }
+   ],
+   "weak": [
+    {
+     "id": "void_eye",
+     "why": "hoher Einzelschaden, mehr Reichweite"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "Panzer und Splash überlegen"
+    },
+    {
+     "id": "vortex",
+     "why": "zäher Frontmann, starker Einzelschaden"
+    },
+    {
+     "id": "wasp",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "marksman",
+   "name": "Marksman",
+   "name_de": "Scharfschütze",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "both",
+   "tags": [
+    "hohe Reichweite",
+    "hoher Einzelschaden",
+    "Flugabwehr",
+    "Scharfschütze"
+   ],
+   "strong": [
+    {
+     "id": "phoenix",
+     "why": "trifft Luft, höhere Reichweite"
+    },
+    {
+     "id": "raiden",
+     "why": "Fokus-Schaden gegen Luftriesen"
+    },
+    {
+     "id": "overlord",
+     "why": "Fokus-Schaden gegen Luftriesen"
+    },
+    {
+     "id": "void_eye",
+     "why": "überreicht es deutlich"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "Schwarm überrennt Einzelschuss"
+    },
+    {
+     "id": "fang",
+     "why": "viele Ziele, Overkill"
+    },
+    {
+     "id": "wasp",
+     "why": "schneller Schwarm, viele Körper"
+    },
+    {
+     "id": "stormcaller",
+     "why": "Artillerie-Splash von weiter weg"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "arclight",
+   "name": "Arclight",
+   "name_de": "Arclight",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "Anti-Chaff",
+    "Flächenschaden",
+    "billig",
+    "zäh"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "Kettensplash zerlegt Schwärme"
+    },
+    {
+     "id": "fang",
+     "why": "Kettensplash zerlegt Schwärme"
+    },
+    {
+     "id": "hound",
+     "why": "zäher, Splash trifft alle"
+    },
+    {
+     "id": "mustang",
+     "why": "Splash gegen leichte Gruppen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "Fernschaden, außer Reichweite"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "sabertooth",
+     "why": "hoher Einzelschaden zerstört es"
+    },
+    {
+     "id": "hacker",
+     "why": "übernimmt es gegen dich"
+    }
+   ],
+   "note": "Anti-Aircraft Ammunition erlaubt Luftziele (v.a. gegen Wasp).",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "void_eye",
+   "name": "Void Eye",
+   "name_de": "Leeres Auge",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "ground",
+   "tags": [
+    "hoher Einzelschaden",
+    "billig",
+    "mittlere Reichweite",
+    "Tech: Flugmodus"
+   ],
+   "strong": [
+    {
+     "id": "sabertooth",
+     "why": "hoher Einzelschaden, mehrere Körper"
+    },
+    {
+     "id": "tarantula",
+     "why": "knackt Panzer aus zweiter Reihe"
+    },
+    {
+     "id": "steel_ball",
+     "why": "schießt sie vor Aufladung ab"
+    },
+    {
+     "id": "hound",
+     "why": "überreicht und zerlegt sie"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "outranged es"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "mustang",
+     "why": "schnell, viele kleine Körper"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "note": "Aerial Mode macht es zur Lufteinheit, die Luft treffen kann.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "vortex",
+   "name": "Vortex",
+   "name_de": "Wirbel",
+   "cost": 100,
+   "tier": "ab Start verfügbar",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "Frontlinie",
+    "Einzelziel",
+    "Schild",
+    "Support"
+   ],
+   "strong": [
+    {
+     "id": "hound",
+     "why": "zäh, starker Einzelschaden früh"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "stark gegen mittlere Einheiten"
+    },
+    {
+     "id": "steel_ball",
+     "why": "hält aus, schießt sie ab"
+    },
+    {
+     "id": "fire_badger",
+     "why": "viel HP, Fokusfeuer"
+    }
+   ],
+   "weak": [
+    {
+     "id": "sabertooth",
+     "why": "höherer Einzelschaden"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "fortress",
+     "why": "mehr HP und Schaden"
+    }
+   ],
+   "note": "Neu seit Season 7 (1.10); 2.0.0.4 machte Machine Learning billiger.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "fire_badger",
+   "name": "Fire Badger",
+   "name_de": "Feuerdachs",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "Anti-Chaff",
+    "Flächenschaden",
+    "Flammenwerfer",
+    "kurze Reichweite"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "Flammen-Splash gegen Chaff"
+    },
+    {
+     "id": "fang",
+     "why": "Flammen-Splash gegen Chaff"
+    },
+    {
+     "id": "mustang",
+     "why": "brennt leichte Einheiten weg"
+    },
+    {
+     "id": "hound",
+     "why": "zäher, Splash trifft alle"
+    }
+   ],
+   "weak": [
+    {
+     "id": "scorpion",
+     "why": "Splash vernichtet ganze Gruppe"
+    },
+    {
+     "id": "hacker",
+     "why": "übernimmt sie gegen dich"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "fortress",
+     "why": "Panzer, Kleinschaden prallt ab"
+    }
+   ],
+   "note": "Season 5 Remake; Scorching Charge = Explosions-Build.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "hacker",
+   "name": "Hacker",
+   "name_de": "Hacker",
+   "cost": 200,
+   "tier": "Freischaltung 100",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "Gedankenkontrolle",
+    "hohe Reichweite",
+    "Utility",
+    "Anti-Groß"
+   ],
+   "strong": [
+    {
+     "id": "sledgehammer",
+     "why": "übernimmt starke Einheiten"
+    },
+    {
+     "id": "tarantula",
+     "why": "übernimmt starke Einheiten"
+    },
+    {
+     "id": "sabertooth",
+     "why": "übernimmt starke Einheiten"
+    },
+    {
+     "id": "scorpion",
+     "why": "gekaperter Splash trifft eigene"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "zu viele billige Ziele"
+    },
+    {
+     "id": "fang",
+     "why": "zu viele billige Ziele"
+    },
+    {
+     "id": "mustang",
+     "why": "schnell, viele Körper"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "note": "Seit 1.11: 0,9s Vorbereitung vor jedem neuen Ziel.",
+   "unlock": 100,
+   "stage": 2
+  },
+  {
+   "id": "mustang",
+   "name": "Mustang",
+   "name_de": "Mustang",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "small",
+   "targets": "both",
+   "tags": [
+    "schnell",
+    "Flugabwehr",
+    "Flanker",
+    "Allrounder"
+   ],
+   "strong": [
+    {
+     "id": "wasp",
+     "why": "Flugabwehr gegen Schwarm"
+    },
+    {
+     "id": "fang",
+     "why": "schneller, mehr HP"
+    },
+    {
+     "id": "void_eye",
+     "why": "flankt und überrennt es"
+    },
+    {
+     "id": "hacker",
+     "why": "zu viele Ziele zum Kapern"
+    }
+   ],
+   "weak": [
+    {
+     "id": "arclight",
+     "why": "Splash gegen leichte Gruppen"
+    },
+    {
+     "id": "fire_badger",
+     "why": "Flammen-Splash gegen Leichte"
+    },
+    {
+     "id": "vulcan",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "tarantula",
+     "why": "Splash und viel HP"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "phantom_ray",
+   "name": "Phantom Ray",
+   "name_de": "Phantomstrahl",
+   "cost": 200,
+   "tier": "Freischaltung 50",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "mittlerer Flieger",
+    "Tarnung",
+    "Raketen",
+    "Burst-Schaden"
+   ],
+   "strong": [
+    {
+     "id": "tarantula",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "sabertooth",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "fire_badger",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "Flugabwehr mit hoher Reichweite"
+    },
+    {
+     "id": "phoenix",
+     "why": "outranged es in der Luft"
+    },
+    {
+     "id": "farseer",
+     "why": "Flak-Splash, Raketenabwehr"
+    },
+    {
+     "id": "raiden",
+     "why": "Blitz zerlegt mittlere Flieger"
+    }
+   ],
+   "note": "Neu seit 1.1 (Nov 2024). Stealth Cloak seit 1.10 nur 100.",
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "phoenix",
+   "name": "Phoenix",
+   "name_de": "Phoenix",
+   "cost": 200,
+   "tier": "Freischaltung 50",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "mittlerer Flieger",
+    "hohe Reichweite",
+    "hoher Einzelschaden",
+    "Wiederbelebung"
+   ],
+   "strong": [
+    {
+     "id": "sabertooth",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "tarantula",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "stormcaller",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "vulcan",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "outranged es, trifft Luft"
+    },
+    {
+     "id": "wasp",
+     "why": "schneller Schwarm, viele Körper"
+    },
+    {
+     "id": "raiden",
+     "why": "mehr HP und Schaden"
+    },
+    {
+     "id": "mustang",
+     "why": "Flugabwehr, viele Körper"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "rhino",
+   "name": "Rhino",
+   "name_de": "Rhino",
+   "cost": 200,
+   "tier": "Freischaltung 50",
+   "class": "large",
+   "targets": "ground",
+   "tags": [
+    "Nahkampf",
+    "Tank",
+    "Ansturm",
+    "Flächenschaden (Wirbel)"
+   ],
+   "strong": [
+    {
+     "id": "marksman",
+     "why": "stürmt in die Fernkämpfer"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "hoher Nahkampfschaden, viel HP"
+    },
+    {
+     "id": "arclight",
+     "why": "zu zäh für deren Schaden"
+    },
+    {
+     "id": "vulcan",
+     "why": "hält aus und zerlegt es"
+    }
+   ],
+   "weak": [
+    {
+     "id": "steel_ball",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "sabertooth",
+     "why": "Einzelschaden vor dem Kontakt"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "sabertooth",
+   "name": "Sabertooth",
+   "name_de": "Säbelzahn",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "large",
+   "targets": "ground",
+   "tags": [
+    "hoher Einzelschaden",
+    "Tank",
+    "Anti-Groß",
+    "Tech: Flugabwehrrakete"
+   ],
+   "strong": [
+    {
+     "id": "tarantula",
+     "why": "hoher Einzelschaden gegen Einzelkörper"
+    },
+    {
+     "id": "arclight",
+     "why": "Einzelschaden zerlegt es"
+    },
+    {
+     "id": "vulcan",
+     "why": "outranged und knackt es"
+    },
+    {
+     "id": "rhino",
+     "why": "schießt es vor Kontakt"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "langsame Schüsse gegen Masse"
+    },
+    {
+     "id": "fang",
+     "why": "langsame Schüsse gegen Masse"
+    },
+    {
+     "id": "void_eye",
+     "why": "mehrere Körper, hoher Schaden"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "note": "Anti-Air Missile (2.0, in 2.0.0.4 gebufft) gibt etwas Flugabwehr.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "sledgehammer",
+   "name": "Sledgehammer",
+   "name_de": "Vorschlaghammer",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "Flächenschaden",
+    "Tank",
+    "Schadensteilung",
+    "mittlere Reichweite"
+   ],
+   "strong": [
+    {
+     "id": "hound",
+     "why": "Panzer und Splash überlegen"
+    },
+    {
+     "id": "mustang",
+     "why": "Splash gegen leichte Gruppen"
+    },
+    {
+     "id": "steel_ball",
+     "why": "Splash vor Aufladung"
+    },
+    {
+     "id": "melting_point",
+     "why": "mehrere Körper, Strahl springt"
+    }
+   ],
+   "weak": [
+    {
+     "id": "scorpion",
+     "why": "großer Splash gegen Gruppen"
+    },
+    {
+     "id": "hacker",
+     "why": "übernimmt sie gegen dich"
+    },
+    {
+     "id": "fortress",
+     "why": "mehr HP und Splash"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "steel_ball",
+   "name": "Steel Ball",
+   "name_de": "Stahlkugel",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "medium",
+   "targets": "ground",
+   "tags": [
+    "aufladender Strahl",
+    "schnell",
+    "kurze Reichweite",
+    "Anti-Groß"
+   ],
+   "strong": [
+    {
+     "id": "tarantula",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "sabertooth",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "rhino",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "melting_point",
+     "why": "schnell dran, schmilzt Riesen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "sledgehammer",
+     "why": "Splash vor Aufladung"
+    },
+    {
+     "id": "scorpion",
+     "why": "großer Splash gegen Gruppen"
+    },
+    {
+     "id": "crawler",
+     "why": "blockt und zieht Strahl ab"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "stormcaller",
+   "name": "Stormcaller",
+   "name_de": "Sturmrufer",
+   "cost": 200,
+   "tier": "Freischaltung 50",
+   "class": "small",
+   "targets": "ground",
+   "tags": [
+    "Artillerie",
+    "sehr hohe Reichweite",
+    "Flächenschaden",
+    "zerbrechlich"
+   ],
+   "strong": [
+    {
+     "id": "tarantula",
+     "why": "beschießt es außer Reichweite"
+    },
+    {
+     "id": "scorpion",
+     "why": "beschießt es außer Reichweite"
+    },
+    {
+     "id": "melting_point",
+     "why": "Raketen von weit weg"
+    },
+    {
+     "id": "marksman",
+     "why": "Splash von weiter weg"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "läuft rein, kaum HP"
+    },
+    {
+     "id": "steel_ball",
+     "why": "schnell dran, kaum HP"
+    },
+    {
+     "id": "rhino",
+     "why": "stürmt rein, kaum HP"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "tarantula",
+   "name": "Tarantula",
+   "name_de": "Tarantel",
+   "cost": 200,
+   "tier": "ab Start verfügbar",
+   "class": "large",
+   "targets": "ground",
+   "tags": [
+    "Anti-Chaff",
+    "Flächenschaden",
+    "Tank",
+    "Spinnenminen"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "fang",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "hound",
+     "why": "zäher, mehr Splash"
+    },
+    {
+     "id": "mustang",
+     "why": "Splash gegen leichte Gruppen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "sabertooth",
+     "why": "hoher Einzelschaden"
+    },
+    {
+     "id": "stormcaller",
+     "why": "beschießt es außer Reichweite"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "void_eye",
+     "why": "knackt Panzer aus zweiter Reihe"
+    }
+   ],
+   "note": "Anti-Aircraft Ammunition erlaubt Luftziele.",
+   "unlock": 0,
+   "stage": 1
+  },
+  {
+   "id": "wasp",
+   "name": "Wasp",
+   "name_de": "Wespe",
+   "cost": 200,
+   "tier": "Freischaltung 50",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "leichter Flieger",
+    "Schwarm",
+    "schnell",
+    "Anti-Riese"
+   ],
+   "strong": [
+    {
+     "id": "marksman",
+     "why": "zu viele schnelle Ziele"
+    },
+    {
+     "id": "phoenix",
+     "why": "Schwarm gegen Einzelschuss"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl verpufft an Schwarm"
+    },
+    {
+     "id": "raiden",
+     "why": "Schwarm gegen Einzelziel"
+    }
+   ],
+   "weak": [
+    {
+     "id": "fang",
+     "why": "billige Flugabwehr, viele Körper"
+    },
+    {
+     "id": "mustang",
+     "why": "Flugabwehr gegen Schwarm"
+    },
+    {
+     "id": "typhoon",
+     "why": "Schnellfeuer-Flak zerlegt Schwarm"
+    },
+    {
+     "id": "wraith",
+     "why": "Splash gegen Luftschwarm"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "farseer",
+   "name": "Farseer",
+   "name_de": "Weitblicker",
+   "cost": 300,
+   "tier": "Freischaltung 50",
+   "class": "large",
+   "targets": "both",
+   "tags": [
+    "Flugabwehr",
+    "Flächenschaden",
+    "hohe Reichweite",
+    "Raketenabwehr"
+   ],
+   "strong": [
+    {
+     "id": "phantom_ray",
+     "why": "Flak-Splash, fängt Raketen ab"
+    },
+    {
+     "id": "wraith",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "raiden",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "overlord",
+     "why": "starke Flugabwehr"
+    }
+   ],
+   "weak": [
+    {
+     "id": "sabertooth",
+     "why": "hoher Einzelschaden am Boden"
+    },
+    {
+     "id": "hacker",
+     "why": "übernimmt es gegen dich"
+    },
+    {
+     "id": "fortress",
+     "why": "mehr HP und Schaden"
+    },
+    {
+     "id": "sandworm",
+     "why": "taucht direkt darunter auf"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "scorpion",
+   "name": "Scorpion",
+   "name_de": "Skorpion",
+   "cost": 300,
+   "tier": "Freischaltung 50",
+   "class": "large",
+   "targets": "ground",
+   "tags": [
+    "großer Flächenschaden",
+    "hoher Schaden",
+    "Säure",
+    "Anti-Mittel"
+   ],
+   "strong": [
+    {
+     "id": "sledgehammer",
+     "why": "großer Splash gegen Gruppen"
+    },
+    {
+     "id": "fire_badger",
+     "why": "ein Schuss trifft ganze Gruppe"
+    },
+    {
+     "id": "steel_ball",
+     "why": "großer Splash gegen Gruppen"
+    },
+    {
+     "id": "typhoon",
+     "why": "hoher Schaden gegen Mittlere"
+    }
+   ],
+   "weak": [
+    {
+     "id": "stormcaller",
+     "why": "beschießt es außer Reichweite"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "hacker",
+     "why": "gekaperter Splash trifft eigene"
+    },
+    {
+     "id": "overlord",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "typhoon",
+   "name": "Typhoon",
+   "name_de": "Taifun",
+   "cost": 300,
+   "tier": "Freischaltung 50",
+   "class": "large",
+   "targets": "both",
+   "tags": [
+    "Anti-Chaff",
+    "Flugabwehr",
+    "Schnellfeuer",
+    "Heilung/Wiederbelebung"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "Schnellfeuer gegen kleine Einheiten"
+    },
+    {
+     "id": "fang",
+     "why": "Schnellfeuer gegen kleine Einheiten"
+    },
+    {
+     "id": "wasp",
+     "why": "Schnellfeuer-Flak zerlegt Schwarm"
+    },
+    {
+     "id": "mustang",
+     "why": "Schnellfeuer gegen kleine Einheiten"
+    }
+   ],
+   "weak": [
+    {
+     "id": "scorpion",
+     "why": "hoher Schaden gegen Mittlere"
+    },
+    {
+     "id": "centurion",
+     "why": "starker Einzelschaden"
+    },
+    {
+     "id": "fortress",
+     "why": "Kleinschaden gegen viel HP"
+    },
+    {
+     "id": "raiden",
+     "why": "Blitzschaden zerlegt es"
+    }
+   ],
+   "note": "Season 8 (1.11) Komplett-Remake: Frontlinie, Chaff-Clear, Anti-Air.",
+   "unlock": 50,
+   "stage": 2,
+   "stage_guess": true
+  },
+  {
+   "id": "centurion",
+   "name": "Centurion",
+   "name_de": "Zenturio",
+   "cost": 300,
+   "tier": "Freischaltung 50",
+   "class": "large",
+   "targets": "both",
+   "tags": [
+    "Einzelziel",
+    "hohe Reichweite",
+    "Nahkampfmodus",
+    "ruft Hound-Einheiten"
+   ],
+   "strong": [
+    {
+     "id": "sledgehammer",
+     "why": "starker Einzelschaden gegen Mittlere"
+    },
+    {
+     "id": "fire_badger",
+     "why": "outranged und knackt sie"
+    },
+    {
+     "id": "typhoon",
+     "why": "starker Einzelschaden"
+    },
+    {
+     "id": "wraith",
+     "why": "trifft Luft mit Fokusfeuer"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "Einzelschuss gegen Schwarm"
+    },
+    {
+     "id": "fang",
+     "why": "Einzelschuss gegen Schwarm"
+    },
+    {
+     "id": "wasp",
+     "why": "Einzelschuss gegen Luftschwarm"
+    },
+    {
+     "id": "fortress",
+     "why": "mehr HP und Schaden"
+    }
+   ],
+   "note": "Neu in 2.0 (Sep 2026). Die Beschwörungs-Tech hilft gegen Chaff; Werte noch im Fluss.",
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "wraith",
+   "name": "Wraith",
+   "name_de": "Geist",
+   "cost": 300,
+   "tier": "Freischaltung 50",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "schwerer Flieger",
+    "Flächenschaden",
+    "Anti-Chaff",
+    "zäh"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "fang",
+     "why": "Splash gegen Schwärme"
+    },
+    {
+     "id": "hound",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "wasp",
+     "why": "Splash gegen Luftschwarm"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "Flugabwehr mit hoher Reichweite"
+    },
+    {
+     "id": "farseer",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "phantom_ray",
+     "why": "Raketen-Burst gegen Flieger"
+    }
+   ],
+   "unlock": 50,
+   "stage": 2
+  },
+  {
+   "id": "fortress",
+   "name": "Fortress",
+   "name_de": "Festung",
+   "cost": 400,
+   "tier": "Freischaltung 200",
+   "class": "giant",
+   "targets": "ground",
+   "tags": [
+    "Tank",
+    "viel HP",
+    "Flächenschaden",
+    "Barriere"
+   ],
+   "strong": [
+    {
+     "id": "sledgehammer",
+     "why": "mehr HP und Splash"
+    },
+    {
+     "id": "sabertooth",
+     "why": "mehr HP und Schaden"
+    },
+    {
+     "id": "scorpion",
+     "why": "mehr HP und Schaden"
+    },
+    {
+     "id": "sandworm",
+     "why": "hält aus und zerlegt ihn"
+    }
+   ],
+   "weak": [
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Riesen"
+    },
+    {
+     "id": "abyss",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "mountain",
+     "why": "Titan mit viel mehr Feuerkraft"
+    },
+    {
+     "id": "war_factory",
+     "why": "Titan mit viel mehr HP"
+    }
+   ],
+   "note": "Anti-Air Barrage erlaubt Luftziele.",
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "melting_point",
+   "name": "Melting Point",
+   "name_de": "Schmelzpunkt",
+   "cost": 400,
+   "tier": "Freischaltung 200",
+   "class": "giant",
+   "targets": "both",
+   "tags": [
+    "aufladender Strahl",
+    "Anti-Riese",
+    "hohe Reichweite",
+    "Einzelziel"
+   ],
+   "strong": [
+    {
+     "id": "fortress",
+     "why": "Strahl schmilzt Riesen"
+    },
+    {
+     "id": "sandworm",
+     "why": "Strahl schmilzt Riesen"
+    },
+    {
+     "id": "vulcan",
+     "why": "Strahl schmilzt Riesen"
+    },
+    {
+     "id": "mountain",
+     "why": "Strahl schmilzt Titanen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "Strahl verpufft an Chaff"
+    },
+    {
+     "id": "fang",
+     "why": "Strahl verpufft an Chaff"
+    },
+    {
+     "id": "wasp",
+     "why": "Strahl verpufft an Schwarm"
+    },
+    {
+     "id": "stormcaller",
+     "why": "Raketen von weit weg"
+    }
+   ],
+   "note": "Energy Diffraction teilt den Strahl, besser gegen Mittlere.",
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "raiden",
+   "name": "Raiden",
+   "name_de": "Raiden",
+   "cost": 400,
+   "tier": "Freischaltung 200",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "Riesenflieger",
+    "Blitz",
+    "Anti-Mittel",
+    "Kettenblitz"
+   ],
+   "strong": [
+    {
+     "id": "hound",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "fire_badger",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "phantom_ray",
+     "why": "Blitz zerlegt mittlere Flieger"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "Fokus-Schaden gegen Luftriesen"
+    },
+    {
+     "id": "wasp",
+     "why": "Schwarm gegen Einzelziel"
+    },
+    {
+     "id": "farseer",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "fang",
+     "why": "billige Flugabwehr in Masse"
+    }
+   ],
+   "note": "Chain-Tech macht es stark gegen Chaff.",
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "sandworm",
+   "name": "Sandworm",
+   "name_de": "Sandwurm",
+   "cost": 400,
+   "tier": "Freischaltung 200",
+   "class": "giant",
+   "targets": "ground",
+   "tags": [
+    "Nahkampf",
+    "gräbt sich ein",
+    "Flächenschaden",
+    "greift Hinterreihe an"
+   ],
+   "strong": [
+    {
+     "id": "marksman",
+     "why": "taucht in der Hinterreihe auf"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "großer Nahkampf-Splash"
+    },
+    {
+     "id": "tarantula",
+     "why": "hoher Nahkampfschaden"
+    },
+    {
+     "id": "vulcan",
+     "why": "hoher Nahkampfschaden"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "blockt, Splash verpufft"
+    },
+    {
+     "id": "fang",
+     "why": "Chaff hält ihn auf"
+    },
+    {
+     "id": "fortress",
+     "why": "mehr HP, Fernschaden"
+    },
+    {
+     "id": "war_factory",
+     "why": "Titan mit viel mehr HP"
+    }
+   ],
+   "note": "Anti-Aerial-Tech (2.0.0.3: +30% ATK) erlaubt Luftziele.",
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "vulcan",
+   "name": "Vulcan",
+   "name_de": "Vulkan",
+   "cost": 400,
+   "tier": "Freischaltung 200",
+   "class": "giant",
+   "targets": "ground",
+   "tags": [
+    "Flammenwerfer",
+    "Anti-Chaff",
+    "großer Flächenschaden",
+    "kurze Reichweite"
+   ],
+   "strong": [
+    {
+     "id": "crawler",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "fang",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "hound",
+     "why": "riesiger Flammen-Splash"
+    },
+    {
+     "id": "mustang",
+     "why": "riesiger Flammen-Splash"
+    }
+   ],
+   "weak": [
+    {
+     "id": "sabertooth",
+     "why": "outranged und knackt es"
+    },
+    {
+     "id": "stormcaller",
+     "why": "beschießt es außer Reichweite"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Riesen"
+    },
+    {
+     "id": "phoenix",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "overlord",
+   "name": "Overlord",
+   "name_de": "Overlord",
+   "cost": 500,
+   "tier": "Freischaltung 200",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "Riesenflieger",
+    "Artillerie-Flächenschaden",
+    "hohe Reichweite",
+    "zäh"
+   ],
+   "strong": [
+    {
+     "id": "sabertooth",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "tarantula",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "scorpion",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "vulcan",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "marksman",
+     "why": "Fokus-Schaden gegen Luftriesen"
+    },
+    {
+     "id": "wasp",
+     "why": "Schwarm gegen Einzelziel"
+    },
+    {
+     "id": "farseer",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Riesen"
+    }
+   ],
+   "unlock": 200,
+   "stage": 3
+  },
+  {
+   "id": "war_factory",
+   "name": "War Factory",
+   "name_de": "Kriegsfabrik",
+   "cost": 800,
+   "tier": "Freischaltung 350",
+   "class": "giant",
+   "targets": "ground",
+   "tags": [
+    "Titan",
+    "beschwört Einheiten",
+    "Flächenschaden",
+    "riesige HP"
+   ],
+   "strong": [
+    {
+     "id": "sabertooth",
+     "why": "Titan mit viel mehr HP"
+    },
+    {
+     "id": "fortress",
+     "why": "Titan mit viel mehr HP"
+    },
+    {
+     "id": "sandworm",
+     "why": "Titan mit viel mehr HP"
+    },
+    {
+     "id": "farseer",
+     "why": "zu viel HP für sie"
+    }
+   ],
+   "weak": [
+    {
+     "id": "overlord",
+     "why": "kann Luft nicht treffen"
+    },
+    {
+     "id": "abyss",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "mountain",
+     "why": "mehr Feuerkraft als Titan"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Titanen"
+    }
+   ],
+   "unlock": 350,
+   "stage": 4
+  },
+  {
+   "id": "mountain",
+   "name": "Mountain",
+   "name_de": "Berg",
+   "cost": 800,
+   "tier": "Freischaltung 350",
+   "class": "giant",
+   "targets": "ground",
+   "tags": [
+    "Titan",
+    "riesiger Schaden",
+    "Flächenschaden",
+    "flexible Techs"
+   ],
+   "strong": [
+    {
+     "id": "fortress",
+     "why": "Titan mit viel mehr Feuerkraft"
+    },
+    {
+     "id": "sandworm",
+     "why": "Titan mit viel mehr Feuerkraft"
+    },
+    {
+     "id": "vulcan",
+     "why": "Titan mit viel mehr Feuerkraft"
+    },
+    {
+     "id": "war_factory",
+     "why": "mehr Feuerkraft als Titan"
+    }
+   ],
+   "weak": [
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Titanen"
+    },
+    {
+     "id": "abyss",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "steel_ball",
+     "why": "Strahl schmilzt Großziele"
+    },
+    {
+     "id": "raiden",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "note": "Anti-Aircraft Ammunition erlaubt Luftziele (-40% ATK).",
+   "unlock": 350,
+   "stage": 4
+  },
+  {
+   "id": "abyss",
+   "name": "Abyss",
+   "name_de": "Abgrund",
+   "cost": 800,
+   "tier": "Freischaltung 350",
+   "class": "air",
+   "targets": "both",
+   "tags": [
+    "Titan",
+    "fliegt",
+    "Laserstrahl",
+    "Anti-Riese"
+   ],
+   "strong": [
+    {
+     "id": "fortress",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "war_factory",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "mountain",
+     "why": "Laser trifft Riesen mehrfach"
+    },
+    {
+     "id": "scorpion",
+     "why": "kann Luft nicht treffen"
+    }
+   ],
+   "weak": [
+    {
+     "id": "crawler",
+     "why": "ein Crawler lenkt Laser ab"
+    },
+    {
+     "id": "wasp",
+     "why": "Schwarm gegen Einzelziel"
+    },
+    {
+     "id": "farseer",
+     "why": "starke Flugabwehr"
+    },
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Riesen"
+    }
+   ],
+   "unlock": 350,
+   "stage": 4
+  },
+  {
+   "id": "death_knell",
+   "name": "Death Knell",
+   "name_de": "Totenglocke",
+   "cost": 800,
+   "tier": "nicht freischaltbar (Sondermodi)",
+   "class": "giant",
+   "targets": "both",
+   "tags": [
+    "Titan",
+    "vier Strahlen",
+    "Barriere",
+    "Anti-Riese"
+   ],
+   "strong": [
+    {
+     "id": "fortress",
+     "why": "vier Strahlen schmelzen Riesen"
+    },
+    {
+     "id": "vulcan",
+     "why": "vier Strahlen schmelzen Riesen"
+    },
+    {
+     "id": "overlord",
+     "why": "trifft Luft, schmilzt Riesen"
+    },
+    {
+     "id": "sledgehammer",
+     "why": "zu viel HP für sie"
+    }
+   ],
+   "weak": [
+    {
+     "id": "melting_point",
+     "why": "Strahl schmilzt Titanen"
+    },
+    {
+     "id": "crawler",
+     "why": "Strahlen verpuffen an Chaff"
+    },
+    {
+     "id": "void_eye",
+     "why": "viele billige Körper, hoher Schaden"
+    },
+    {
+     "id": "steel_ball",
+     "why": "Strahl schmilzt Großziele"
+    }
+   ],
+   "note": "Laut Wiki nicht normal freischaltbar (Survival/Brawl u.ä.).",
+   "unlock": 350,
+   "stage": 4
+  }
+ ]
+}
