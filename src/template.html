@@ -286,9 +286,9 @@ footer p { margin: 4px 0; }
 .info[open] > summary::before { transform: rotate(90deg); }
 .info > summary:hover { color: var(--fg); }
 .info-body { margin-top: 8px; max-width: 80ch; }
-/* Ko-fi: dezent, aber immer sichtbar */
+/* Ko-fi: oben rechts in der Kopfzeile, dezent, aber immer sichtbar */
 .kofi {
-  display: inline-flex; align-items: center; gap: 7px; height: 32px; padding: 0 12px; white-space: nowrap; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 7px; height: 36px; padding: 0 12px; white-space: nowrap; text-decoration: none;
   background: var(--surface); border: 1px solid var(--line); border-radius: 6px; color: var(--fg);
   font: 600 13px var(--font-ui); letter-spacing: .03em;
 }
@@ -424,6 +424,10 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
           </div></div>
       </div>
     </details>
+    <a class="kofi" href="https://ko-fi.com/byalexity" target="_blank" rel="noopener" title="Öffnet ko-fi.com/byalexity in einem neuen Tab">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h13.5v6a5 5 0 0 1-5 5H8.5a5 5 0 0 1-5-5V7zm13.5 1h1.6a3 3 0 0 1 0 6H17v-1.8h1.6a1.2 1.2 0 0 0 0-2.4H17V8zM2.5 19.6h16v1.6h-16z"/></svg>
+      Auf Ko-fi unterstützen
+    </a>
   </div>
 </header>
 
@@ -447,10 +451,6 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
     <summary>Infos: Quellen, Techs und Bedienung</summary>
     <div class="info-body" id="foot"></div>
   </details>
-  <a class="kofi" href="https://ko-fi.com/byalexity" target="_blank" rel="noopener" title="Öffnet ko-fi.com/byalexity in einem neuen Tab">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7h13.5v6a5 5 0 0 1-5 5H8.5a5 5 0 0 1-5-5V7zm13.5 1h1.6a3 3 0 0 1 0 6H17v-1.8h1.6a1.2 1.2 0 0 0 0-2.4H17V8zM2.5 19.6h16v1.6h-16z"/></svg>
-    Auf Ko-fi unterstützen
-  </a>
 </footer>
 
 <script>
