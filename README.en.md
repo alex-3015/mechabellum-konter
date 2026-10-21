@@ -2,6 +2,8 @@
 
 [Deutsch](README.md) · **English**
 
+<p align="center"><img src="docs/logo.png" width="195" height="195" alt="Mechabellum Counters: Sledgehammer in the center, Scorpion on the left as its counter, Mustang on the right as a unit it counters"></p>
+
 A Mechabellum cheat sheet for your second monitor: click a unit (or hover over it) and instantly see what it counters and what counters it.
 
 Status: patch 2.0.0.4 (Oct 14, 2026), 34 units, 11 languages.
@@ -47,6 +49,7 @@ Open the page online or open `index.html` directly in your browser. The file is 
 | `data/techrefs.json` | Tech names referenced in texts as `{t:…}` |
 | `data/techs.page.json`, `data/icons.json` | Generated, embedded into the page |
 | `icons/` | Unit images (112 px) |
+| `docs/logo.png`, `docs/logo-195.png` | Logo (390 and 195 px), e.g. as the Steam guide image |
 | `scripts/` | Build, language check, tech generation, image data, preview server, game file extraction |
 | `.github/workflows/check.yml` | Check on every pull request |
 
