@@ -272,6 +272,17 @@ h1 b { color: var(--accent); font-weight: 700; }
 footer { margin-top: 26px; color: var(--muted); font-size: 13px; max-width: 80ch; }
 footer a { color: var(--muted); }
 footer p { margin: 4px 0; }
+/* Infos zu Quellen und Bedienung: standardmäßig eingeklappt */
+.info { border-top: 1px solid var(--line); padding-top: 10px; }
+.info > summary {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer; list-style: none; user-select: none;
+  font: 600 13px var(--font-ui); letter-spacing: .04em; color: var(--muted);
+}
+.info > summary::-webkit-details-marker { display: none; }
+.info > summary::before { content: "▸"; font-size: 11px; transition: transform .15s; }
+.info[open] > summary::before { transform: rotate(90deg); }
+.info > summary:hover { color: var(--fg); }
+.info-body { margin-top: 8px; }
 kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 3px; color: var(--fg); }
 
 [hidden] { display: none !important; }
@@ -2461,7 +2472,12 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   <aside class="panel" id="panel" aria-live="polite"></aside>
 </main>
 
-<footer id="foot"></footer>
+<footer>
+  <details class="info">
+    <summary>Infos: Quellen, Techs und Bedienung</summary>
+    <div class="info-body" id="foot"></div>
+  </details>
+</footer>
 
 <script>
 (function () {
@@ -2970,7 +2986,7 @@ kbd { font: 600 11px var(--font-ui); padding: 1px 5px; border: 1px solid var(--l
   // Klick ins Leere hebt die Auswahl auf; ein offenes Ansicht-Menü schließt sich zuerst
   document.addEventListener('click', e => {
     if (menu.open && !e.target.closest('.menu')) { menu.open = false; return; }
-    if (e.target.closest('.tile, .panel, .menu, .techbar, button, a, input, label, summary')) return;
+    if (e.target.closest('.tile, .panel, .menu, .techbar, .info, button, a, input, label, summary')) return;
     deselect();
   });
 
