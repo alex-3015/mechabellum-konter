@@ -4,9 +4,11 @@ Cheat-Sheet für Mechabellum für den zweiten Monitor: Einheit anklicken (oder m
 
 Stand: Patch 2.0.0.4 (14.10.2026), 34 Einheiten.
 
+**Online:** https://alex-3015.github.io/mechabellum-konter/
+
 ## Benutzen
 
-`mechabellum-konter.html` im Browser öffnen. Die Datei ist komplett eigenständig (Daten und Bilder sind eingebettet), nur die Schriften kommen von Google Fonts.
+Die Seite online aufrufen oder `index.html` direkt im Browser öffnen. Die Datei ist komplett eigenständig (Daten und Bilder sind eingebettet), nur die Schriften kommen von Google Fonts.
 
 - **Grün ▲** kontert die gewählte Einheit, **Rot ▼** wird von ihr gekontert, gestrichelt = Tendenz durch eine Tech.
 - Panzer- und Flugzeug-Symbol auf jeder Kachel: trifft Boden / trifft Luft (blass = nein, Akzentfarbe = durch Tech).
@@ -19,7 +21,7 @@ Stand: Patch 2.0.0.4 (14.10.2026), 34 Einheiten.
 
 | Pfad | Inhalt |
 |---|---|
-| `mechabellum-konter.html` | Fertige Seite (wird gebaut, nicht direkt bearbeiten) |
+| `index.html` | Fertige Seite, wird über GitHub Pages ausgeliefert (wird gebaut, nicht direkt bearbeiten) |
 | `src/template.html` | Vorlage mit Layout, Styles und Logik |
 | `data/units.json` | Einheiten: Namen EN/DE, Kosten, Klasse, Zieltyp, Ingame-Stufe, Konter mit Begründung |
 | `data/techs.config.js` | Welche Techs berücksichtigt werden und was sie ändern |
@@ -54,4 +56,10 @@ Einzeln: `npm run icons`, `npm run techs`, `npm run build`. Mit `npm run serve` 
 - Zieltypen, Freischaltkosten und Tech-Zuordnung: mit mbwiki.dreamhaven.com abgeglichen; Ingame-Stufen I–IV aus dem Spiel abgelesen.
 - Einheitenbilder: mbwiki.dreamhaven.com (Centurion/Zenturio hat noch kein Bild).
 
-Mechabellum, Einheitennamen, Texte und Bilder gehören Game River. Privates Projekt zur persönlichen Nutzung.
+## Mitmachen
+
+Änderungen am `main`-Branch laufen über Pull Requests, die der Repo-Inhaber prüft und freigibt. Direkt pushen kann niemand sonst.
+
+## Hinweis
+
+Inoffizielles Fan-Projekt, nicht mit Game River verbunden. Mechabellum, Einheitennamen, Texte und Bilder gehören Game River.
