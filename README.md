@@ -79,7 +79,7 @@ Einzeln: `npm run check` (Sprachen prüfen), `npm run icons`, `npm run techs`, `
 - Einheiten- und Tech-Namen sowie Spieltexte (alle Sprachen): lokale Spieldateien (`resources.assets`).
 - Konter: Community-Konsens aus den Wikis (mbwiki.dreamhaven.com, mechabellum.wiki.gg) und Patchnotes.
 - Zieltypen, Freischaltkosten und Tech-Zuordnung: mit mbwiki.dreamhaven.com abgeglichen; Ingame-Stufen I–IV aus dem Spiel abgelesen.
-- Einheitenbilder: mbwiki.dreamhaven.com (Centurion hat noch kein Bild).
+- Einheitenbilder: mbwiki.dreamhaven.com, Centurion: mechabellum.wiki.gg.
 
 ## Lizenz
 
