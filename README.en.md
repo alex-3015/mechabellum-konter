@@ -79,7 +79,7 @@ Changes to the `main` branch go through pull requests that only the repository o
 - Unit and tech names and game texts (all languages): local game files (`resources.assets`).
 - Counters: community consensus from the wikis (mbwiki.dreamhaven.com, mechabellum.wiki.gg) and patch notes.
 - Target types, unlock costs and tech assignment: cross-checked with mbwiki.dreamhaven.com; in-game tiers I–IV taken from the game.
-- Unit images: mbwiki.dreamhaven.com (Centurion has no image yet).
+- Unit images: mbwiki.dreamhaven.com, Centurion: mechabellum.wiki.gg.
 
 ## License
 
