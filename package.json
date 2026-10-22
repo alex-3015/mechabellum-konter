@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Cheat-Sheet für Mechabellum: welche Einheit kontert welche, mit Tech-Schaltern aus den Spieldateien",
+  "author": "Alex (alex-3015)",
+  "license": "MIT",
+  "repository": "github:alex-3015/mechabellum-konter",
   "scripts": {
     "check": "node scripts/check-i18n.js",
     "build": "node scripts/build.js",

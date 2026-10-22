@@ -81,6 +81,12 @@ Changes to the `main` branch go through pull requests that only the repository o
 - Target types, unlock costs and tech assignment: cross-checked with mbwiki.dreamhaven.com; in-game tiers I–IV taken from the game.
 - Unit images: mbwiki.dreamhaven.com (Centurion has no image yet).
 
+## License
+
+[MIT License](LICENSE), © 2026 Alex (alex-3015). If you use this project or parts of it, you must keep the copyright notice and the license text, which credits the author.
+
+Game River content (unit and tech names, game texts, unit images) is not covered by the license, see the disclaimer below.
+
 ## Disclaimer
 
 Unofficial fan project, not affiliated with Game River. Mechabellum, unit names, texts and images belong to Game River.

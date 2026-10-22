@@ -81,6 +81,12 @@ Einzeln: `npm run check` (Sprachen prüfen), `npm run icons`, `npm run techs`, `
 - Zieltypen, Freischaltkosten und Tech-Zuordnung: mit mbwiki.dreamhaven.com abgeglichen; Ingame-Stufen I–IV aus dem Spiel abgelesen.
 - Einheitenbilder: mbwiki.dreamhaven.com (Centurion hat noch kein Bild).
 
+## Lizenz
+
+[MIT-Lizenz](LICENSE), © 2026 Alex (alex-3015). Wer das Projekt oder Teile davon verwendet, muss den Copyright-Vermerk und den Lizenztext beibehalten und nennt damit den Urheber.
+
+Nicht unter die Lizenz fallen die Inhalte von Game River (Einheiten- und Tech-Namen, Spieltexte, Einheitenbilder), siehe Hinweis unten.
+
 ## Hinweis
 
 Inoffizielles Fan-Projekt, nicht mit Game River verbunden. Mechabellum, Einheitennamen, Texte und Bilder gehören Game River.
